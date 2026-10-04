@@ -1,0 +1,54 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Bi from '../../../components/Bi.astro';
+import { others } from '../../../data/albums';
+import { href } from '../../../lib/util';
+
+// 專輯以外的作品（內容於下一階段補充）
+const works = [
+  { year: 2007, title: 'The Taylor Swift Holiday Collection', kind: { en: 'EP', zh: 'EP' } },
+  { year: 2008, title: 'Beautiful Eyes', kind: { en: 'EP', zh: 'EP' } },
+  { year: 2009, title: 'Crazier', kind: { en: 'Soundtrack · Hannah Montana: The Movie', zh: '電影歌曲．Hannah Montana: The Movie' } },
+  { year: 2010, title: 'Today Was a Fairytale', kind: { en: "Soundtrack · Valentine's Day", zh: "電影歌曲．Valentine's Day" } },
+  { year: 2011, title: 'Safe & Sound', kind: { en: 'Soundtrack · The Hunger Games, with The Civil Wars', zh: '電影歌曲．The Hunger Games，與 The Civil Wars 合作' } },
+  { year: 2012, title: 'Eyes Open', kind: { en: 'Soundtrack · The Hunger Games', zh: '電影歌曲．The Hunger Games' } },
+  { year: 2013, title: 'Sweeter than Fiction', kind: { en: 'Soundtrack · One Chance', zh: '電影歌曲．One Chance' } },
+  { year: 2016, title: "I Don't Wanna Live Forever", kind: { en: 'Soundtrack · Fifty Shades Darker, with ZAYN', zh: '電影歌曲．Fifty Shades Darker，與 ZAYN 合作' } },
+  { year: 2019, title: 'Christmas Tree Farm', kind: { en: 'Holiday single', zh: '聖誕單曲' } },
+  { year: 2019, title: 'Beautiful Ghosts', kind: { en: 'Soundtrack · Cats', zh: '電影歌曲．Cats' } },
+  { year: 2020, title: 'Only the Young', kind: { en: 'Miss Americana', zh: '紀錄片 Miss Americana' } },
+  { year: 2022, title: 'Carolina', kind: { en: 'Soundtrack · Where the Crawdads Sing', zh: '電影歌曲．Where the Crawdads Sing' } },
+];
+---
+<Base title="Other Works · Taylor Swift Eras" theme={others.theme} era="others" page="others">
+  <section class="era-hero" style="min-height:70svh">
+    <div class="wrap">
+      <p class="eyebrow">Bonus Era</p>
+      <h1 class="foil" style="font-family:'Great Vibes';font-weight:400">Other Works</h1>
+      <p class="tagline"><Bi l={{ en: 'EPs, soundtracks, collaborations and singles that live outside the twelve albums.', zh: '十二張專輯以外的 EP、電影歌曲、合作作品和單曲。' }} /></p>
+    </div>
+  </section>
+  <section style="padding-top:0">
+    <div class="wrap">
+      <ol class="works">
+        {works.map((w, i) => (
+          <li class="glass" data-reveal style={`--d:${(i % 4) * 0.08}s`}>
+            <span class="y foil">{w.year}</span>
+            <span class="t">{w.title}</span>
+            <span class="k"><Bi l={w.kind} /></span>
+          </li>
+        ))}
+      </ol>
+      <p class="section-sub" style="margin-top:2rem"><Bi l={{ en: 'Song pages for these works will be added in a later phase.', zh: '這些作品的歌曲頁面會在稍後階段加入。' }} /></p>
+      <p style="text-align:center"><a class="btn ghost" href={href('/#eras')}>← <span class="l-zh">返回所有時期</span><span class="l-en">Back to the eras</span></a></p>
+    </div>
+  </section>
+</Base>
+
+<style is:global>
+  .works { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); }
+  .works li { padding: 18px 20px; display: grid; grid-template-columns: auto 1fr; gap: 2px 16px; align-items: baseline; }
+  .works .y { font-family: var(--display); font-weight: 700; font-size: 1.3rem; grid-row: span 2; }
+  .works .t { font-family: var(--display); font-size: 1.15rem; }
+  .works .k { font-size: .85rem; color: var(--muted); }
+</style>

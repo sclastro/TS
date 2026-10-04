@@ -94,7 +94,7 @@ const featured = interviews.filter((i) => i.youtube).slice(0, 3);
       <div class="iv-grid">
         {featured.map((iv) => (
           <a class="iv-card glass" href={href(`/interviews/#${iv.id}`)} data-reveal>
-            <div class="iv-thumb"><img src={yt.thumb(iv.youtube!)} alt="" loading="lazy" /><span class="play-mini">▶</span></div>
+            <div class="iv-thumb"><img src={yt.thumb(iv.youtube!)} alt="" loading="lazy" data-soft /><span class="play-mini">▶</span></div>
             <div class="iv-body">
               <span class="chip">{iv.outlet} · <Bi l={fmtDate(iv.date)} /></span>
               <h3><Bi l={iv.title} /></h3>

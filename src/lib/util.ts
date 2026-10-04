@@ -30,7 +30,7 @@ export const commonsPage = (file: string) =>
   `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file.replace(/ /g, '_'))}`;
 
 export const photoCredit = (p: Photo) =>
-  [p.credit, p.license].filter(Boolean).join(' · ') || 'Wikimedia Commons';
+  [p.credit, p.license].filter(Boolean).join(' · ');
 
 export const themeStyle = (t: Theme) =>
   [

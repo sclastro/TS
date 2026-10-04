@@ -1,0 +1,179 @@
+---
+import Base from '../layouts/Base.astro';
+import Bi from '../components/Bi.astro';
+import { albums, others } from '../data/albums';
+import { events, catLabel } from '../data/timeline';
+import { interviewById } from '../data/interviews';
+import type { Theme } from '../data/types';
+import { href, bi, fmtDate, themeStyle, commons } from '../lib/util';
+
+const years = [...new Set([...events.map((e) => +e.date.slice(0, 4)), ...albums.map((a) => a.year)])].sort((x, y) => x - y);
+const eraFor = (y: number) => [...albums].reverse().find((a) => a.year <= y);
+const themeFor = (y: number): { slug: string; theme: Theme } => {
+  const a = eraFor(y);
+  return a ? { slug: a.slug, theme: a.theme } : { slug: 'others', theme: others.theme };
+};
+const cats = Object.keys(catLabel) as (keyof typeof catLabel)[];
+const first = themeFor(years[0]);
+---
+<Base title="Timeline · Taylor Swift Eras" page="timeline" theme={first.theme} era={first.slug}>
+  <section class="tl-hero">
+    <div class="wrap" style="text-align:center">
+      <p class="eyebrow">Invisible String</p>
+      <h1 class="foil tl-title"><Bi l={{ en: 'Life & Music', zh: '生平與音樂' }} /></h1>
+      <p class="section-sub"><Bi l={{ en: 'Left: her life. Right: the albums. Tap an album to light up every moment tied to it. As you scroll, the whole site changes with each era.', zh: '左邊是她的人生，右邊是她的專輯。點選一張專輯，與它相關的每一刻都會亮起金光。向下捲動時，整個網站會隨時期轉換。' }} /></p>
+      <div class="filters" role="group" aria-label="Filter">
+        {cats.map((c) => <button type="button" class="chip on" data-cat={c} aria-pressed="true"><Bi l={catLabel[c]} /></button>)}
+      </div>
+    </div>
+  </section>
+
+  <div class="tl wrap">
+    <div class="tl-head" aria-hidden="true">
+      <span><span class="l-zh">生平大事</span><span class="l-en">Life</span></span><span></span><span><span class="l-zh">專輯</span><span class="l-en">Albums</span></span>
+    </div>
+    {years.map((y) => {
+      const { slug, theme } = themeFor(y);
+      const ev = events.filter((e) => +e.date.slice(0, 4) === y);
+      const al = albums.filter((a) => a.year === y);
+      return (
+        <div class="tl-year" id={`y${y}`} data-era={slug} data-fx={theme.particles} data-style={themeStyle(theme)} data-dark={theme.dark ? '1' : '0'}>
+          <div class="tl-life">
+            {ev.map((e) => {
+              const iv = e.interview ? interviewById[e.interview] : undefined;
+              return (
+                <article class="tl-ev glass" data-cat={e.cat} data-album={e.album ?? ''} data-reveal>
+                  <div class="tl-ev-top"><span class="d"><Bi l={fmtDate(e.date)} /></span><span class="chip"><Bi l={catLabel[e.cat]} /></span></div>
+                  <h3 set:html={bi(e.title, { rich: true })} />
+                  {e.body && <Fragment set:html={bi(e.body, { tag: 'p', rich: true })} />}
+                  {iv && <a class="iv-link" href={href(`/interviews/#${iv.id}`)}>{iv.youtube ? '▶' : '↗'} {iv.outlet}: <Bi l={iv.title} /></a>}
+                </article>
+              );
+            })}
+          </div>
+          <div class="tl-axis"><span class="yr">{y}</span></div>
+          <div class="tl-albums">
+            {al.map((a) => (
+              <div class="tl-album" role="button" tabindex="0" data-album={a.slug} style={`--c-bg:${a.theme.bg};--c-bg2:${a.theme.bg2};--c-ink:${a.theme.ink};--c-accent:${a.theme.accent};--c-font:'${a.theme.font}'`} data-reveal>
+                {a.photos[0] && <img src={commons(a.photos[0].file, 500)} alt="" loading="lazy" data-soft referrerpolicy="no-referrer" />}
+                <span class="tl-album-in">
+                  <span class="d"><Bi l={fmtDate(a.date)} /></span>
+                  <span class="name">{a.title}</span>
+                  <span class="tg"><Bi l={a.tagline} /></span>
+                  <a class="go" href={href(`/eras/${a.slug}/`)}><span class="l-zh">進入時期</span><span class="l-en">Enter era</span> →</a>
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+
+  <script>
+    // 1) 捲動時按年份切換全站主題  2) 點選專輯以金線點亮相關事件  3) 類別篩選
+    const rows = [...document.querySelectorAll<HTMLElement>('.tl-year')];
+    const body = document.body;
+    let current = '';
+    const apply = (row: HTMLElement) => {
+      if (row.dataset.era === current) return;
+      current = row.dataset.era!;
+      body.setAttribute('style', row.dataset.style!);
+      body.dataset.era = current;
+      body.classList.toggle('is-dark', row.dataset.dark === '1');
+      body.classList.toggle('is-light', row.dataset.dark !== '1');
+      const fx = (window as any).__fx;
+      if (fx) { fx.setMode(row.dataset.fx); fx.refresh(); }
+      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', getComputedStyle(body).getPropertyValue('--bg'));
+    };
+    const obs = new IntersectionObserver(
+      (es) => es.forEach((e) => { if (e.isIntersecting) apply(e.target as HTMLElement); }),
+      { rootMargin: '-45% 0px -50% 0px' },
+    );
+    rows.forEach((r) => obs.observe(r));
+
+    document.querySelectorAll<HTMLElement>('.tl-album').forEach((btn) => {
+      btn.addEventListener('keydown', (e) => { if (e.key === 'Enter' && e.target === btn) btn.click(); });
+      btn.addEventListener('click', (e) => {
+        if ((e.target as HTMLElement).closest('a')) return;
+        const slug = btn.dataset.album!;
+        const on = !btn.classList.contains('active');
+        document.querySelectorAll('.tl-album.active, .tl-ev.lit').forEach((el) => el.classList.remove('active', 'lit'));
+        document.querySelector('.tl')!.classList.toggle('stringing', on);
+        if (on) {
+          btn.classList.add('active');
+          document.querySelectorAll(`.tl-ev[data-album="${slug}"]`).forEach((el) => el.classList.add('lit'));
+        }
+      });
+    });
+
+    document.querySelectorAll<HTMLButtonElement>('.filters button').forEach((b) => {
+      b.addEventListener('click', () => {
+        const on = b.getAttribute('aria-pressed') !== 'true';
+        b.setAttribute('aria-pressed', String(on));
+        b.classList.toggle('on', on);
+        document.querySelectorAll<HTMLElement>(`.tl-ev[data-cat="${b.dataset.cat}"]`).forEach((el) => (el.hidden = !on));
+      });
+    });
+  </script>
+</Base>
+
+<style is:global>
+  .tl-hero { padding: 120px 0 30px; }
+  .tl-title { font-size: clamp(2.8rem, 9vw, 6rem); font-family: 'Great Vibes', var(--zh); font-weight: 400; }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  .filters .chip { cursor: pointer; background: none; opacity: .45; transition: opacity .3s, background .3s; }
+  .filters .chip.on { opacity: 1; background: color-mix(in srgb, var(--accent) 22%, transparent); color: var(--ink); }
+
+  .tl { position: relative; padding-bottom: 80px; }
+  .tl::before {
+    content: ''; position: absolute; top: 0; bottom: 0; left: calc(var(--gutter) + 26px); width: 2px;
+    background: var(--gold); background-size: 100% 300%; animation: thread 6s linear infinite; opacity: .75;
+  }
+  @keyframes thread { to { background-position: 0 -300%; } }
+  .tl-head { display: none; }
+  .tl-year { display: grid; grid-template-columns: 54px 1fr; grid-template-areas: 'axis albums' 'axis life'; gap: 14px 16px; padding: 26px 0; scroll-margin-top: 80px; }
+  .tl-life { grid-area: life; display: grid; gap: 14px; align-content: start; }
+  .tl-albums { grid-area: albums; display: grid; gap: 14px; align-content: start; }
+  .tl-axis { grid-area: axis; position: relative; }
+  .tl-axis .yr {
+    position: sticky; top: 84px; display: grid; place-items: center; width: 54px; height: 54px; border-radius: 50%;
+    font-family: var(--display); font-weight: 700; font-size: .82rem; background: var(--bg); color: var(--accent);
+    border: 2px solid var(--accent); box-shadow: 0 0 0 6px color-mix(in srgb, var(--bg) 70%, transparent), 0 0 24px color-mix(in srgb, var(--accent) 50%, transparent);
+  }
+  @media (min-width: 900px) {
+    .tl::before { left: 50%; transform: translateX(-50%); }
+    .tl-head { display: grid; grid-template-columns: 1fr 90px 1fr; text-align: center; font-family: var(--display); letter-spacing: .3em; text-transform: uppercase; font-size: .75rem; color: var(--muted); padding: 8px 0; }
+    .tl-year { grid-template-columns: 1fr 90px 1fr; grid-template-areas: 'life axis albums'; }
+    .tl-axis { display: flex; justify-content: center; }
+    .tl-axis .yr { width: 70px; height: 70px; font-size: 1rem; }
+    .tl-life .tl-ev { text-align: right; }
+    .tl-life .tl-ev .tl-ev-top { flex-direction: row-reverse; }
+  }
+  .tl-ev { padding: 16px 18px; transition: box-shadow .5s, opacity .5s, transform .5s; }
+  .tl-ev[hidden] { display: none; }
+  .tl-ev h3 { font-size: 1.08rem; margin: .4em 0 .2em; }
+  .tl-ev p { margin: .3em 0 0; font-size: .92em; color: var(--muted); }
+  .tl-ev-top { display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+  .tl-ev .d, .tl-album .d { font-family: var(--display); font-size: .8rem; color: var(--accent); letter-spacing: .05em; }
+  .iv-link { display: inline-block; margin-top: .6em; font-size: .85rem; color: var(--accent); }
+  .tl.stringing .tl-ev:not(.lit) { opacity: .28; }
+  .tl-ev.lit { box-shadow: 0 0 0 2px #f2d27a, 0 0 40px -6px rgba(242, 210, 122, .8); transform: scale(1.02); }
+
+  .tl-album {
+    position: relative; display: block; width: 100%; text-align: left; border: 0; padding: 0; cursor: pointer; overflow: hidden;
+    border-radius: var(--radius); min-height: 190px; color: var(--c-ink);
+    background: linear-gradient(145deg, var(--c-bg), var(--c-bg2));
+    box-shadow: 0 24px 60px -28px rgba(0, 0, 0, .8), inset 0 0 0 1px rgba(255, 255, 255, .15);
+    transition: transform .5s var(--ease), box-shadow .5s;
+  }
+  .tl-album img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .35; mix-blend-mode: luminosity; }
+  .tl-album::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, color-mix(in srgb, var(--c-bg) 92%, transparent), transparent); }
+  .tl-album-in { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 4px; padding: 20px 22px; }
+  .tl-album .name { font-family: var(--c-font), var(--display); font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.05; }
+  .tl-album .d { color: var(--c-accent); }
+  .tl-album .tg { font-size: .9rem; opacity: .85; max-width: 22em; }
+  .tl-album .go { margin-top: 8px; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--c-accent); text-decoration: none; }
+  .tl-album:hover { transform: translateY(-4px); }
+  .tl-album.active { box-shadow: 0 0 0 3px #f2d27a, 0 0 60px -8px rgba(242, 210, 122, .9); }
+</style>

@@ -13,7 +13,7 @@ export const interviews: Interview[] = [
   },
   {
     id: 'vogue-73', date: '2016-04', outlet: 'Vogue', album: '1989',
-    title: { en: '73 Questions with Taylor Swift', zh: 'Vogue「73 條問題」' },
+    title: { en: '73 Questions', zh: '「73 條問題」' },
     summary: {
       en: 'Filmed during Grammy week at her Beverly Hills home, at the end of the 1989 era: rapid-fire questions on her habits, her cats and advice to her younger self.',
       zh: '在格林美頒獎週於她比華利山的家中拍攝，正值《1989》時期尾聲：連珠炮發問她的生活習慣、她的貓，以及她會給年輕時的自己甚麼忠告。',

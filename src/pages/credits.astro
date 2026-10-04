@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import Bi from '../components/Bi.astro';
+import { albums } from '../data/albums';
+import { commons, commonsPage, photoCredit } from '../lib/util';
+
+const all = albums.flatMap((a) => a.photos.map((p) => ({ a, p })));
+const seen = new Set<string>();
+const photos = all.filter(({ p }) => (seen.has(p.file) ? false : (seen.add(p.file), true)));
+---
+<Base title="Credits · Taylor Swift Eras" page="credits">
+  <section>
+    <div class="wrap" style="padding-top:40px">
+      <h1 class="foil" style="text-align:center;font-family:'Great Vibes',var(--zh);font-weight:400;font-size:clamp(2.6rem,8vw,5rem)"><Bi l={{ en: 'Photo Credits', zh: '圖片來源' }} /></h1>
+      <p class="section-sub"><Bi l={{ en: 'All photos are loaded from Wikimedia Commons under Creative Commons licences. Follow each link for the photographer, the full licence and the original file.', zh: '所有照片均載入自 Wikimedia Commons，以創用 CC 授權使用。點擊連結可查看攝影師、完整授權條款及原始檔案。' }} /></p>
+      <ul class="credit-list">
+        {photos.map(({ a, p }) => (
+          <li class="glass">
+            <img src={commons(p.file, 160)} alt="" loading="lazy" data-soft referrerpolicy="no-referrer" />
+            <div>
+              <strong>{a.title}</strong> · <Bi l={p.caption} /><br />
+              <small>{photoCredit(p) || 'CC'} · <a href={commonsPage(p.file)} target="_blank" rel="noopener">{p.file}</a></small>
+            </div>
+          </li>
+        ))}
+      </ul>
+      <p class="section-sub" style="margin-top:2rem"><Bi l={{ en: 'Music videos are embedded from the official YouTube channels; previews are embedded from Spotify. Lyrics are not reproduced on this site.', zh: 'MV 嵌入自官方 YouTube 頻道；試聽嵌入自 Spotify。本站不轉載歌詞。' }} /></p>
+    </div>
+  </section>
+</Base>
+
+<style is:global>
+  .credit-list { list-style: none; padding: 0; display: grid; gap: 10px; }
+  .credit-list li { display: flex; gap: 14px; align-items: center; padding: 10px; font-size: .9rem; }
+  .credit-list img { width: 64px; height: 64px; object-fit: cover; border-radius: 8px; flex: none; background: var(--bg2); }
+  .credit-list small { color: var(--muted); word-break: break-all; }
+</style>

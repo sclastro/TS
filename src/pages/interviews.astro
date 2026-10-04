@@ -1,0 +1,66 @@
+---
+import Base from '../layouts/Base.astro';
+import Bi from '../components/Bi.astro';
+import YouTube from '../components/YouTube.astro';
+import { interviews } from '../data/interviews';
+import { albumBySlug } from '../data/albums';
+import { href, fmtDate, bi } from '../lib/util';
+
+const list = [...interviews].sort((a, b) => a.date.localeCompare(b.date));
+---
+<Base title="Interviews · Taylor Swift Eras" page="interviews">
+  <section style="padding-bottom:20px">
+    <div class="wrap" style="text-align:center;padding-top:60px">
+      <p class="eyebrow">In Her Own Words</p>
+      <h1 class="foil" style="font-family:'Great Vibes',var(--zh);font-weight:400;font-size:clamp(2.8rem,9vw,6rem)"><Bi l={{ en: 'Interviews & Speeches', zh: '訪問與演說' }} /></h1>
+      <p class="section-sub"><Bi l={{ en: 'Video interviews play right here; articles open at the original publisher. Each entry links back to its era.', zh: '影片訪問可直接在此播放；文章會連結至原刊登媒體。每一項都連回所屬的時期。' }} /></p>
+    </div>
+  </section>
+  <section style="padding-top:0">
+    <div class="wrap iv-list">
+      {list.map((iv) => {
+        const a = iv.album ? albumBySlug[iv.album] : undefined;
+        return (
+          <article class="iv glass" id={iv.id} data-reveal style={a ? `--accent:${a.theme.accent}` : undefined}>
+            <div class="iv-media">
+              {iv.youtube ? <YouTube id={iv.youtube} title={iv.title.en} /> : (
+                <a class="iv-article" href={iv.url} target="_blank" rel="noopener">
+                  <span class="big">{iv.outlet}</span>
+                  <span>↗ <span class="l-zh">閱讀原文</span><span class="l-en">Open article</span></span>
+                </a>
+              )}
+            </div>
+            <div class="iv-text">
+              <div class="iv-meta">
+                <span class="chip">{iv.outlet}</span>
+                <span class="chip"><Bi l={fmtDate(iv.date)} /></span>
+                {a && <a class="chip" href={href(`/eras/${a.slug}/`)}>{a.title} era</a>}
+              </div>
+              <h2><Bi l={iv.title} /></h2>
+              <Fragment set:html={bi(iv.summary, { tag: 'p' })} />
+              {iv.youtube && iv.url && <a href={iv.url} target="_blank" rel="noopener">↗ Source</a>}
+            </div>
+          </article>
+        );
+      })}
+      <p class="glass note" data-reveal><Bi l={{ en: 'To add an interview, append an entry to src/data/interviews.ts with its YouTube video ID or article URL, the date and the related album.', zh: '如要加入訪問，只需在 src/data/interviews.ts 新增一項，填上 YouTube 影片 ID 或文章網址、日期及相關專輯即可。' }} /></p>
+    </div>
+  </section>
+</Base>
+
+<style is:global>
+  .iv-list { display: grid; gap: 26px; }
+  .iv { display: grid; grid-template-columns: 1fr; overflow: hidden; scroll-margin-top: 90px; }
+  @media (min-width: 900px) { .iv { grid-template-columns: 1.1fr 1fr; } }
+  .iv-media .yt { border-radius: 0; border: 0; height: 100%; }
+  .iv-article {
+    display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px; min-height: 220px; height: 100%;
+    text-decoration: none; background: linear-gradient(135deg, var(--bg2), color-mix(in srgb, var(--accent) 45%, var(--bg)));
+  }
+  .iv-article .big { font-family: var(--display); font-size: clamp(2rem, 5vw, 3rem); font-style: italic; }
+  .iv-text { padding: clamp(18px, 3vw, 32px); }
+  .iv-text h2 { font-size: 1.4rem; margin: .7em 0 .4em; }
+  .iv-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+  .iv-meta a.chip { text-decoration: none; color: var(--accent); }
+  .note { padding: 16px 20px; font-size: .85rem; color: var(--muted); }
+</style>

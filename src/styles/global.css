@@ -38,7 +38,8 @@ button { font: inherit; color: inherit; }
 /* ============ 語言切換 ============ */
 html[data-lang='zh'] .l-en { display: none !important; }
 html[data-lang='en'] .l-zh { display: none !important; }
-html[data-lang='both'] span.l-zh::before { content: ' / '; opacity: .5; }
+html[data-lang='both'] span.l-en + span.l-zh::before,
+html[data-lang='both'] span.l-zh + span.l-en::before { content: ' / '; opacity: .5; }
 html[data-lang='both'] p.l-zh, html[data-lang='both'] div.l-zh {
   opacity: .82; font-size: .94em; border-left: 2px solid color-mix(in srgb, var(--accent) 60%, transparent);
   padding-left: .9em; margin-top: .4em;
@@ -58,7 +59,8 @@ html[data-lang='both'] .stack > span.l-zh::before { content: none; }
 .eyebrow { font-family: var(--display); text-transform: uppercase; letter-spacing: .32em; font-size: .72rem; color: var(--muted); }
 h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.2; margin: 0 0 .5em; }
 h2.section-title { font-size: clamp(1.8rem, 3vw + 1rem, 3rem); text-align: center; margin: 0 0 .3em; }
-.section-sub { text-align: center; color: var(--muted); margin: 0 auto 2.4rem; max-width: 40em; }
+.section-sub { text-align: center; color: var(--muted); margin: 0 auto 2.4rem; max-width: 40em; padding: 0 var(--gutter); }
+h2.section-title { padding: 0 var(--gutter); }
 .ornament { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 0 auto 1rem; color: var(--accent); }
 .ornament::before, .ornament::after { content: ''; height: 1px; width: min(120px, 22vw); background: linear-gradient(90deg, transparent, currentColor, transparent); }
 section { padding: clamp(56px, 9vw, 120px) 0; position: relative; }
@@ -69,7 +71,9 @@ section { padding: clamp(56px, 9vw, 120px) 0; position: relative; }
   gap: 12px; padding: 10px var(--gutter);
   background: linear-gradient(180deg, color-mix(in srgb, var(--bg) 88%, transparent), transparent);
   backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  transition: background .4s, box-shadow .4s;
 }
+body.scrolled .topbar { background: color-mix(in srgb, var(--bg) 92%, transparent); box-shadow: 0 1px 0 color-mix(in srgb, var(--accent) 30%, transparent); }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .brand .mono { font-family: 'Great Vibes', cursive; font-size: 2.1rem; line-height: 1; }
 .brand small { font-family: var(--display); letter-spacing: .3em; font-size: .62rem; text-transform: uppercase; color: var(--muted); }
@@ -164,13 +168,14 @@ main, footer { position: relative; z-index: 2; }
 /* ============ 照片 & 燈箱 ============ */
 .photo { position: relative; overflow: hidden; background: linear-gradient(135deg, var(--bg2), color-mix(in srgb, var(--accent) 60%, var(--bg))); }
 .photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease), opacity .6s; }
-.photo img.broken { opacity: 0; }
+img.broken { opacity: 0 !important; }
 .photo figcaption {
   position: absolute; inset: auto 0 0 0; padding: 28px 14px 10px; font-size: .78rem; line-height: 1.4; color: #fff;
   background: linear-gradient(transparent, rgba(0, 0, 0, .7));
 }
 .photo figcaption small { display: block; opacity: .7; font-size: .7rem; }
-.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); gap: 14px; }
+.gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+@media (min-width: 700px) { .gallery { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; } }
 .gallery .photo { aspect-ratio: 4/5; border-radius: 14px; cursor: zoom-in; margin: 0; }
 .gallery .photo:hover img { transform: scale(1.06); }
 .lightbox {

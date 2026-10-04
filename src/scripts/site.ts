@@ -59,6 +59,11 @@ const io = new IntersectionObserver(
 );
 document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
 
+/* ---------- 捲動後導航列加底色 ---------- */
+const onScroll = () => document.body.classList.toggle('scrolled', scrollY > 40);
+addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
 /* ---------- 手機選單 ---------- */
 document.querySelector('.menu-btn')?.addEventListener('click', () => {
   const open = document.body.classList.toggle('menu-open');
@@ -126,6 +131,14 @@ if (curtain) {
 /* ---------- 橫向唱片列：滑鼠滾輪 / 箭咀 ---------- */
 document.querySelectorAll<HTMLElement>('[data-rail]').forEach((rail) => {
   const track = rail.querySelector<HTMLElement>('.rail-track')!;
+  // 觸控裝置沒有 hover：置中的唱片自動滑出封套
+  if (matchMedia('(hover: none)').matches) {
+    const peek = new IntersectionObserver(
+      (es) => es.forEach((e) => e.target.classList.toggle('peek', e.isIntersecting)),
+      { root: track, rootMargin: '0px -30% 0px -30%', threshold: 0.6 },
+    );
+    track.querySelectorAll('.era-card').forEach((c) => peek.observe(c));
+  }
   rail.querySelectorAll<HTMLButtonElement>('[data-dir]').forEach((b) =>
     b.addEventListener('click', () => track.scrollBy({ left: Number(b.dataset.dir) * track.clientWidth * 0.8, behavior: 'smooth' })),
   );

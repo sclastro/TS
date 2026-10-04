@@ -6,5 +6,5 @@ const { p, width = 900, class: cls = '', eager = false, caption = true } = Astro
 ---
 <figure class:list={['photo', cls]} data-zoom={commons(p.file, 1800)} data-alt={p.caption.en}>
   <img src={commons(p.file, width)} alt={p.caption.en} loading={eager ? 'eager' : 'lazy'} decoding="async" data-soft style={p.focus ? `object-position:${p.focus}` : undefined} referrerpolicy="no-referrer" />
-  {caption && <figcaption><Fragment set:html={bi(p.caption)} /><small>📷 {photoCredit(p)} · Wikimedia Commons</small></figcaption>}
+  {caption && <figcaption><Fragment set:html={bi(p.caption)} /><small>📷 {[photoCredit(p), 'Wikimedia Commons'].filter(Boolean).join(' · ')}</small></figcaption>}
 </figure>
