@@ -359,6 +359,43 @@ export const albums: Album[] = [
       en: 'Lover is a bright, romantic counterpoint to reputation, which Swift described as a love letter to love itself. It was her first album with Republic Records, and the first whose master recordings she owns outright.',
       zh: '《Lover》明亮而浪漫，與《reputation》形成對比；Swift 形容它是「寫給愛情本身的情書」。這是她加盟 Republic Records 後的首張專輯，也是她第一張完全擁有母帶版權的作品。',
     },
+    chapters: [
+      {
+        title: { en: 'Out of the dark', zh: '走出黑暗' },
+        body: {
+          en: 'If reputation was night, Lover was meant to be daylight. Swift described the album as a love letter to love itself, in all its forms: giddy, anxious, domestic, political. The visual world changed completely, from black and white to pastel pinks, blues and glitter.',
+          zh: '如果《reputation》是黑夜，《Lover》就是日光。Swift 形容這張專輯是寫給愛情本身的情書，包括愛的各種模樣：暈眩的、焦慮的、居家的、政治的。視覺世界完全轉變，由黑白變成粉紅、粉藍和閃粉。',
+        },
+      },
+      {
+        title: { en: 'Owning her work', zh: '擁有自己的作品' },
+        body: {
+          en: 'Lover was her first album under her new deal with Republic Records, which allowed her to own the master recordings of her new music. In June 2019, two months before its release, her former label Big Machine was acquired by [[Scooter Braun]]’s company, along with the masters of her first six albums. Swift objected publicly, and the dispute shaped everything that followed, including the re-recordings.',
+          zh: '《Lover》是她與 Republic Records 簽訂新合約後的首張專輯，新合約讓她擁有新作品的母帶。2019 年 6 月，即專輯推出前兩個月，她的前唱片公司 Big Machine 連同她首六張專輯的母帶，被 [[Scooter Braun]] 的公司收購。Swift 公開反對，這場爭議影響了其後的一切，包括重錄計劃。',
+        },
+      },
+      {
+        title: { en: 'Speaking up', zh: '開口發聲' },
+        body: {
+          en: 'After years of avoiding politics, Swift endorsed candidates in Tennessee in 2018. Lover reflects that change: "You Need to Calm Down" supports LGBTQ+ rights, "The Man" confronts sexism, and "Miss Americana & the Heartbreak Prince" uses a high school to describe political disillusionment. The documentary Miss Americana, released in January 2020, showed the process behind the decision.',
+          zh: '多年來迴避政治之後，Swift 在 2018 年支持田納西州的候選人。《Lover》反映了這個轉變：〈You Need to Calm Down〉支持 LGBTQ+ 權利，〈The Man〉挑戰性別歧視，〈Miss Americana & the Heartbreak Prince〉則以一所高中描寫對政治的幻滅。2020 年 1 月推出的紀錄片《Miss Americana》呈現了這個決定背後的過程。',
+        },
+      },
+      {
+        title: { en: 'Family and fear', zh: '家人與恐懼' },
+        body: {
+          en: 'Among the album’s joyful songs is "Soon You’ll Get Better", written about her mother’s cancer. Swift said she almost did not include it. Its presence gives the album weight: love is not only romance, but also the fear of losing the people closest to you.',
+          zh: '在一眾快樂的歌曲之中，〈Soon You’ll Get Better〉寫的是她母親的癌症。Swift 說她差點沒有收錄這首歌。它的存在令專輯更有份量：愛不只是浪漫，也是害怕失去至親的恐懼。',
+        },
+      },
+      {
+        title: { en: 'Lover Fest, cancelled', zh: '被取消的 Lover Fest' },
+        body: {
+          en: 'Swift planned a small series of festival-style concerts called Lover Fest for 2020, but they were cancelled because of the COVID-19 pandemic. The Lover songs finally got their stage on the Eras Tour in 2023, where the Lover set opened every show.',
+          zh: 'Swift 原計劃在 2020 年舉行一系列音樂節式的演唱會 Lover Fest，但因新冠疫情而取消。Lover 的歌曲終於在 2023 年的 Eras Tour 登上舞台，Lover 環節更是每場演出的開場。',
+        },
+      },
+    ],
     facts: [
       { en: 'First album under Republic Records', zh: '加盟 Republic Records 後的首張專輯' },
       { en: 'Lover Fest concerts were cancelled because of the COVID-19 pandemic', zh: 'Lover Fest 演唱會因新冠疫情取消' },
