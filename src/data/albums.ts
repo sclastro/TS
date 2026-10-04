@@ -143,15 +143,15 @@ export const albums: Album[] = [
       {
         title: { en: 'The Speak Now World Tour', zh: 'Speak Now World Tour' },
         body: {
-          en: 'The tour ran through 2011 and 2012 and was her most theatrical yet, inspired by Broadway: a moving bridge, a balcony, aerial acrobatics, a rainstorm during "Haunted", and a different cover song in each city. A live album, Speak Now World Tour Live, followed.',
-          zh: '巡演於 2011 至 2012 年舉行，是她迄今最富舞台劇色彩的演出，靈感來自百老匯：會移動的橋、露台、空中雜技、〈Haunted〉期間的人造暴雨，以及在每個城市演唱不同的翻唱歌曲。其後推出了現場專輯《Speak Now World Tour Live》。',
+          en: 'The tour ran through 2011 and 2012 and was her most theatrical yet, inspired by Broadway: a moving bridge, a balcony that flew over the audience, aerial acrobatics, and a different cover song in each city. A live album, Speak Now World Tour Live, followed.',
+          zh: '巡演於 2011 至 2012 年舉行，是她迄今最富舞台劇色彩的演出，靈感來自百老匯：會移動的橋、在觀眾頭上飛越的露台、空中雜技，以及在每個城市演唱不同的翻唱歌曲。其後推出了現場專輯《Speak Now World Tour Live》。',
         },
       },
       {
         title: { en: 'Recognition and a snub', zh: '肯定與遺珠' },
         body: {
-          en: '"Mean" won two Grammys in 2012, but the album itself was not nominated for Album of the Year, which surprised many. Swift performed "Mean" at that ceremony on a porch set with a banjo, ending with a pointed look at the audience.',
-          zh: '〈Mean〉在 2012 年奪得兩項格林美獎，但專輯本身未獲年度專輯提名，令不少人感到意外。Swift 在那屆頒獎禮上，於門廊佈景中彈着班祖琴演唱〈Mean〉，最後意味深長地望向觀眾。',
+          en: '"Mean" won two Grammys in 2012, but the album itself was not nominated for Album of the Year, which surprised many. Swift performed "Mean" at that ceremony on a porch set with a banjo.',
+          zh: '〈Mean〉在 2012 年奪得兩項格林美獎，但專輯本身未獲年度專輯提名，令不少人感到意外。Swift 在那屆頒獎禮上，於門廊佈景中彈着班祖琴演唱〈Mean〉。',
         },
       },
       {
@@ -181,6 +181,43 @@ export const albums: Album[] = [
       en: 'Red mixes country, rock and electronic pop, and marks Swift’s first work with producers Max Martin and Shellback. She described the album as being about the tumultuous, crazy, intense feelings of falling in and out of love. "All Too Well" later became one of her most celebrated songs.',
       zh: '《Red》融合鄉村、搖滾和電子流行樂，亦是 Swift 首次與監製 Max Martin、Shellback 合作。她形容這張專輯描寫的是戀愛與失戀之間那些混亂、瘋狂而強烈的情緒。〈All Too Well〉後來成為她最受推崇的作品之一。',
     },
+    chapters: [
+      {
+        title: { en: 'The colour of intense emotion', zh: '濃烈情感的顏色' },
+        body: {
+          en: 'Swift has explained that she named the album Red because the emotions it describes, from falling in love to heartbreak, jealousy and anger, all felt like the colour red to her: intense, overwhelming and impossible to ignore. Many of the songs were written in the aftermath of a painful breakup.',
+          zh: 'Swift 解釋，她把專輯命名為《Red》，是因為專輯描述的情感，由墮入愛河到心碎、妒忌和憤怒，在她看來全都是紅色的：濃烈、壓倒一切、無法忽視。不少歌曲寫於一段痛苦分手之後。',
+        },
+      },
+      {
+        title: { en: 'Between two worlds', zh: '介乎兩個世界之間' },
+        body: {
+          en: 'Red mixes country, folk, arena rock and electronic pop. Swift worked with a wide range of producers for the first time, including [[Max Martin]] and [[Shellback]], [[Jeff Bhasker]], [[Dan Wilson]], [[Butch Walker]] and [[Jacknife Lee]], while still recording some songs with [[Nathan Chapman]]. Critics debated whether it was still a country album; Swift later said it was the moment she knew pop was where she was heading.',
+          zh: '《Red》混合了鄉村、民謠、體育館搖滾和電子流行樂。Swift 首次與多位不同監製合作，包括 [[Max Martin]] 與 [[Shellback]]、[[Jeff Bhasker]]、[[Dan Wilson]]、[[Butch Walker]] 和 [[Jacknife Lee]]，同時仍與 [[Nathan Chapman]] 錄製部分歌曲。評論界爭論它是否仍算鄉村專輯；Swift 後來表示，那一刻她已知道自己將走向流行樂。',
+        },
+      },
+      {
+        title: { en: 'The Red Tour', zh: 'The Red Tour' },
+        body: {
+          en: 'The Red Tour ran from March 2013 to June 2014, with [[Ed Sheeran]] as an opening act on much of the North American leg. It featured a red-and-white circus-inspired staging for "We Are Never Ever Getting Back Together" and an acoustic moment on a small stage among the crowd.',
+          zh: 'The Red Tour 由 2013 年 3 月至 2014 年 6 月舉行，[[Ed Sheeran]] 擔任北美大部分場次的開場嘉賓。演出包括以紅白色馬戲團為靈感的〈We Are Never Ever Getting Back Together〉舞台，以及在人群中小舞台上的木結他環節。',
+        },
+      },
+      {
+        title: { en: 'Recognition', zh: '肯定' },
+        body: {
+          en: 'Red was nominated for Album of the Year at the 2014 Grammys. Over the following decade, critics came to rank it among her very best work, largely because of "All Too Well", which many consider the finest song she has written.',
+          zh: '《Red》獲得 2014 年格林美年度專輯提名。在其後十年，評論界逐漸把它列為她最出色的作品之一，很大程度上是因為〈All Too Well〉，不少人認為那是她寫過最好的歌。',
+        },
+      },
+      {
+        title: { en: 'Red (Taylor’s Version) and the ten minutes', zh: 'Red (Taylor’s Version) 與那十分鐘' },
+        body: {
+          en: 'The re-recording, released on 12 November 2021, added nine vault tracks, including the long-awaited ten-minute "All Too Well". Swift also released All Too Well: The Short Film, which she wrote and directed. The ten-minute version became the longest song ever to top the Hot 100, and the album debuted at number one.',
+          zh: '重錄版於 2021 年 11 月 12 日推出，加入九首 vault 歌曲，包括期待已久的十分鐘版〈All Too Well〉。Swift 亦推出由她編劇及執導的《All Too Well: The Short Film》。十分鐘版成為 Hot 100 史上最長的冠軍歌，專輯亦空降榜首。',
+        },
+      },
+    ],
     facts: [
       { en: "Re-recorded as Red (Taylor's Version), 12 November 2021, with All Too Well: The Short Film", zh: "重錄版 Red (Taylor's Version)：2021 年 11 月 12 日，同日推出 All Too Well: The Short Film" },
     ],
