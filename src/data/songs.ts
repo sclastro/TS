@@ -22,5 +22,6 @@ export const sectionLabel: Record<SongSection, L> = {
   '3am': { en: '3am Edition', zh: '3am 版' },
   tilldawn: { en: 'Til Dawn Edition', zh: 'Til Dawn 版' },
   anthology: { en: 'The Anthology', zh: 'The Anthology 選集' },
+  other: { en: 'Non-album work', zh: '非專輯作品' },
 };
-export const sectionOrder: SongSection[] = ['standard', 'deluxe', 'bonus', '3am', 'tilldawn', 'anthology', 'vault'];
+export const sectionOrder: SongSection[] = ['standard', 'deluxe', 'bonus', '3am', 'tilldawn', 'anthology', 'vault', 'other'];

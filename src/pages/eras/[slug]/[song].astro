@@ -4,14 +4,14 @@ import Bi from '../../../components/Bi.astro';
 import Photo from '../../../components/Photo.astro';
 import YouTube from '../../../components/YouTube.astro';
 import Spotify from '../../../components/Spotify.astro';
-import { albums, albumBySlug } from '../../../data/albums';
+import { albums, albumBySlug, others } from '../../../data/albums';
 import { songsByAlbum, sectionLabel, songByRef } from '../../../data/songs';
 import { interviews } from '../../../data/interviews';
 import type { Album, Song, L } from '../../../data/types';
 import { href, bi, personHTML, geniusSearch, spotifySearch, appleSearch, ytChannelSearch, fmtDate } from '../../../lib/util';
 
 export function getStaticPaths() {
-  return albums.flatMap((a) =>
+  return [...albums, others as unknown as Album].flatMap((a) =>
     (songsByAlbum[a.slug] ?? []).map((s, i, arr) => ({
       params: { slug: a.slug, song: s.slug },
       props: { a, s, prev: arr[i - 1], next: arr[i + 1] },

@@ -672,6 +672,11 @@ export const albums: Album[] = [
 
 export const others = {
   slug: 'others', title: 'Other Works',
+  photos: [
+    eras('Taylor Swift The Eras Tour Speak Now Set Era (53109969638).jpg', 'Speak Now set', 'Speak Now 環節'),
+    eras('Taylor Swift The Eras Tour 1989 Era Set (53109542801).jpg', '1989 set', '1989 環節'),
+    eras('Taylor Swift The Eras Tour Fearless Set Era (53109821975).jpg', 'Fearless set', 'Fearless 環節'),
+  ],
   theme: { bg: '#120f17', bg2: '#251e2e', ink: '#f3ece0', muted: '#c8beac', accent: '#cfac4e', accent2: '#eddda7', card: '#1c1725', font: 'Playfair Display', particles: 'sparkle' as const, dark: true },
 };
 
