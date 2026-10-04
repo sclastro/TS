@@ -515,6 +515,43 @@ export const albums: Album[] = [
       en: 'Midnights is a concept album about thirteen sleepless nights scattered throughout Swift’s life. In its release week she became the first artist to occupy the entire top ten of the Billboard Hot 100, and it won Album of the Year, her record fourth.',
       zh: '《Midnights》是一張概念專輯，描寫 Swift 一生中十三個失眠的夜晚。推出當週，她成為史上首位同時包辦 Billboard Hot 100 頭十位的歌手；專輯其後奪得格林美年度專輯，是她破紀錄的第四座。',
     },
+    chapters: [
+      {
+        title: { en: 'Thirteen sleepless nights', zh: '十三個失眠夜' },
+        body: {
+          en: 'Swift announced Midnights while accepting an award at the 2022 MTV VMAs, describing it as stories of sleepless nights scattered throughout her life. Each song is a different night: anxiety, revenge, falling in love, regret and self-doubt.',
+          zh: 'Swift 在 2022 年 MTV 音樂錄像頒獎禮領獎時宣佈《Midnights》，形容它是散落在她一生中失眠夜晚的故事。每首歌是不同的一夜：焦慮、復仇、墮入愛河、懊悔與自我懷疑。',
+        },
+      },
+      {
+        title: { en: 'Back to pop, at night', zh: '在深夜重返流行樂' },
+        body: {
+          en: 'After two folk albums, Swift returned to synth-pop with [[Jack Antonoff]], but in a softer, darker and moodier style than 1989. The production is full of hazy synths, low beats and pitched-down voices, like music heard at three in the morning.',
+          zh: '在兩張民謠專輯之後，Swift 與 [[Jack Antonoff]] 重返合成器流行樂，但風格比《1989》更柔和、更暗、更具情緒。製作充滿朦朧的合成器、低沉的節拍和被調低音高的人聲，就像凌晨三時聽到的音樂。',
+        },
+      },
+      {
+        title: { en: '3am and Til Dawn', zh: '3am 與 Til Dawn' },
+        body: {
+          en: 'Three hours after release, Swift surprised fans with seven extra songs, the 3am Edition, several made with [[Aaron Dessner]]. In 2023 the Til Dawn edition added more, including a remix of "Karma" with [[Ice Spice]], and a vault song, "You’re Losing Me", appeared later that year.',
+          zh: '推出三小時後，Swift 突然加推七首歌，即 3am Edition，其中多首與 [[Aaron Dessner]] 合作。2023 年的 Til Dawn 版再加入新曲，包括與 [[Ice Spice]] 合作的〈Karma〉混音版；同年稍後又推出 vault 歌曲〈You’re Losing Me〉。',
+        },
+      },
+      {
+        title: { en: 'A record-breaking week', zh: '破紀錄的一週' },
+        body: {
+          en: 'In its first week, songs from Midnights filled all ten places in the top ten of the Billboard Hot 100, the first time any artist had done so. "Anti-Hero" spent eight weeks at number one.',
+          zh: '推出首週，《Midnights》的歌曲包辦 Billboard Hot 100 頭十位，是史上首位歌手做到。〈Anti-Hero〉蟬聯冠軍八週。',
+        },
+      },
+      {
+        title: { en: 'Into the Eras Tour', zh: '走進 Eras Tour' },
+        body: {
+          en: 'Midnights was the final set of each Eras Tour show, with a glittering stage, a purple fur coat and the "Karma" finale. In February 2024 it won the Grammy for Album of the Year, Swift’s record fourth win. Earlier that night, accepting another award, she announced her next album.',
+          zh: '《Midnights》是每場 Eras Tour 的最後一個環節：閃亮的舞台、紫色皮草大衣，以及〈Karma〉壓軸。2024 年 2 月，專輯奪得格林美年度專輯，是 Swift 破紀錄的第四座。同一晚稍早，她在領取另一個獎項時宣佈了下一張專輯。',
+        },
+      },
+    ],
     facts: [
       { en: 'First artist to hold the entire Hot 100 top ten', zh: '史上首位包辦 Hot 100 頭十位的歌手' },
       { en: 'Grammy Album of the Year (2024), a record fourth win', zh: '格林美年度專輯（2024 年），破紀錄第四座' },
