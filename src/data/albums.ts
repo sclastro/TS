@@ -569,6 +569,43 @@ export const albums: Album[] = [
       en: 'Announced during her acceptance speech at the 2024 Grammys, The Tortured Poets Department arrived with a surprise second half two hours later, The Anthology, bringing the total to 31 songs. It is a dense, literary record, and was written in large part during the Eras Tour.',
       zh: '《The Tortured Poets Department》在 2024 年格林美的得獎致辭中宣佈。推出兩小時後，她再突襲發佈下半部 The Anthology，令全碟增至 31 首歌。這是一張文字密度極高、充滿文學氣息的專輯，大部分在 Eras Tour 期間寫成。',
     },
+    chapters: [
+      {
+        title: { en: 'Written on the road', zh: '在巡演路上寫成' },
+        body: {
+          en: 'Swift wrote much of the album during the Eras Tour, in a period she later described as short, intense and painful. While she performed to stadiums each weekend, she was privately processing the end of a long relationship and a brief, chaotic romance afterwards.',
+          zh: 'Swift 大部分作品在 Eras Tour 期間寫成，她後來形容那是一段短暫、熾烈而痛苦的時期。每個週末她在體育場演出，私下卻在消化一段長久感情的結束，以及其後一段短暫而混亂的戀情。',
+        },
+      },
+      {
+        title: { en: 'A Grammy-night announcement', zh: '格林美之夜的宣佈' },
+        body: {
+          en: 'At the Grammys in February 2024, while accepting the award for Best Pop Vocal Album for Midnights, Swift revealed that her next album would arrive in April. Later that night Midnights won Album of the Year.',
+          zh: '2024 年 2 月的格林美頒獎禮上，Swift 憑《Midnights》領取最佳流行歌唱專輯獎時，宣佈下一張專輯將於四月推出。同一晚稍後，《Midnights》奪得年度專輯。',
+        },
+      },
+      {
+        title: { en: 'Two hours later: The Anthology', zh: '兩小時後：The Anthology' },
+        body: {
+          en: 'At 2 a.m. on release day, Swift revealed that the album was a secret double album with fifteen more songs. Most were made with [[Aaron Dessner]] and are quieter, more literary and full of myth: Cassandra, Peter Pan, the albatross.',
+          zh: '推出當日凌晨兩時，Swift 揭曉這是一張秘密雙專輯，另有十五首歌。大多與 [[Aaron Dessner]] 合作，風格更安靜、更具文學性，並充滿神話與典故：Cassandra、小飛俠、信天翁。',
+        },
+      },
+      {
+        title: { en: 'Black, white and sepia', zh: '黑、白與褐色' },
+        body: {
+          en: 'The visual world of TTPD is monochrome and literary: typewriters, handwritten pages, old libraries and white nightgowns. On the charts it was enormous: in its first week its songs filled the entire top fourteen of the Billboard Hot 100.',
+          zh: 'TTPD 的視覺世界是單色而富文學氣息的：打字機、手寫稿、舊圖書館和白色睡袍。在榜單上，它聲勢浩大：推出首週，其歌曲包辦 Billboard Hot 100 頭十四位。',
+        },
+      },
+      {
+        title: { en: 'A new set on tour', zh: '巡演的新環節' },
+        body: {
+          en: 'From May 2024 in Paris, the Eras Tour added a TTPD set, staged like a theatre piece about a poet trapped by her own story and the show she must keep performing. The tour ended in December 2024 in Vancouver.',
+          zh: '由 2024 年 5 月巴黎站起，Eras Tour 加入 TTPD 環節，以舞台劇形式演繹一位被自己的故事、以及不得不繼續的演出所困的詩人。巡演於 2024 年 12 月在溫哥華落幕。',
+        },
+      },
+    ],
     facts: [
       { en: 'The Anthology edition: 31 tracks', zh: 'The Anthology 版本共 31 首歌' },
       { en: 'Added as a new set on the Eras Tour in 2024', zh: '2024 年加入 Eras Tour，成為新的演出環節' },
