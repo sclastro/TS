@@ -1,0 +1,10 @@
+---
+import { yt } from '../lib/util';
+interface Props { id: string; title: string; label?: string }
+const { id, title, label } = Astro.props;
+---
+<div class="yt" data-id={id} data-title={title} role="button" tabindex="0" aria-label={`Play: ${title}`}>
+  <img src={yt.thumb(id)} alt="" loading="lazy" />
+  <span class="play" aria-hidden="true"></span>
+  {label && <span class="yt-label">{label}</span>}
+</div>

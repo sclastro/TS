@@ -1,4 +1,124 @@
 ---
-const x = 1;
+import Base from '../layouts/Base.astro';
+import EraCard from '../components/EraCard.astro';
+import Bi from '../components/Bi.astro';
+import { albums, others } from '../data/albums';
+import { interviews } from '../data/interviews';
+import { commons, href, yt, fmtDate } from '../lib/util';
+
+const slides = albums.map((a) => a.photos[a.photos.length > 2 ? 1 : 0] ?? a.photos[0]).filter(Boolean);
+const stats = [
+  { n: '12', l: { en: 'studio albums', zh: '張錄音室專輯' } },
+  { n: '4', l: { en: 'Albums of the Year, a record', zh: '座格林美年度專輯（史上最多）' } },
+  { n: '149', l: { en: 'Eras Tour shows', zh: '場 Eras Tour' } },
+  { n: '2025', l: { en: 'the year she owned all her masters', zh: '年取回全部作品母帶' } },
+];
+const featured = interviews.filter((i) => i.youtube).slice(0, 3);
 ---
-<html><body>{x}</body></html>
+<Base title="Taylor Swift · The Eras Archive" page="home">
+  <div class="curtain" slot="intro">
+    <div class="half l"></div><div class="half r"></div><div class="valance"></div><div class="spot"></div>
+    <div class="inner">
+      <p class="q foil">Are you ready for it?</p>
+      <p class="zh">準備好了嗎</p>
+      <button class="btn" type="button">✦ Enter the Eras · 進場 ✦</button>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-slides" aria-hidden="true">
+      {slides.map((p, i) => (
+        <figure style={`animation-delay:${i * 4}s`}>
+          <img src={commons(p.file, 1600)} alt="" loading={i < 2 ? 'eager' : 'lazy'} data-soft referrerpolicy="no-referrer" style={`animation-delay:${i * 4}s`} />
+        </figure>
+      ))}
+    </div>
+    <div class="hero-inner">
+      <p class="eyebrow" style="color:#e9dcc0">2006 — 2025</p>
+      <h1 class="foil">Taylor Swift</h1>
+      <p class="sub">The Eras Archive</p>
+      <p class="subzh">十二個時期．一生的故事</p>
+      <a class="btn" href="#eras">✦ <span class="l-zh">選擇時期</span><span class="l-en">Choose your era</span></a>
+    </div>
+    <span class="scroll">Scroll</span>
+  </section>
+
+  <section class="intro">
+    <div class="wrap prose" style="text-align:center">
+      <div class="ornament">✦</div>
+      <p data-reveal style="font-size:1.25em">
+        <Bi l={{
+          en: 'From a Christmas tree farm in Pennsylvania to the highest-grossing tour in history: twelve albums, each with its own colours, sound and story.',
+          zh: '由賓夕法尼亞州的聖誕樹農場，走到史上票房最高的巡迴演唱會：十二張專輯，各有自己的顏色、聲音與故事。',
+        }} />
+      </p>
+      <div class="stats" data-reveal>
+        {stats.map((s) => (
+          <div class="stat glass"><b class="foil">{s.n}</b><span><Bi l={s.l} /></span></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="eras">
+    <h2 class="section-title foil">The Eras</h2>
+    <p class="section-sub"><Bi l={{ en: 'Touch a record to step into its world. Every era changes the colours, type and atmosphere of the whole site.', zh: '點選一張唱片，走進它的世界。每個時期都會改變全站的配色、字體與氛圍。' }} /></p>
+    <div class="rail" data-rail>
+      <div class="rail-track">
+        {albums.map((a, i) => <EraCard a={a} n={i + 1} />)}
+        <a class="era-card" href={href('/eras/others/')} style={`--c-bg:${others.theme.bg};--c-bg2:${others.theme.bg2};--c-ink:${others.theme.ink};--c-accent:${others.theme.accent};--c-font:'Great Vibes'`} data-reveal>
+          <div class="stage">
+            <div class="vinyl" aria-hidden="true"></div>
+            <div class="sleeve"><span class="no">Bonus</span><span class="name foil" style="font-family:'Great Vibes'">Other Works</span><span class="yr"><span class="l-zh">其他作品</span><span class="l-en">Soundtracks & more</span></span></div>
+          </div>
+          <p class="tagline"><Bi l={{ en: 'Soundtracks, collaborations and songs outside the albums', zh: '電影歌曲、合作作品，以及專輯以外的歌' }} /></p>
+        </a>
+      </div>
+      <div class="rail-arrows"><button type="button" data-dir="-1" aria-label="Previous">←</button><button type="button" data-dir="1" aria-label="Next">→</button></div>
+    </div>
+  </section>
+
+  <section class="string-teaser">
+    <div class="wrap" style="text-align:center">
+      <p class="eyebrow">Invisible String</p>
+      <h2 class="section-title foil" data-reveal><Bi l={{ en: 'A life, side by side with the music', zh: '生平與音樂，並排對照' }} /></h2>
+      <p class="section-sub" data-reveal><Bi l={{ en: 'Her life events and album releases on two parallel lines, joined by a golden thread. Scroll through the years and watch the site change era by era.', zh: '生平大事與專輯推出排成兩條平行線，以一條金線相連。向下捲動穿越歲月，整個網站會隨時期轉換。' }} /></p>
+      <a class="btn" href={href('/timeline/')} data-reveal>✦ <span class="l-zh">進入時間線</span><span class="l-en">Open the timeline</span></a>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="section-title foil"><Bi l={{ en: 'In Her Own Words', zh: '她親口說' }} /></h2>
+      <p class="section-sub"><Bi l={{ en: 'Speeches and interviews, linked to the eras they belong to.', zh: '演說與訪問，並連結到所屬的時期。' }} /></p>
+      <div class="iv-grid">
+        {featured.map((iv) => (
+          <a class="iv-card glass" href={href(`/interviews/#${iv.id}`)} data-reveal>
+            <div class="iv-thumb"><img src={yt.thumb(iv.youtube!)} alt="" loading="lazy" /><span class="play-mini">▶</span></div>
+            <div class="iv-body">
+              <span class="chip">{iv.outlet} · <Bi l={fmtDate(iv.date)} /></span>
+              <h3><Bi l={iv.title} /></h3>
+            </div>
+          </a>
+        ))}
+      </div>
+      <p style="text-align:center;margin-top:2rem"><a class="btn ghost" href={href('/interviews/')}><span class="l-zh">全部訪問</span><span class="l-en">All interviews</span> →</a></p>
+    </div>
+  </section>
+</Base>
+
+<style is:global>
+  .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 2.4rem; }
+  @media (min-width: 760px) { .stats { grid-template-columns: repeat(4, 1fr); } }
+  .stat { padding: 20px 12px; display: flex; flex-direction: column; gap: 4px; align-items: center; }
+  .stat b { font-family: var(--display); font-size: clamp(2rem, 5vw, 3rem); line-height: 1; }
+  .stat span { font-size: .85rem; color: var(--muted); line-height: 1.4; }
+  .iv-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+  .iv-card { text-decoration: none; overflow: hidden; display: block; transition: transform .5s var(--ease); }
+  .iv-card:hover { transform: translateY(-6px); }
+  .iv-thumb { position: relative; aspect-ratio: 16/9; overflow: hidden; background: #000; }
+  .iv-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: .85; }
+  .play-mini { position: absolute; inset: 0; margin: auto; width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; background: var(--gold); color: #2a1d05; }
+  .iv-body { padding: 16px 18px 20px; }
+  .iv-body h3 { font-size: 1.15rem; margin: .6em 0 0; }
+</style>

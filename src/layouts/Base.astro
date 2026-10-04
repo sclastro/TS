@@ -1,0 +1,90 @@
+---
+import '../styles/global.css';
+import '../styles/eras.css';
+import type { Theme } from '../data/types';
+import { others } from '../data/albums';
+import { href, themeStyle } from '../lib/util';
+
+interface Props {
+  title: string;
+  description?: string;
+  theme?: Theme;
+  era?: string;
+  page?: 'home' | 'eras' | 'timeline' | 'interviews' | 'others' | 'credits';
+}
+const { title, description = 'Taylor Swift：十二個時期的專輯、歌曲、生平與訪問，中英對照。', theme = others.theme, era = 'others', page } = Astro.props;
+
+const fonts =
+  'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Great+Vibes&family=Noto+Serif+TC:wght@400;600&family=Satisfy&family=Cinzel+Decorative:wght@400;700&family=Pinyon+Script&family=Abril+Fatface&family=Permanent+Marker&family=UnifrakturMaguntia&family=Pacifico&family=IM+Fell+English&family=IM+Fell+English+SC&family=Bodoni+Moda:ital,wght@0,400;1,400&family=Special+Elite&family=Limelight&display=swap';
+
+const nav = [
+  { key: 'eras', path: '/#eras', en: 'Eras', zh: '時期' },
+  { key: 'timeline', path: '/timeline/', en: 'Timeline', zh: '時間線' },
+  { key: 'interviews', path: '/interviews/', en: 'Interviews', zh: '訪問' },
+  { key: 'others', path: '/eras/others/', en: 'Other Works', zh: '其他作品' },
+];
+---
+<!doctype html>
+<html lang="zh-Hant" data-lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content={theme.bg} />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href={href('/favicon.svg')} type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href={fonts} />
+    <script is:inline>
+      try { var l = localStorage.getItem('ts-lang'); if (l) document.documentElement.dataset.lang = l; } catch (e) {}
+    </script>
+  </head>
+  <body data-era={era} data-fx={theme.particles} class:list={[theme.dark ? 'is-dark' : 'is-light']} style={themeStyle(theme)}>
+    <canvas id="fx" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+    <slot name="intro" />
+    <header class="topbar">
+      <a class="brand" href={href('/')}>
+        <span class="mono foil">TS</span>
+        <small>The Eras Archive</small>
+      </a>
+      <div class="topbar-right">
+        <nav class="nav" aria-label="Main">
+          {nav.map((n) => (
+            <a href={href(n.path)} aria-current={page === n.key ? 'page' : undefined}>
+              <span class="l-en">{n.en}</span><span class="l-zh">{n.zh}</span>
+            </a>
+          ))}
+        </nav>
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang="zh" aria-pressed="true">中</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button type="button" data-lang="both" aria-pressed="false">對照</button>
+        </div>
+        <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site">
+      <div class="mono foil">Taylor Swift</div>
+      <p>
+        <span class="l-zh">個人收藏用途．照片來自 Wikimedia Commons（CC 授權），詳見</span>
+        <span class="l-en">Personal use only · Photos from Wikimedia Commons (CC licences), see</span>
+        <a href={href('/credits/')}><span class="l-zh">圖片來源</span><span class="l-en">credits</span></a>
+      </p>
+      <p>
+        <span class="l-zh">歌詞版權屬原作者所有，本站只作主題解讀，並連結至授權平台。</span>
+        <span class="l-en">Lyrics belong to their copyright holders; this site only discusses themes and links to licensed sources.</span>
+      </p>
+    </footer>
+    <div class="lightbox" role="dialog" aria-modal="true"><button type="button" aria-label="Close">×</button><img alt="" /><p></p></div>
+    <script>
+      import '../scripts/site.ts';
+      import '../scripts/fx.ts';
+    </script>
+  </body>
+</html>

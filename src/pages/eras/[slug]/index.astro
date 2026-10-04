@@ -1,0 +1,160 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Bi from '../../../components/Bi.astro';
+import Photo from '../../../components/Photo.astro';
+import Spotify from '../../../components/Spotify.astro';
+import { albums } from '../../../data/albums';
+import { songsByAlbum, sectionLabel } from '../../../data/songs';
+import { events } from '../../../data/timeline';
+import { interviews } from '../../../data/interviews';
+import type { Album, SongSection } from '../../../data/types';
+import { commons, href, fmtDate, bi } from '../../../lib/util';
+
+export function getStaticPaths() {
+  return albums.map((a, i) => ({ params: { slug: a.slug }, props: { a, n: i + 1 } }));
+}
+const { a, n } = Astro.props as { a: Album; n: number };
+const songs = songsByAlbum[a.slug] ?? [];
+const sections: SongSection[] = ['standard', 'deluxe', 'vault'];
+const eraEvents = events.filter((e) => e.album === a.slug).sort((x, y) => x.date.localeCompare(y.date));
+const eraInterviews = interviews.filter((i) => i.album === a.slug);
+const prev = albums[n - 2];
+const next = albums[n];
+const rot = (i: number) => `${((i * 37) % 7) - 3}deg`;
+---
+<Base title={`${a.title} · Taylor Swift Eras`} theme={a.theme} era={a.slug} page="eras">
+  <section class="era-hero">
+    <div class="bgimg" aria-hidden="true">{a.photos[0] && <img src={commons(a.photos[0].file, 1800)} alt="" data-soft referrerpolicy="no-referrer" />}</div>
+    <div class="wrap">
+      <p class="eyebrow">Era {String(n).padStart(2, '0')} · {a.year}</p>
+      <h1 class="era-title">{a.title}</h1>
+      <p class="tagline"><Bi l={a.tagline} /></p>
+      <div class="meta">
+        <span class="chip"><Bi l={fmtDate(a.date)} /></span>
+        {a.tv && <span class="chip">{a.tv.title} · <Bi l={fmtDate(a.tv.date)} /></span>}
+        {songs.length > 0 && <span class="chip">{songs.length} <span class="l-zh">首歌</span><span class="l-en">songs</span></span>}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap two-col">
+      <div data-reveal>
+        <h2><span class="l-zh">關於這個時期</span><span class="l-en">About this era</span></h2>
+        <div class="prose" style="margin:0"><Fragment set:html={bi(a.summary, { tag: 'p', rich: true })} /></div>
+        <ul class="facts">
+          {a.facts.map((f) => <li class="glass"><Bi l={f} /></li>)}
+        </ul>
+      </div>
+      <div data-reveal style="--d:.15s">
+        {a.spotifyAlbum ? (
+          <>
+            <h2><span class="l-zh">試聽</span><span class="l-en">Listen</span></h2>
+            <Spotify kind="album" id={a.spotifyAlbum} />
+          </>
+        ) : a.photos[1] ? <Photo p={a.photos[1]} class="feature-photo" /> : a.photos[0] && <Photo p={a.photos[0]} class="feature-photo" />}
+      </div>
+    </div>
+  </section>
+
+  {songs.length > 0 ? (
+    <section id="tracks">
+      <div class="wrap">
+        <h2 class="section-title era-title"><span class="l-zh">曲目</span><span class="l-en">Tracklist</span></h2>
+        <p class="section-sub"><Bi l={{ en: 'Each song opens its own page: the story behind it, its themes, the official video and a preview.', zh: '每首歌都有獨立頁面：創作背景、主題解讀、官方 MV 及試聽。' }} /></p>
+        {sections.map((sec) => {
+          const list = songs.filter((s) => s.section === sec);
+          if (!list.length) return null;
+          return (
+            <>
+              <div class="section-head"><h3><Bi l={sectionLabel[sec]} /></h3></div>
+              <div class="tracks">
+                {list.map((s, i) => {
+                  const ph = (s.photos?.[0] ?? a.photos[s.track % a.photos.length]);
+                  return (
+                    <a class="polaroid" href={href(`/eras/${a.slug}/${s.slug}/`)} style={`--r:${rot(s.track)}`} data-reveal>
+                      <div class="ph">
+                        <img src={commons(ph.file, 500)} alt="" loading="lazy" data-soft referrerpolicy="no-referrer" />
+                        <span class="t">{s.title}</span>
+                      </div>
+                      <div class="cap">
+                        <span class="no"><span>No. {s.track}</span>{s.mv && <span class="badge">▶ MV</span>}</span>
+                        {s.title}
+                      </div>
+                    </a>
+                  );
+                })}
+              </div>
+            </>
+          );
+        })}
+      </div>
+    </section>
+  ) : (
+    <section>
+      <div class="wrap prose glass coming" data-reveal>
+        <p class="eyebrow">Coming soon</p>
+        <h2 class="era-title" style="font-size:2rem"><span class="l-zh">歌曲內容籌備中</span><span class="l-en">Songs coming soon</span></h2>
+        <p><Bi l={{ en: 'The full tracklist, song stories and music videos for this era will be added in the next phase. The colours, type and atmosphere you see here are already this era’s theme.', zh: '這個時期的完整曲目、創作背景和 MV 會在下一階段加入。你現在看到的配色、字體與氛圍，已經是這個時期的主題設計。' }} /></p>
+      </div>
+    </section>
+  )}
+
+  {eraEvents.length > 0 && (
+    <section>
+      <div class="wrap">
+        <h2 class="section-title era-title"><span class="l-zh">這個時期的大事</span><span class="l-en">Moments of the era</span></h2>
+        <ol class="mini-tl">
+          {eraEvents.map((e) => (
+            <li data-reveal>
+              <span class="d"><Bi l={fmtDate(e.date)} /></span>
+              <div class="glass"><strong><Fragment set:html={bi(e.title, { rich: true })} /></strong>{e.body && <Fragment set:html={bi(e.body, { tag: 'p', rich: true })} />}</div>
+            </li>
+          ))}
+        </ol>
+        <p style="text-align:center"><a class="btn ghost" href={href(`/timeline/#y${a.year}`)}><span class="l-zh">在完整時間線查看</span><span class="l-en">See it on the full timeline</span> →</a></p>
+      </div>
+    </section>
+  )}
+
+  {eraInterviews.length > 0 && (
+    <section>
+      <div class="wrap">
+        <h2 class="section-title era-title"><span class="l-zh">相關訪問</span><span class="l-en">Interviews</span></h2>
+        <div class="facts" style="max-width:46em;margin:0 auto">
+          {eraInterviews.map((iv) => (
+            <a class="glass iv-row" href={href(`/interviews/#${iv.id}`)} data-reveal>
+              <span class="chip">{iv.outlet}</span> <strong><Bi l={iv.title} /></strong> <span>{iv.youtube ? '▶' : '↗'}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section>
+    <div class="wrap">
+      <h2 class="section-title era-title"><span class="l-zh">相冊</span><span class="l-en">Gallery</span></h2>
+      <div class="gallery">{a.photos.map((p) => <Photo p={p} />)}</div>
+    </div>
+  </section>
+
+  <nav class="wrap pager" aria-label="Eras">
+    {prev ? <a class="glass" href={href(`/eras/${prev.slug}/`)}><small>← <span class="l-zh">上一個時期</span><span class="l-en">Previous era</span></small>{prev.title}</a> : <span></span>}
+    {next ? <a class="glass next" href={href(`/eras/${next.slug}/`)}><small><span class="l-zh">下一個時期</span><span class="l-en">Next era</span> →</small>{next.title}</a> : <a class="glass next" href={href('/eras/others/')}><small><span class="l-zh">其他作品</span><span class="l-en">Other works</span> →</small>Other Works</a>}
+  </nav>
+</Base>
+
+<style is:global>
+  .feature-photo { aspect-ratio: 4/5; border-radius: var(--radius); cursor: zoom-in; margin: 0; }
+  .coming { padding: clamp(24px, 4vw, 48px); text-align: center; }
+  .mini-tl { list-style: none; padding: 0; margin: 0 auto 2rem; max-width: 46em; display: grid; gap: 18px; }
+  .mini-tl li { display: grid; grid-template-columns: 1fr; gap: 6px; }
+  @media (min-width: 700px) { .mini-tl li { grid-template-columns: 9.5em 1fr; } }
+  .mini-tl .d { font-family: var(--display); color: var(--accent); font-size: .9rem; padding-top: 14px; }
+  .mini-tl .glass { padding: 14px 18px; }
+  .mini-tl p { margin: .4em 0 0; color: var(--muted); font-size: .95em; }
+  .iv-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 14px 18px; text-decoration: none; }
+  .iv-row strong { flex: 1; }
+  body.is-light .era-card .tagline { color: var(--muted); }
+</style>

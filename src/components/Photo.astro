@@ -1,0 +1,10 @@
+---
+import type { Photo } from '../data/types';
+import { commons, photoCredit, bi } from '../lib/util';
+interface Props { p: Photo; width?: number; class?: string; eager?: boolean; caption?: boolean }
+const { p, width = 900, class: cls = '', eager = false, caption = true } = Astro.props;
+---
+<figure class:list={['photo', cls]} data-zoom={commons(p.file, 1800)} data-alt={p.caption.en}>
+  <img src={commons(p.file, width)} alt={p.caption.en} loading={eager ? 'eager' : 'lazy'} decoding="async" data-soft style={p.focus ? `object-position:${p.focus}` : undefined} referrerpolicy="no-referrer" />
+  {caption && <figcaption><Fragment set:html={bi(p.caption)} /><small>📷 {photoCredit(p)} · Wikimedia Commons</small></figcaption>}
+</figure>

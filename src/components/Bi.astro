@@ -1,0 +1,7 @@
+---
+import type { L } from '../data/types';
+import { bi } from '../lib/util';
+interface Props { l: L; rich?: boolean; tag?: string }
+const { l, rich = false, tag = 'span' } = Astro.props;
+---
+<Fragment set:html={bi(l, { rich, tag })} />

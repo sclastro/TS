@@ -1,0 +1,9 @@
+---
+interface Props { kind: 'album' | 'track'; id: string }
+const { kind, id } = Astro.props;
+const h = kind === 'track' ? 152 : 380;
+---
+<div class="spotify">
+  <iframe src={`https://open.spotify.com/embed/${kind}/${id}?utm_source=generator`} height={h} loading="lazy"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Spotify"></iframe>
+</div>
