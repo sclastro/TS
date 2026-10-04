@@ -21,8 +21,8 @@ if (canvas && !reduce) {
   };
 
   const density: Record<Mode, number> = {
-    sparkle: 45, glitter: 60, magic: 55, butterflies: 9, leaves: 16, seagulls: 7, smoke: 10,
-    hearts: 14, fog: 8, snow: 80, stars: 120, letters: 18, confetti: 40,
+    sparkle: 58, glitter: 85, magic: 72, butterflies: 11, leaves: 20, seagulls: 8, smoke: 12,
+    hearts: 18, fog: 9, snow: 100, stars: 140, letters: 24, confetti: 55,
   };
 
   const spawn = (init: boolean): P => {
@@ -78,7 +78,7 @@ if (canvas && !reduce) {
     for (let i = 0; i < ps.length; i++) {
       const p = ps[i];
       p.t += 1; p.x += p.vx; p.y += p.vy; p.r += p.vr;
-      ctx.globalAlpha = p.a * 0.75; ctx.fillStyle = p.c; ctx.strokeStyle = p.c;
+      ctx.globalAlpha = p.a * 0.88; ctx.fillStyle = p.c; ctx.strokeStyle = p.c;
       switch (mode) {
         case 'snow': p.x += Math.sin(p.t / 40) * 0.3; ctx.beginPath(); ctx.arc(p.x, p.y, p.s, 0, 6.28); ctx.fill(); break;
         case 'leaves':

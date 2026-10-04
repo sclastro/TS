@@ -9,7 +9,7 @@ const eras = (file: string, en: string, zh: string): Photo => ({
 export const albums: Album[] = [
   {
     slug: 'taylor-swift', title: 'Taylor Swift', year: 2006, date: '2006-10-24', ready: false,
-    theme: { bg: '#eef3ef', bg2: '#dde8e2', ink: '#1f2e2a', muted: '#5b6e67', accent: '#3a8a7e', accent2: '#b89a62', card: '#f8fbf9', font: 'Satisfy', particles: 'butterflies', dark: false },
+    theme: { bg: '#eaf3ee', bg2: '#c8e2da', ink: '#183531', muted: '#4c6c65', accent: '#318b7f', accent2: '#c1a266', card: '#f8fdfb', font: 'Satisfy', particles: 'butterflies', dark: false },
     tagline: { en: 'A girl, a guitar and a notebook full of songs', zh: '一個女孩、一支結他、一本寫滿歌的筆記簿' },
     summary: {
       en: 'Released when Swift was sixteen, her debut introduced a teenage songwriter who wrote or co-wrote every track. Country radio embraced singles such as "Tim McGraw", "Teardrops on My Guitar" and "Our Song", the last making her the youngest person at the time to solely write and perform a number-one country hit.',
@@ -26,7 +26,7 @@ export const albums: Album[] = [
   },
   {
     slug: 'fearless', title: 'Fearless', year: 2008, date: '2008-11-11', ready: false,
-    theme: { bg: '#16120b', bg2: '#201a10', ink: '#f3ead6', muted: '#bfae8a', accent: '#d6b25a', accent2: '#f0dfa6', card: '#211b12', font: 'Cinzel Decorative', particles: 'glitter', dark: true },
+    theme: { bg: '#191308', bg2: '#392a11', ink: '#faf0d7', muted: '#cdb78b', accent: '#e5bf52', accent2: '#f8e9b0', card: '#261d0d', font: 'Cinzel Decorative', particles: 'glitter', dark: true },
     tagline: { en: 'Fairy tales, golden hair and the first Album of the Year', zh: '童話、金髮與第一座年度專輯大獎' },
     summary: {
       en: 'Fearless turned Swift from a country newcomer into a global star. "Love Story" and "You Belong with Me" crossed over to pop radio, and the album won four Grammys including Album of the Year, making her, at twenty, the youngest winner of that award at the time.',
@@ -45,7 +45,7 @@ export const albums: Album[] = [
   },
   {
     slug: 'speak-now', title: 'Speak Now', year: 2010, date: '2010-10-25', ready: false,
-    theme: { bg: '#15111b', bg2: '#211a2a', ink: '#f1e9f6', muted: '#b8a6c5', accent: '#b98ad8', accent2: '#e9c6e6', card: '#211a2a', font: 'Pinyon Script', particles: 'magic', dark: true },
+    theme: { bg: '#180d24', bg2: '#3a1d52', ink: '#f4ebfb', muted: '#c4add7', accent: '#c08bed', accent2: '#f5cfee', card: '#261636', font: 'Pinyon Script', particles: 'magic', dark: true },
     tagline: { en: 'Every word written by her alone', zh: '每一個字，都由她獨力寫成' },
     summary: {
       en: 'Swift wrote every song on Speak Now by herself, partly to answer critics who doubted her songwriting. The album is a set of confessions addressed to people she had never spoken to directly, framed in sweeping, theatrical arrangements.',
@@ -64,7 +64,7 @@ export const albums: Album[] = [
   },
   {
     slug: 'red', title: 'Red', year: 2012, date: '2012-10-22', ready: false,
-    theme: { bg: '#160e0e', bg2: '#231414', ink: '#f4e9e3', muted: '#c4a69d', accent: '#c9443f', accent2: '#e3b48f', card: '#231515', font: 'Abril Fatface', particles: 'leaves', dark: true },
+    theme: { bg: '#21090a', bg2: '#541216', ink: '#faede7', muted: '#d7b0a3', accent: '#d73f3d', accent2: '#edc39d', card: '#300f11', font: 'Abril Fatface', particles: 'leaves', dark: true },
     tagline: { en: 'Autumn leaves, a scarf and the colour of intense emotion', zh: '秋葉、圍巾，以及最濃烈的情感顏色' },
     summary: {
       en: 'Red mixes country, rock and electronic pop, and marks Swift’s first work with producers Max Martin and Shellback. She described the album as being about the tumultuous, crazy, intense feelings of falling in and out of love. "All Too Well" later became one of her most celebrated songs.',
@@ -82,7 +82,7 @@ export const albums: Album[] = [
   },
   {
     slug: '1989', title: '1989', year: 2014, date: '2014-10-27', ready: true,
-    theme: { bg: '#f2f5f7', bg2: '#e0e9f0', ink: '#1d2d3b', muted: '#586a7a', accent: '#4a83b2', accent2: '#d3a291', card: '#ffffff', font: 'Permanent Marker', particles: 'seagulls', dark: false },
+    theme: { bg: '#eaf3f9', bg2: '#c1dcef', ink: '#1c3347', muted: '#516b81', accent: '#3b81b9', accent2: '#deab9a', card: '#ffffff', font: 'Permanent Marker', particles: 'seagulls', dark: false },
     tagline: { en: 'Polaroids, New York City and her first official pop album', zh: '寶麗來、紐約，以及她第一張正式的流行專輯' },
     summary: {
       en: 'Named after the year she was born, 1989 was what Swift called her first documented, official pop album. Inspired by late-1980s synth-pop and her move to New York City, she made it with Max Martin as co-executive producer. It sold almost 1.29 million copies in its first US week, produced three Billboard Hot 100 number ones, and won the Grammy for Album of the Year, making her the first woman to win that award twice as a lead artist.',
@@ -150,7 +150,7 @@ export const albums: Album[] = [
   },
   {
     slug: 'reputation', title: 'reputation', year: 2017, date: '2017-11-10', ready: false,
-    theme: { bg: '#0f0f0f', bg2: '#181818', ink: '#eeeeee', muted: '#9d9d9d', accent: '#c4c4c4', accent2: '#5c8f6e', card: '#191919', font: 'UnifrakturMaguntia', particles: 'smoke', dark: true },
+    theme: { bg: '#0c0c0c', bg2: '#202020', ink: '#f0f0f0', muted: '#a2a2a2', accent: '#cbcbcb', accent2: '#4c986a', card: '#171717', font: 'UnifrakturMaguntia', particles: 'smoke', dark: true },
     tagline: { en: 'Snakes, newsprint and a reputation reclaimed', zh: '蛇、報紙鉛字，以及奪回的名聲' },
     summary: {
       en: 'After a year away from the public eye, Swift returned with a darker, heavier electro-pop record that answered the media narratives around her. She gave almost no interviews for the album, letting the music, and a tour that became the highest-grossing in US history at the time, speak for her.',
@@ -168,7 +168,7 @@ export const albums: Album[] = [
   },
   {
     slug: 'lover', title: 'Lover', year: 2019, date: '2019-08-23', ready: false,
-    theme: { bg: '#fbf2f5', bg2: '#eef0fa', ink: '#4a2a3f', muted: '#86677a', accent: '#d9679a', accent2: '#79a6de', card: '#fffafc', font: 'Pacifico', particles: 'hearts', dark: false },
+    theme: { bg: '#fdeaf2', bg2: '#ddeafd', ink: '#532a45', muted: '#88607a', accent: '#ee6ba5', accent2: '#7cb2f0', card: '#fff8fb', font: 'Pacifico', particles: 'hearts', dark: false },
     tagline: { en: 'Pastel skies and the first album she owns', zh: '粉彩天空，以及第一張由她擁有母帶的專輯' },
     summary: {
       en: 'Lover is a bright, romantic counterpoint to reputation, which Swift described as a love letter to love itself. It was her first album with Republic Records, and the first whose master recordings she owns outright.',
@@ -185,7 +185,7 @@ export const albums: Album[] = [
   },
   {
     slug: 'folklore', title: 'folklore', year: 2020, date: '2020-07-24', ready: false,
-    theme: { bg: '#efefec', bg2: '#dedfdb', ink: '#252825', muted: '#5f645f', accent: '#5a6859', accent2: '#a7a59a', card: '#f8f8f6', font: 'IM Fell English', particles: 'fog', dark: false },
+    theme: { bg: '#e5e5e1', bg2: '#b2b5b1', ink: '#262926', muted: '#595e59', accent: '#4b594b', accent2: '#d7d6d2', card: '#f3f3f0', font: 'IM Fell English', particles: 'fog', dark: false },
     tagline: { en: 'A cardigan, a misty forest and stories told in lockdown', zh: '羊毛開襟衫、迷霧森林，以及封城時寫下的故事' },
     summary: {
       en: 'Written and recorded remotely during the pandemic, folklore was announced only hours before release. Working with Aaron Dessner and Jack Antonoff, Swift turned to indie folk and fictional characters, and the album won the Grammy for Album of the Year, her third.',
@@ -199,7 +199,7 @@ export const albums: Album[] = [
   },
   {
     slug: 'evermore', title: 'evermore', year: 2020, date: '2020-12-11', ready: false,
-    theme: { bg: '#19130e', bg2: '#251b13', ink: '#f2e6d6', muted: '#bea88d', accent: '#c98a52', accent2: '#a8b0a0', card: '#251b13', font: 'IM Fell English SC', particles: 'snow', dark: true },
+    theme: { bg: '#22170f', bg2: '#50331c', ink: '#f5e8d7', muted: '#c9b192', accent: '#d58a4e', accent2: '#b9a88b', card: '#2f1f14', font: 'IM Fell English SC', particles: 'snow', dark: true },
     tagline: { en: 'The sister record: winter woods and a plaid coat', zh: '姊妹專輯：冬日樹林與格子大衣' },
     summary: {
       en: 'Released less than five months after folklore, evermore continues its storytelling approach. Swift called it a sister record, explaining that she and her collaborators simply could not stop writing songs.',
@@ -213,7 +213,7 @@ export const albums: Album[] = [
   },
   {
     slug: 'midnights', title: 'Midnights', year: 2022, date: '2022-10-21', ready: false,
-    theme: { bg: '#0d1022', bg2: '#161a33', ink: '#eceefe', muted: '#a9addb', accent: '#a796ee', accent2: '#e3bb7c', card: '#171b36', font: 'Bodoni Moda', particles: 'stars', dark: true },
+    theme: { bg: '#0b0f29', bg2: '#222553', ink: '#edefff', muted: '#b1b5e2', accent: '#b19ff7', accent2: '#ebbf7b', card: '#151a3e', font: 'Bodoni Moda', particles: 'stars', dark: true },
     tagline: { en: 'Thirteen sleepless nights across her life', zh: '一生中十三個不眠之夜' },
     summary: {
       en: 'Midnights is a concept album about thirteen sleepless nights scattered throughout Swift’s life. In its release week she became the first artist to occupy the entire top ten of the Billboard Hot 100, and it won Album of the Year, her record fourth.',
@@ -230,7 +230,7 @@ export const albums: Album[] = [
   },
   {
     slug: 'the-tortured-poets-department', title: 'The Tortured Poets Department', year: 2024, date: '2024-04-19', ready: false,
-    theme: { bg: '#f3efe7', bg2: '#e6e0d4', ink: '#1c1b19', muted: '#625d54', accent: '#3d3a34', accent2: '#8b7d66', card: '#faf8f3', font: 'Special Elite', particles: 'letters', dark: false },
+    theme: { bg: '#f2ede5', bg2: '#ddd6c9', ink: '#1b1a1a', muted: '#5e5950', accent: '#33312e', accent2: '#8a7d68', card: '#faf7f2', font: 'Special Elite', particles: 'letters', dark: false },
     tagline: { en: 'Typewriters, sepia ink and raw confession', zh: '打字機、褐色墨水與赤裸的告白' },
     summary: {
       en: 'Announced during her acceptance speech at the 2024 Grammys, The Tortured Poets Department arrived with a surprise second half two hours later, The Anthology, bringing the total to 31 songs. It is a dense, literary record, and was written in large part during the Eras Tour.',
@@ -247,7 +247,7 @@ export const albums: Album[] = [
   },
   {
     slug: 'the-life-of-a-showgirl', title: 'The Life of a Showgirl', year: 2025, date: '2025-10-03', ready: false,
-    theme: { bg: '#0b1a19', bg2: '#112725', ink: '#fbf1e4', muted: '#a9cbbf', accent: '#ee8a3e', accent2: '#8fd8c2', card: '#132a28', font: 'Limelight', particles: 'confetti', dark: true },
+    theme: { bg: '#082623', bg2: '#10443d', ink: '#fdf3e5', muted: '#b5d8cc', accent: '#f7812a', accent2: '#98e1cb', card: '#0e3531', font: 'Limelight', particles: 'confetti', dark: true },
     tagline: { en: 'Orange, mint green and sequins under the spotlight', zh: '橙色、薄荷綠，以及射燈下的亮片' },
     summary: {
       en: 'Swift’s twelfth album was announced in August 2025 on the New Heights podcast and reunited her with Max Martin and Shellback. Its imagery draws on showgirls and the backstage life she lived during the Eras Tour, and it set a new US record for first-week sales.',
@@ -265,7 +265,7 @@ export const albums: Album[] = [
 
 export const others = {
   slug: 'others', title: 'Other Works',
-  theme: { bg: '#121110', bg2: '#1b1917', ink: '#efe9dc', muted: '#c7bfb0', accent: '#c9a96a', accent2: '#e6d3a3', card: '#1b1917', font: 'Playfair Display', particles: 'sparkle' as const, dark: true },
+  theme: { bg: '#120f17', bg2: '#251e2e', ink: '#f3ece0', muted: '#c8beac', accent: '#cfac4e', accent2: '#eddda7', card: '#1c1725', font: 'Playfair Display', particles: 'sparkle' as const, dark: true },
 };
 
 export const albumBySlug = Object.fromEntries(albums.map((a) => [a.slug, a]));
