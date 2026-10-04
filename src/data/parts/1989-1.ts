@@ -53,9 +53,9 @@ export const part1: Song[] = [
     lyrics: [
       { part: { en: 'Verse 1', zh: '第一段主歌' }, meaning: { en: 'The narrator spots a new man and sizes him up like a prize, already imagining the romance, and already aware of her own reputation. The tone is flirtatious and theatrical.', zh: '敘述者看中一個新對象，像打量獎品一樣審視他，腦中已在想像這段戀情，同時清楚知道自己的名聲。語氣調情而富戲劇感。' } },
       { part: { en: 'Pre-chorus', zh: '導歌' }, meaning: { en: 'She promises an intoxicating ride and admits it may end badly. She describes the relationship as a game she knows how to play.', zh: '她承諾一段令人沉醉的旅程，也承認結局可能很糟。她把這段關係形容為一場她很懂得玩的遊戲。' } },
-      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'The heart of the satire: she has a long list of former lovers who will tell you she is insane, and an empty space waiting for his name. The famous mishearing of one line as a coffee-shop name became a meme that Swift herself enjoyed.', zh: '諷刺的核心：她有一長串會說她瘋了的前度，以及一個留給他名字的空白位置。其中一句被廣泛聽錯成咖啡店的名字，成為網上笑話，連 Swift 本人也樂在其中。' } },
-      { part: { en: 'Verse 2', zh: '第二段主歌' }, meaning: { en: 'The romance runs through its stages at high speed: the passion, the jealousy, the screaming. She describes herself as a nightmare dressed like a daydream, the image that sums up the character.', zh: '戀情高速走完每一個階段：激情、妒忌、爭吵。她形容自己是「打扮成白日夢的噩夢」，這個意象正好概括了整個角色。' } },
-      { part: { en: 'Bridge', zh: '橋段' }, meaning: { en: 'Boys only want love if it is torture, she says, flipping the blame back onto the men who seek out the drama and then complain about it.', zh: '她說男生只想要折磨人的愛情，把責任反推給那些主動追求戲劇性、事後又抱怨的男人。' } },
+      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'The heart of the satire: she admits her romantic history is long and that her exes all say she is unstable, yet she still has room for one more name. One line is famously misheard as the name of a coffee chain, a meme Swift herself enjoyed.', zh: '諷刺的核心：她承認自己情史豐富，前度們都說她情緒不穩，但她仍有空位留給下一個名字。其中一句被廣泛聽錯成咖啡店的名字，成為網上笑話，連 Swift 本人也樂在其中。' } },
+      { part: { en: 'Verse 2', zh: '第二段主歌' }, meaning: { en: 'The romance runs through its stages at high speed: the passion, the jealousy, the screaming. She describes herself as something frightening disguised as something lovely, which sums up the character.', zh: '戀情高速走完每一個階段：激情、妒忌、爭吵。她形容自己是包裝得很美麗的可怕之物，正好概括了整個角色。' } },
+      { part: { en: 'Bridge', zh: '橋段' }, meaning: { en: 'She suggests that the men who chase this kind of drama secretly want to be tormented, flipping the blame back onto them.', zh: '她暗示那些追求這種戲劇性的男人，其實暗地裏想被折磨，把責任反推給他們。' } },
     ],
     mv: {
       id: 'e-ORhEE9VVg', director: 'Joseph Kahn', date: '2014-11-10',
@@ -95,7 +95,7 @@ export const part1: Song[] = [
     },
     lyrics: [
       { part: { en: 'Verse 1', zh: '第一段主歌' }, meaning: { en: 'He picks her up at midnight and they drive with the lights off, a scene of secrecy and thrill. She knows where this is heading and gets in anyway.', zh: '他在午夜接她，兩人關掉車頭燈駕車，是一個充滿秘密與刺激的場景。她清楚這會走向何方，仍然上了車。' } },
-      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'She describes his look (an old-Hollywood, rebel-heartthrob daydream) and hers (a classic red lip, a tight little skirt). The point is that they each have a signature style, and so does their relationship: whatever happens, it never goes out of style.', zh: '她描寫他的模樣（像舊荷里活叛逆型男的白日夢）和她自己的模樣（經典紅唇、貼身短裙）。重點是兩人各有招牌風格，他們的關係也一樣：無論發生甚麼事，都永不過時。' } },
+      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'She describes his look as an old-Hollywood rebel and her own as a classic, glamorous one. They each have a signature style, and so does their relationship: whatever happens, it never goes out of fashion.', zh: '她把他描寫成舊荷里活的叛逆型男，把自己描寫成經典而光鮮的模樣。兩人各有招牌風格，他們的關係也一樣：無論發生甚麼事，都永不過時。' } },
       { part: { en: 'Verse 2', zh: '第二段主歌' }, meaning: { en: 'Rumours reach her that he has been with someone else. She confronts him, and admits she has her own secrets too. Neither is innocent.', zh: '她聽聞他與別人有染，於是當面質問，同時承認自己也並不清白。兩人都不是無辜的。' } },
       { part: { en: 'Bridge', zh: '橋段' }, meaning: { en: 'He asks if she has been with someone else; she does not deny it. The confession hangs in the air, and then they fall back into each other, which is exactly the pattern the chorus describes.', zh: '他問她是否也與別人有過關係，她沒有否認。這句坦白懸在空中，然後兩人又再次投入對方懷抱，正是副歌所描述的模式。' } },
     ],
@@ -133,7 +133,7 @@ export const part1: Song[] = [
     },
     lyrics: [
       { part: { en: 'Verse 1', zh: '第一段主歌' }, meaning: { en: 'She looks at Polaroid-like snapshots of the relationship and remembers small objects and moments, details that feel precious precisely because the whole thing felt so breakable.', zh: '她看着像寶麗來一樣的戀愛快照，回想一些細小的物件和片刻；正因為整段感情如此易碎，這些細節才顯得珍貴。' } },
-      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'The same question, asked again and again: are we out of the woods yet, are we in the clear? The repetition is the meaning. A secure relationship would not need to keep asking.', zh: '同一個問題一問再問：我們走出森林了嗎？安全了嗎？重複本身就是意思。一段安穩的關係，根本毋須不停追問。' } },
+      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'The same question about whether they are finally safe, asked again and again. The repetition is the meaning: a secure relationship would not need to keep asking.', zh: '她一再追問兩人是否終於安全了。重複本身就是意思：一段安穩的關係，根本毋須不停追問。' } },
       { part: { en: 'Verse 2', zh: '第二段主歌' }, meaning: { en: 'The snowmobile accident, the hospital, the stitches: a real scare that, for a moment, made everything else irrelevant. She remembers how he looked at her afterwards.', zh: '雪地電單車意外、醫院、縫針：一次真實的驚嚇，令其他一切在那一刻變得無關重要。她記得事後他怎樣看着她。' } },
       { part: { en: 'Bridge', zh: '橋段' }, meaning: { en: 'She recalls the moment she realised they would not make it, and the strange relief of finally knowing. The question is answered, just not the way she hoped.', zh: '她回想察覺兩人不會走下去的那一刻，以及終於知道答案時那份奇怪的釋然。問題得到了回答，只是答案不如她所願。' } },
     ],
@@ -196,7 +196,7 @@ export const part1: Song[] = [
     },
     lyrics: [
       { part: { en: 'Verse 1', zh: '第一段主歌' }, meaning: { en: 'She rattles off the gossip about her: that she stays out too late, dates too much, has nothing in her brain. She repeats the insults almost cheerfully, which takes away their sting.', zh: '她一口氣數出關於自己的流言：太晚回家、約會太多、腦袋空空。她幾乎是開心地複述這些侮辱，反而令它們失去殺傷力。' } },
-      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'Players will play, haters will hate, and she will simply shake it off. The logic is that criticism is just what some people do, so it says more about them than about her.', zh: '玩家照玩、酸民照酸，她只會一笑置之。邏輯是：批評只是某些人的習慣，反映的是他們，而不是她。' } },
+      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'Some people will always play games and some will always criticise; she will simply shrug it off. Criticism, the chorus argues, says more about the critic than about her.', zh: '總有人愛玩弄感情，總有人愛批評；她只會一笑置之。副歌的邏輯是：批評反映的是批評者本身，而不是她。' } },
       { part: { en: 'Spoken bridge', zh: '獨白橋段' }, meaning: { en: 'A playful spoken section imagines her ex with his new girlfriend and turns it into a joke. It is the most direct sign that this is a different, lighter Taylor Swift.', zh: '一段俏皮的獨白，想像前度與新女友的情景，然後把它變成笑話。這是最直接的信號：這是一個更輕鬆、不一樣的 Taylor Swift。' } },
     ],
     mv: {

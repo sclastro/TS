@@ -69,6 +69,43 @@ export const albums: Album[] = [
       en: 'Fearless turned Swift from a country newcomer into a global star. "Love Story" and "You Belong with Me" crossed over to pop radio, and the album won four Grammys including Album of the Year, making her, at twenty, the youngest winner of that award at the time.',
       zh: '《Fearless》令 Swift 由鄉村樂壇新人躍升為國際巨星。〈Love Story〉和〈You Belong with Me〉打入流行樂電台，專輯奪得四項格林美獎，包括年度專輯；當年她只有二十歲，是該獎項史上最年輕的得主。',
     },
+    chapters: [
+      {
+        title: { en: 'Written on the road', zh: '在旅途中寫成' },
+        body: {
+          en: 'Much of Fearless was written while Swift was opening for other artists in 2007 and 2008. She wrote more of this album alone than the debut, including "Love Story", "Fifteen" and "You Belong with Me"’s companion pieces, and co-produced it with [[Nathan Chapman]], the first time she took a production credit on a full album.',
+          zh: '《Fearless》大部分歌曲寫於 2007 至 2008 年她為其他歌手擔任開場嘉賓期間。比起出道專輯，她在這張專輯中獨力創作的歌曲更多，包括〈Love Story〉和〈Fifteen〉等，並與 [[Nathan Chapman]] 共同監製，這是她第一次在整張專輯掛名監製。',
+        },
+      },
+      {
+        title: { en: 'What fearless means', zh: '「無畏」的意思' },
+        body: {
+          en: 'In the album booklet Swift explained that, to her, fearless did not mean being without fear. It meant having doubts and fears and still jumping, falling in love again after being hurt, walking into a school where you do not fit in. The fairy-tale imagery of the era, castles, princes, white horses, was both embraced and questioned on the same record.',
+          zh: 'Swift 在專輯歌詞冊中解釋，對她來說，無畏不是沒有恐懼，而是心存懷疑和恐懼，卻仍然一躍而下：受傷後再次愛上一個人、走進一所自己格格不入的學校。這個時期的童話意象，城堡、王子、白馬，在同一張專輯中既被擁抱，也被質疑。',
+        },
+      },
+      {
+        title: { en: 'The crossover', zh: '跨界' },
+        body: {
+          en: '"Love Story" and "You Belong with Me" were played on pop radio around the world, and Fearless became the best-selling album of 2009 in the United States. In September 2009, accepting Best Female Video at the MTV VMAs for "You Belong with Me", she was interrupted on stage by [[Kanye West]], a moment that would echo through her career for years.',
+          zh: '〈Love Story〉和〈You Belong with Me〉在世界各地的流行電台播放，《Fearless》成為 2009 年美國最暢銷的專輯。2009 年 9 月，她以〈You Belong with Me〉在 MTV VMA 領取最佳女歌手音樂錄影帶時，被 [[Kanye West]] 走上台打斷。這一刻在其後多年不斷影響她的事業。',
+        },
+      },
+      {
+        title: { en: 'The Fearless Tour and the Grammys', zh: 'Fearless Tour 與格林美' },
+        body: {
+          en: 'Her first headlining tour, from April 2009 to June 2010, was full of theatrical touches: costume changes, a fairy-tale castle set, and a moment where she walked through the crowd to a small stage at the back. In January 2010 Fearless won four Grammys, including Album of the Year, making her, at twenty, the youngest winner of that award at the time.',
+          zh: '她的首個主角巡迴演唱會由 2009 年 4 月至 2010 年 6 月，充滿戲劇元素：多次換裝、童話城堡佈景，還有她穿過人群走到場館後方小舞台的一幕。2010 年 1 月，《Fearless》奪得四項格林美獎，包括年度專輯；二十歲的她成為當時該獎項最年輕的得主。',
+        },
+      },
+      {
+        title: { en: 'The first re-recording', zh: '第一張重錄專輯' },
+        body: {
+          en: 'After the masters of her first six albums were sold in 2019, Swift began re-recording them so that she would own new versions. Fearless (Taylor’s Version), released on 9 April 2021, was the first. It included six vault tracks and debuted at number one, the first re-recorded album to do so, proving that fans would follow her to the new versions.',
+          zh: '2019 年首六張專輯的母帶被出售後，Swift 開始重新錄製這些專輯，讓自己擁有新版本。2021 年 4 月 9 日推出的《Fearless (Taylor’s Version)》是第一張。它收錄六首 vault 歌曲，並空降榜首，成為首張登上冠軍的重錄專輯，證明歌迷會跟隨她轉聽新版本。',
+        },
+      },
+    ],
     facts: [
       { en: 'Grammy Album of the Year (2010)', zh: '格林美年度專輯（2010 年）' },
       { en: "Re-recorded as Fearless (Taylor's Version), 9 April 2021", zh: "重錄版 Fearless (Taylor's Version)：2021 年 4 月 9 日" },

@@ -22,7 +22,7 @@ export const part1: Song[] = [
     lyrics: [
       { part: { en: 'Verse 1', zh: '第一段主歌' }, meaning: { en: 'She pictures him in the future, on a summer night, and lists what will remind him of her: the details of a small-town summer, the truck, the stars, the moonlight.', zh: '她想像將來某個夏夜的他，並列出會令他想起她的東西：小鎮夏天的種種細節、貨車、星星、月光。' } },
       { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'When he hears the Tim McGraw song that was "their" song, she hopes he thinks of her. The song becomes a time capsule for the relationship.', zh: '當他聽到那首屬於兩人的 Tim McGraw 歌曲，她希望他會想起她。那首歌成為這段感情的時間囊。' } },
-      { part: { en: 'Verse 2', zh: '第二段主歌' }, meaning: { en: 'More concrete memories: a faded pair of jeans, a dirt road, a first dance. The specificity that would become her trademark is already here.', zh: '更多具體的回憶：一條褪色的牛仔褲、一條泥路、第一支舞。日後成為她招牌的細節描寫，在這裏已經出現。' } },
+      { part: { en: 'Verse 2', zh: '第二段主歌' }, meaning: { en: 'More concrete memories of clothes, country roads and dancing. The specificity that would become her trademark is already here.', zh: '更多關於衣着、鄉間小路和跳舞的具體回憶。日後成為她招牌的細節描寫，在這裏已經出現。' } },
       { part: { en: 'Bridge', zh: '橋段' }, meaning: { en: 'She reveals she has left him a letter to read after she has gone, so that the last word, and the memory, will be hers.', zh: '她透露自己留下了一封信，讓他在她離開後閱讀；這樣最後一句話和那份回憶，都會屬於她。' } },
     ],
     mv: {
@@ -55,10 +55,10 @@ export const part1: Song[] = [
       zh: 'Swift 說這首歌寫的是一個她其實從未正式交往過的男孩，一個她覺得自大又愛控制別人的人，她是在一陣怒火中寫成的。她與 [[Liz Rose]] 把怒氣變成喜劇：敘述者揚言要和他的朋友約會、把他的缺點告訴所有人，還要燒掉他的照片。\n\n這首歌很早便證明，她不會只寫關於男孩的傷心歌，也會寫尖銳又頑皮的歌。推出電台單曲時，其中一句被修改，刪去了可能冒犯人的字眼。',
     },
     lyrics: [
-      { part: { en: 'Verse 1', zh: '第一段主歌' }, meaning: { en: 'She mocks his pickup truck and his ego: he never let her drive, he thought he was too cool. The details make him ridiculous.', zh: '她嘲笑他的貨車和他的自負：他從不讓她開車，自以為很酷。這些細節令他顯得可笑。' } },
-      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'He is nothing to her now but a picture to burn. The image is dramatic and a little childish on purpose, the kind of thing you say when you are hurt and pretending not to be.', zh: '如今他對她來說，只是一張要燒掉的照片。這個意象刻意誇張又帶點孩子氣，是受了傷卻假裝不在乎時會說的話。' } },
+      { part: { en: 'Verse 1', zh: '第一段主歌' }, meaning: { en: 'She mocks his truck and his ego with small, petty details that make him look ridiculous.', zh: '她用一些小氣而具體的細節，嘲笑他的貨車和他的自負，令他顯得可笑。' } },
+      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'She reduces him to a photograph she is ready to destroy. The image is dramatic and a little childish on purpose, the kind of thing you say when you are hurt and pretending not to be.', zh: '她把他貶為一張準備銷毀的照片。這個意象刻意誇張又帶點孩子氣，是受了傷卻假裝不在乎時會說的話。' } },
       { part: { en: 'Verse 2', zh: '第二段主歌' }, meaning: { en: 'She warns that she will start dating his friends and tell them what he is really like. The threats are comic exaggerations.', zh: '她警告說會開始和他的朋友約會，並告訴他們他的真面目。這些威脅都是喜劇式的誇張。' } },
-      { part: { en: 'Bridge', zh: '橋段' }, meaning: { en: 'If he comes back, she says, she will be ready, and her father is too. The joke lands as a classic country-song move.', zh: '她說如果他回來，她已準備好，她爸爸也一樣。這個笑點是典型的鄉村歌曲手法。' } },
+      { part: { en: 'Bridge', zh: '橋段' }, meaning: { en: 'She warns him not to come back, with a classic country-song joke about her protective family.', zh: '她警告他別再回來，並用了一個關於她那保護女兒的家人的笑話，是典型的鄉村歌曲手法。' } },
     ],
     echoes: [
       { ref: 'taylor-swift/shouldve-said-no', note: { en: 'Two sides of the same debut-era anger: one comic, one wounded.', zh: '出道時期同一種憤怒的兩面：一首是喜劇式的，一首是受傷的。' } },
@@ -83,7 +83,7 @@ export const part1: Song[] = [
     },
     lyrics: [
       { part: { en: 'Verse 1', zh: '第一段主歌' }, meaning: { en: 'Drew looks at her, and she puts on a smile, while he talks about the girl he loves. She hides everything.', zh: 'Drew 望向她，她擠出笑容，而他則談論着他愛的女孩。她把一切藏起來。' } },
-      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'He is the reason for the teardrops on her guitar, and the only thing she wishes on stars. The guitar is where her secret feelings go.', zh: '他是她結他上淚滴的原因，也是她向星星許的唯一願望。結他是她安放秘密心事的地方。' } },
+      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'He is the cause of her private tears and the subject of all her wishes. The guitar is where her secret feelings go.', zh: '他是她暗自流淚的原因，也是她所有願望的對象。結他是她安放秘密心事的地方。' } },
       { part: { en: 'Verse 2', zh: '第二段主歌' }, meaning: { en: 'She knows his girlfriend is beautiful and wishes her well, which makes the hurt purer: there is no villain, just bad luck.', zh: '她知道他的女朋友很漂亮，也真心祝福她，這令傷痛更純粹：這裏沒有壞人，只有運氣不好。' } },
       { part: { en: 'Bridge', zh: '橋段' }, meaning: { en: 'She drives home alone, still thinking about him, unable to stop herself even though she knows better.', zh: '她獨自駕車回家，仍在想着他，明知不該，卻停不下來。' } },
     ],
@@ -115,7 +115,7 @@ export const part1: Song[] = [
     },
     lyrics: [
       { part: { en: 'Verse 1', zh: '第一段主歌' }, meaning: { en: 'She does not know what she wants yet, only that she is restless and wants to be somewhere, doing something that matters.', zh: '她還不知道自己想要甚麼，只知道自己坐立不安，想到某個地方，做一些有意義的事。' } },
-      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'She is just a girl trying to find a place in this world. The line is simple, almost diary-like, and that directness is its strength.', zh: '她只是一個想在這世界找到位置的女孩。這句話簡單得像日記，而直接正是它的力量。' } },
+      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'She describes herself simply as a girl looking for where she belongs. The tone is almost diary-like, and that directness is its strength.', zh: '她簡單地形容自己是一個正在尋找歸屬的女孩。語氣像日記，而直接正是它的力量。' } },
       { part: { en: 'Bridge', zh: '橋段' }, meaning: { en: 'She chooses to keep going even without a map, trusting that she will find her way eventually.', zh: '即使沒有地圖，她仍選擇繼續前行，相信自己終會找到方向。' } },
     ],
     echoes: [
@@ -136,7 +136,7 @@ export const part1: Song[] = [
     },
     lyrics: [
       { part: { en: 'Verse 1', zh: '第一段主歌' }, meaning: { en: 'She has been painting a better picture of him than he deserves, and finally sees the gap.', zh: '她一直把他描繪得比他應得的更好，終於看清兩者之間的落差。' } },
-      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'She has never been anywhere as cold as being with him. The temperature metaphor turns emotional absence into something you can feel on your skin.', zh: '她從未去過比與他一起更冷的地方。溫度的比喻，把情感上的缺席變成皮膚也感受得到的東西。' } },
+      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'Being with him is described as the coldest place she has ever been. The temperature metaphor turns emotional absence into something you can feel on your skin.', zh: '與他一起，被形容為她到過最寒冷的地方。溫度的比喻，把情感上的缺席變成皮膚也感受得到的東西。' } },
       { part: { en: 'Bridge', zh: '橋段' }, meaning: { en: 'She imagines that one day he will be alone with his regrets, and accepts that she cannot save him.', zh: '她想像有一天他會獨自面對自己的懊悔，並接受自己無法拯救他。' } },
     ],
     echoes: [
@@ -161,7 +161,7 @@ export const part1: Song[] = [
     },
     lyrics: [
       { part: { en: 'Verse 1', zh: '第一段主歌' }, meaning: { en: 'She describes trying to fit in and being shut out, again and again.', zh: '她描述自己一次又一次嘗試融入，卻一次又一次被拒諸門外。' } },
-      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'She has been on the outside looking in, and asks to be let in. The plea is direct and unguarded.', zh: '她一直在外面往裏看，懇求別人讓她進去。這個請求直接而毫無防備。' } },
+      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'She has been stuck outside the circle, watching, and asks to be let in. The plea is direct and unguarded.', zh: '她一直被擋在圈子外旁觀，懇求別人讓她加入。這個請求直接而毫無防備。' } },
       { part: { en: 'Bridge', zh: '橋段' }, meaning: { en: 'She suggests that one day the people who left her out might see things differently, a quiet hope rather than a threat.', zh: '她暗示有一天，那些排擠她的人或許會改變看法。這是一個安靜的希望，而不是威脅。' } },
     ],
     echoes: [
@@ -182,7 +182,7 @@ export const part1: Song[] = [
     },
     lyrics: [
       { part: { en: 'Verse 1', zh: '第一段主歌' }, meaning: { en: 'The friend appears beautiful and confident, but the narrator sees that she is holding herself together with effort.', zh: '這位朋友看似美麗自信，但敘述者看得出她是努力撐着自己。' } },
-      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'She is tied together with a smile but coming undone. The image is of someone held up by a performance.', zh: '她用一個微笑把自己綁在一起，卻正在逐漸散開。這個意象寫的是一個靠表演撐着的人。' } },
+      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'The friend is holding herself together with a smile while quietly falling apart. The image is of someone held up by a performance.', zh: '這位朋友靠一個微笑撐住自己，內裏卻正在崩解。這個意象寫的是一個靠表演撐着的人。' } },
       { part: { en: 'Bridge', zh: '橋段' }, meaning: { en: 'The narrator wishes the friend could see herself as others see her, and know that she does not need to be perfect.', zh: '敘述者希望朋友能像別人一樣看見自己，明白她毋須完美。' } },
     ],
     echoes: [

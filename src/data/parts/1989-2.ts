@@ -20,9 +20,9 @@ export const part2: Song[] = [
     },
     lyrics: [
       { part: { en: 'Verse 1', zh: '第一段主歌' }, meaning: { en: 'She addresses the former friend directly: you did something I cannot forgive, and you know exactly what it was.', zh: '她直接對昔日好友說話：你做了一件我無法原諒的事，而你很清楚那是甚麼。' } },
-      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'Because of what happened, there is now bad blood between them. The wound metaphor runs through the song: some cuts do not heal no matter what bandages you use.', zh: '因為那件事，兩人之間從此結下梁子。傷口的比喻貫穿全曲：有些傷口，無論貼上甚麼膠布都不會癒合。' } },
+      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'Because of what happened, the relationship is poisoned for good. A wound metaphor runs through the song: some injuries cannot be patched up.', zh: '因為那件事，兩人的關係從此變質。傷口的比喻貫穿全曲：有些傷，是修補不了的。' } },
       { part: { en: 'Verse 2', zh: '第二段主歌' }, meaning: { en: 'She mocks the idea that an apology or a little time could fix things; the damage is too deep.', zh: '她嘲笑以為一句道歉或一點時間就能解決問題的想法；傷害實在太深。' } },
-      { part: { en: 'Bridge', zh: '橋段' }, meaning: { en: 'Band-aids do not fix bullet holes: the most quoted image of the song, a blunt statement that some betrayals are permanent.', zh: '膠布補不了彈孔：這是全曲最常被引用的意象，直截了當地指出有些背叛是永久的。' } },
+      { part: { en: 'Bridge', zh: '橋段' }, meaning: { en: 'The most quoted image of the song compares a small first-aid fix to a gunshot wound: a blunt statement that some betrayals are permanent.', zh: '全曲最常被引用的意象，把小小的急救措施與槍傷相比：直截了當地指出有些背叛是永久的。' } },
     ],
     mv: {
       id: 'QcIy9NiNbmo', director: 'Joseph Kahn', date: '2015-05-17',
@@ -55,7 +55,7 @@ export const part2: Song[] = [
     },
     lyrics: [
       { part: { en: 'Verse 1', zh: '第一段主歌' }, meaning: { en: 'She sees a man who is clearly trouble and decides to go ahead anyway. Even at the start, she is thinking about the end.', zh: '她看見一個明顯是麻煩的男人，仍決定投入。即使才剛開始，她已在想像結局。' } },
-      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'Her request: say you will remember me, in a nice dress, at sunset, even if you only see me again in your wildest dreams. Being remembered is her consolation for losing.', zh: '她的請求：答應我你會記得我，穿着漂亮的裙子，站在夕陽下；即使你只能在最狂野的夢裏再見到我。被記住，是她失去之後的安慰。' } },
+      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'Her request is to be remembered as a beautiful image, at her best, even if he only sees her again in his dreams. Being remembered is her consolation for losing.', zh: '她的請求是：被他記住為一幅美麗的畫面，記住她最好的模樣，即使他只能在夢中再見到她。被記住，是她失去之後的安慰。' } },
       { part: { en: 'Verse 2', zh: '第二段主歌' }, meaning: { en: 'She describes the intensity of their time together and anticipates how it will hurt when it is over.', zh: '她描述兩人相處時的熾熱，並預想一切結束後會有多痛。' } },
       { part: { en: 'Bridge', zh: '橋段' }, meaning: { en: 'The song’s emotional peak: she imagines him seeing her in his memory, maybe even with regret, and wants that image to haunt him a little.', zh: '全曲情緒的高峰：她想像他在回憶中看見她，甚至帶着懊悔，並希望那幅畫面能令他有點念念不忘。' } },
     ],
@@ -110,7 +110,7 @@ export const part2: Song[] = [
     },
     lyrics: [
       { part: { en: 'Verse 1', zh: '第一段主歌' }, meaning: { en: 'She describes a love that was cut short and let go, like something set adrift.', zh: '她描述一段被迫中斷、只好放手的愛，像一件被放逐漂流的東西。' } },
-      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'The tide metaphor: this love is good, this love is bad, it returns from the dead. It recedes and then comes back, unpredictable as the ocean.', zh: '潮汐的比喻：這份愛時好時壞，又會死而復生。它退去，然後回來，像海洋一樣難以預料。' } },
+      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'The tide metaphor: this love is sometimes good and sometimes painful, and it keeps coming back when she thought it was gone, unpredictable as the ocean.', zh: '潮汐的比喻：這份愛時而美好、時而痛苦，每當她以為它已消逝，它又再回來，像海洋一樣難以預料。' } },
       { part: { en: 'Bridge', zh: '橋段' }, meaning: { en: 'She waits on the shore, letting the love come back in its own time rather than chasing it.', zh: '她在岸邊等待，讓愛按自己的時間回來，而不是去追逐它。' } },
     ],
     echoes: [
@@ -133,7 +133,7 @@ export const part2: Song[] = [
     },
     lyrics: [
       { part: { en: 'Verse 1', zh: '第一段主歌' }, meaning: { en: 'Something fragile has started between two people, and she can already feel the world watching and waiting to pounce.', zh: '兩人之間剛萌生出脆弱的東西，她已感覺到全世界在監視，等待撲上來。' } },
-      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'The hunters and the foxes: the press chases, the lovers run. Her promise is practical rather than romantic: she knows places where no one will find them.', zh: '獵人與狐狸：傳媒追趕，戀人逃跑。她的承諾務實而不浪漫：她知道有些地方沒有人會找到他們。' } },
+      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'The press are the hunters and the lovers are the hunted. Her promise is practical rather than romantic: she knows how to keep them out of sight.', zh: '傳媒是獵人，戀人是獵物。她的承諾務實而不浪漫：她知道怎樣讓兩人避開眾人目光。' } },
       { part: { en: 'Bridge', zh: '橋段' }, meaning: { en: 'Even under pressure, she insists that the two of them are stronger together than the forces trying to break them.', zh: '即使承受壓力，她仍堅持兩人在一起，比那些想拆散他們的力量更強大。' } },
     ],
     echoes: [
@@ -183,7 +183,7 @@ export const part2: Song[] = [
     },
     lyrics: [
       { part: { en: 'Verse 1', zh: '第一段主歌' }, meaning: { en: 'She meets someone with intriguing green eyes and follows him, like Alice following the rabbit, without thinking where it leads.', zh: '她遇上一個有着迷人綠眼睛的人，像愛麗絲追隨兔子一樣跟着他，完全沒有想過會走向何方。' } },
-      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'They fell into a wonderland, lost their minds and could not get back. The fairy tale has become a trap.', zh: '他們掉進仙境，失去理智，再也回不去。童話變成了陷阱。' } },
+      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'Together they tumbled into a strange world and lost their bearings. The fairy tale has become a trap.', zh: '兩人一同跌進奇異的世界，迷失了方向。童話變成了陷阱。' } },
       { part: { en: 'Bridge', zh: '橋段' }, meaning: { en: 'She realises others had warned her. In the end, both of them were changed by the experience, and not entirely for the better.', zh: '她察覺其實早有人警告過她。最終兩人都被這段經歷改變了，而且不全是好的改變。' } },
     ],
   },

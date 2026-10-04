@@ -40,8 +40,8 @@ export const part3: Song[] = [
     },
     lyrics: [
       { part: { en: 'Verse 1', zh: '第一段主歌' }, meaning: { en: 'She describes her friends as people who have been hurt and keep going out anyway, finding their own kind of freedom in the city at night.', zh: '她把朋友們描繪成受過傷卻照樣出去玩的人，在城市的夜裏找到屬於自己的自由。' } },
-      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'Heartbreak is the national anthem and they sing it proudly. Instead of hiding pain, they make it the soundtrack of the party.', zh: '心碎是他們的國歌，而他們驕傲地高唱。他們不隱藏痛苦，而是把它變成派對的配樂。' } },
-      { part: { en: 'Bridge', zh: '橋段' }, meaning: { en: 'She talks about people throwing stones at her and how she builds a castle out of them, turning criticism into something to stand on.', zh: '她說別人向她扔石頭，她就用那些石頭建一座城堡，把批評變成自己的立足點。' } },
+      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'Heartbreak is something they all share and sing about proudly. Instead of hiding pain, they make it the soundtrack of the party.', zh: '心碎是他們共同的經歷，他們驕傲地把它唱出來。他們不隱藏痛苦，而是把它變成派對的配樂。' } },
+      { part: { en: 'Bridge', zh: '橋段' }, meaning: { en: 'She describes turning the attacks aimed at her into building material, making criticism into something to stand on.', zh: '她描述把別人向她發動的攻擊變成建築材料，把批評化為自己的立足點。' } },
     ],
     mv: {
       id: 'wyK7YuwUWsU', director: 'Jonas Åkerlund', date: '2016-04-13',
@@ -154,7 +154,7 @@ export const part3: Song[] = [
     },
     lyrics: [
       { part: { en: 'Verse 1', zh: '第一段主歌' }, meaning: { en: 'She accuses him of moving on to new girls very quickly after the breakup, each one, she suggests, a pale copy of her.', zh: '她指責他分手後很快便轉向新女伴，並暗示每一位都只是她的蒼白翻版。' } },
-      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'The title question, asked with frustration: is it over now? If it is, why does he keep showing up, and why does she keep feeling it?', zh: '歌名的問題，帶着煩躁問出：現在結束了嗎？如果是，為何他總是出現，為何她仍有感覺？' } },
+      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'The title question, asked with frustration: if it is really finished, why does he keep showing up, and why does she keep feeling it?', zh: '歌名的問題，帶着煩躁問出：如果真的結束了，為何他總是出現，為何她仍有感覺？' } },
       { part: { en: 'Verse 2', zh: '第二段主歌' }, meaning: { en: 'Images of the snowy crash and its aftermath return, now coloured by blame rather than tenderness.', zh: '雪地撞擊及其後果的畫面再次出現，這次不再帶着溫柔，而是帶着責怪。' } },
       { part: { en: 'Bridge', zh: '橋段' }, meaning: { en: 'The most furious section in the vault: she describes her own pain in vivid, almost violent terms and makes clear he caused it. The anger is the closure that "Out of the Woods" never had.', zh: '整批 vault 歌曲中最憤怒的段落：她以鮮明、近乎暴烈的字眼描述自己的痛苦，並清楚表明是他造成的。這份憤怒，正是〈Out of the Woods〉一直欠缺的了結。' } },
     ],

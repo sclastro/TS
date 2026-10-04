@@ -15,7 +15,7 @@ export const part2: Song[] = [
     },
     lyrics: [
       { part: { en: 'Verse 1', zh: '第一段主歌' }, meaning: { en: 'She describes the boy’s eyes and the way he carries himself, watching him from across a room.', zh: '她隔着房間望着那個男孩，描述他的眼睛和他的舉止。' } },
-      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'Her wish: stay beautiful, do not change. And if he ever wants someone to come home to, she will be there.', zh: '她的願望：保持美好，不要改變。如果他有一天想找一個可以回去的人，她會在那裏。' } },
+      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'Her wish is that he never changes, and she quietly lets him know she would be there if he ever looked her way.', zh: '她的願望是他永遠不要改變；她亦含蓄地讓他知道，如果他有天回頭，她會在那裏。' } },
       { part: { en: 'Bridge', zh: '橋段' }, meaning: { en: 'She admits he may never be hers, and is at peace with that, as long as he stays happy.', zh: '她承認他可能永遠不屬於她，只要他快樂，她也心安。' } },
     ],
     echoes: [
@@ -36,7 +36,7 @@ export const part2: Song[] = [
     },
     lyrics: [
       { part: { en: 'Verse 1', zh: '第一段主歌' }, meaning: { en: 'She has heard what he did, and he is trying to explain. She is not interested.', zh: '她已聽說他做了甚麼，他正嘗試解釋，而她毫無興趣聽。' } },
-      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'The title as verdict: he should have said no, he should have gone home, he should have thought twice. Every "should have" is a door he chose not to close.', zh: '歌名就是判決：他應該拒絕、應該回家、應該三思。每一個「應該」，都是一扇他選擇不關上的門。' } },
+      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'The title is a verdict: he had every chance to walk away and did not. Each missed chance is a door he chose not to close.', zh: '歌名就是判決：他有無數機會轉身離開，卻沒有這樣做。每一次錯過，都是一扇他選擇不關上的門。' } },
       { part: { en: 'Bridge', zh: '橋段' }, meaning: { en: 'He begs for forgiveness and she refuses to give it. She would rather be alone than with someone who did this.', zh: '他乞求原諒，她拒絕了。她寧願獨自一人，也不要和做出這種事的人在一起。' } },
     ],
     echoes: [
@@ -87,7 +87,7 @@ export const part2: Song[] = [
     },
     lyrics: [
       { part: { en: 'Verse 1', zh: '第一段主歌' }, meaning: { en: 'Riding in his car, she notices they do not have a song, and he points out the sounds of their evening instead.', zh: '坐在他車上，她察覺兩人沒有屬於自己的歌；他便指出那個晚上身邊的種種聲音。' } },
-      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'Their song is the screen door, the late-night phone calls, the sneaking around. Ordinary life is the soundtrack.', zh: '他們的歌就是紗門聲、深夜電話、偷偷摸摸的約會。平凡的生活就是配樂。' } },
+      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'Their song is made of the everyday noises of their relationship: doors, late-night calls, sneaking out. Ordinary life is the soundtrack.', zh: '他們的歌由兩人相處時的日常聲響組成：關門聲、深夜電話、偷偷溜出去。平凡的生活就是配樂。' } },
       { part: { en: 'Verse 2', zh: '第二段主歌' }, meaning: { en: 'After a bad day she prays, and the prayer itself becomes part of their song.', zh: '經過糟糕的一天，她祈禱，而祈禱本身也成為他們的歌的一部分。' } },
       { part: { en: 'Outro', zh: '尾段' }, meaning: { en: 'She writes the song down on a napkin, and the song you are hearing turns out to be the one she wrote. A neat, self-aware ending.', zh: '她在一張餐巾上寫下這首歌，而你正在聽的，原來就是她寫下的那首。一個巧妙、自覺的結尾。' } },
     ],
@@ -136,7 +136,7 @@ export const part2: Song[] = [
     },
     lyrics: [
       { part: { en: 'Verse', zh: '主歌' }, meaning: { en: 'She watches him with someone else, and knows she would treat him better.', zh: '她看着他與別人一起，知道自己會待他更好。' } },
-      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'She feels invisible to him, and wonders what it would take for him to notice.', zh: '在他眼中，她彷彿是隱形的；她不知道要怎樣才能令他留意。' } },
+      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'She feels completely unseen by him, and wonders what it would take for him to notice.', zh: '在他眼中，她彷彿是隱形的；她不知道要怎樣才能令他留意。' } },
     ],
     echoes: [
       { ref: 'taylor-swift/teardrops-on-my-guitar', note: { en: 'The same situation, told with more detail and a named boy.', zh: '同樣的處境，寫得更具體，還說出了男孩的名字。' } },
@@ -156,7 +156,7 @@ export const part2: Song[] = [
     },
     lyrics: [
       { part: { en: 'Verse', zh: '主歌' }, meaning: { en: 'She had never been hurt before, and gave her heart without reservation.', zh: '她從未受過傷，毫無保留地交出了自己的心。' } },
-      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'Why would you break a perfectly good heart? The question is not angry so much as stunned.', zh: '你為何要打破一顆完好的心？這個問題與其說是憤怒，不如說是錯愕。' } },
+      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'She asks why anyone would damage something that was whole and working. The question is not angry so much as stunned.', zh: '她問，為何有人會破壞一件完好無缺的東西。這個問題與其說是憤怒，不如說是錯愕。' } },
     ],
     echoes: [
       { ref: 'red/all-too-well', note: { en: 'The first heartbreak is a sketch; years later comes the full portrait of one.', zh: '第一次心碎只是一幅素描；多年後，才有一幅完整的心碎畫像。' } },
