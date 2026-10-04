@@ -1,4 +1,5 @@
 import type { L, Photo, Theme } from '../data/types';
+import photoManifest from '../data/photo-manifest.json';
 
 export const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
 export const href = (path: string) => `${BASE}${path.startsWith('/') ? path : `/${path}`}`;
@@ -24,13 +25,26 @@ export const bi = (l: L, opts: { rich?: boolean; tag?: string } = {}) => {
   return `<${tag} class="l-en" lang="en">${f(l.en)}</${tag}><${tag} class="l-zh" lang="zh-Hant">${f(l.zh)}</${tag}>`;
 };
 
-export const commons = (file: string, width = 1200) =>
-  `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file.replace(/ /g, '_'))}?width=${width}`;
+// Commons 只接受標準縮圖寬度，其他寬度會回 400 或被限流
+const STD = [250, 330, 500, 960, 1280, 1920];
+type Meta = { slug: string; w: number; h: number; artist?: string; license?: string; sizes: number[] };
+const manifest = photoManifest as Record<string, Meta>;
+export const photoMeta = (file: string): Meta | undefined => manifest[file];
+
+/** 照片網址：建置時已自存者用本站 WebP，否則用 Commons 標準寬度縮圖 */
+export const commons = (file: string, width = 960) => {
+  const m = manifest[file];
+  if (m) return `${BASE}/photos/${m.slug}-${width <= 500 ? 500 : 1280}.webp`;
+  const w = STD.find((s) => s >= width) ?? 1920;
+  return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file.replace(/ /g, '_'))}?width=${w}`;
+};
 export const commonsPage = (file: string) =>
   `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file.replace(/ /g, '_'))}`;
 
-export const photoCredit = (p: Photo) =>
-  [p.credit, p.license].filter(Boolean).join(' · ');
+export const photoCredit = (p: Photo) => {
+  const m = manifest[p.file];
+  return [p.credit || m?.artist, p.license || m?.license].filter(Boolean).join(' · ');
+};
 
 export const themeStyle = (t: Theme) =>
   [
@@ -52,6 +66,10 @@ export const yt = {
   thumb: (id: string) => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`,
   watch: (id: string) => `https://www.youtube.com/watch?v=${id}`,
 };
+
+/** 只搜尋 Taylor Swift 官方 YouTube 頻道，保證是官方 MV / lyric video */
+export const ytChannelSearch = (title: string) =>
+  `https://www.youtube.com/@TaylorSwift/search?query=${encodeURIComponent(title)}`;
 
 export const geniusSearch = (title: string) =>
   `https://genius.com/search?q=${encodeURIComponent(`Taylor Swift ${title}`)}`;

@@ -1,22 +1,23 @@
 ---
 import type { Album } from '../data/types';
 import { commons, href, bi } from '../lib/util';
+import { songsByAlbum } from '../data/songs';
 interface Props { a: Album; n: number }
 const { a, n } = Astro.props;
 const t = a.theme;
 const style = `--c-bg:${t.bg};--c-bg2:${t.bg2};--c-ink:${t.ink};--c-accent:${t.accent};--c-font:'${t.font}'`;
 const img = a.photos[0];
 ---
-<a class="era-card" href={href(`/eras/${a.slug}/`)} style={style} data-reveal>
+<a class="era-card" href={href(`/eras/${a.slug}/`)} style={style}>
   <div class="stage">
     <div class="vinyl" aria-hidden="true"></div>
     <div class="sleeve">
-      {img && <img src={commons(img.file, 600)} alt="" loading="lazy" data-soft referrerpolicy="no-referrer" />}
+      {img && <img src={commons(img.file, 500)} alt="" loading="lazy" data-soft class="fadein" referrerpolicy="no-referrer" />}
       <span class="no">No. {String(n).padStart(2, '0')}</span>
-      <span class="name">{a.title}</span>
+      <span class="name" style={`view-transition-name:e-${a.slug}`}>{a.title}</span>
       <span class="yr">{a.year}</span>
     </div>
-    {a.ready && <span class="tag"><span class="l-zh">已開放</span><span class="l-en">OPEN</span></span>}
+    {(songsByAlbum[a.slug]?.length ?? 0) > 0 && <span class="tag"><span class="l-zh">已開放</span><span class="l-en">OPEN</span></span>}
   </div>
   <p class="tagline"><Fragment set:html={bi(a.tagline)} /></p>
 </a>

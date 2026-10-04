@@ -21,8 +21,8 @@ if (canvas && !reduce) {
   };
 
   const density: Record<Mode, number> = {
-    sparkle: 70, glitter: 110, magic: 90, butterflies: 14, leaves: 26, seagulls: 9, smoke: 14,
-    hearts: 22, fog: 10, snow: 120, stars: 160, letters: 30, confetti: 70,
+    sparkle: 45, glitter: 60, magic: 55, butterflies: 9, leaves: 16, seagulls: 7, smoke: 10,
+    hearts: 14, fog: 8, snow: 80, stars: 120, letters: 18, confetti: 40,
   };
 
   const spawn = (init: boolean): P => {
@@ -78,7 +78,7 @@ if (canvas && !reduce) {
     for (let i = 0; i < ps.length; i++) {
       const p = ps[i];
       p.t += 1; p.x += p.vx; p.y += p.vy; p.r += p.vr;
-      ctx.globalAlpha = p.a; ctx.fillStyle = p.c; ctx.strokeStyle = p.c;
+      ctx.globalAlpha = p.a * 0.75; ctx.fillStyle = p.c; ctx.strokeStyle = p.c;
       switch (mode) {
         case 'snow': p.x += Math.sin(p.t / 40) * 0.3; ctx.beginPath(); ctx.arc(p.x, p.y, p.s, 0, 6.28); ctx.fill(); break;
         case 'leaves':
@@ -138,5 +138,15 @@ if (canvas && !reduce) {
     if (document.hidden) cancelAnimationFrame(raf); else raf = requestAnimationFrame(frame);
   });
   // 時間線頁面捲動時切換時期
-  (window as any).__fx = { setMode(m: Mode) { if (m !== mode) { mode = m; reset(); } }, refresh: reset };
+  // 切換模式時先淡出，再以新模式淡入，避免畫面突變
+  let swap = 0;
+  (window as any).__fx = {
+    setMode(m: Mode) {
+      if (m === mode) return;
+      clearTimeout(swap);
+      canvas.classList.add('fading');
+      swap = window.setTimeout(() => { mode = m; reset(); canvas.classList.remove('fading'); }, 700);
+    },
+    refresh() { window.setTimeout(readPalette, 1500); },
+  };
 }

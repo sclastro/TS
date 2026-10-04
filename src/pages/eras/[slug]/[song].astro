@@ -4,11 +4,11 @@ import Bi from '../../../components/Bi.astro';
 import Photo from '../../../components/Photo.astro';
 import YouTube from '../../../components/YouTube.astro';
 import Spotify from '../../../components/Spotify.astro';
-import { albums } from '../../../data/albums';
-import { songsByAlbum, sectionLabel } from '../../../data/songs';
+import { albums, albumBySlug } from '../../../data/albums';
+import { songsByAlbum, sectionLabel, songByRef } from '../../../data/songs';
 import { interviews } from '../../../data/interviews';
-import type { Album, Song } from '../../../data/types';
-import { href, bi, personHTML, geniusSearch, spotifySearch, appleSearch } from '../../../lib/util';
+import type { Album, Song, L } from '../../../data/types';
+import { href, bi, personHTML, geniusSearch, spotifySearch, appleSearch, ytChannelSearch, fmtDate } from '../../../lib/util';
 
 export function getStaticPaths() {
   return albums.flatMap((a) =>
@@ -19,78 +19,151 @@ export function getStaticPaths() {
   );
 }
 const { a, s, prev, next } = Astro.props as { a: Album; s: Song; prev?: Song; next?: Song };
-const photos = s.photos?.length ? s.photos : [a.photos[s.track % a.photos.length], a.photos[(s.track + 3) % a.photos.length]];
-const related = interviews.filter((i) => i.songs?.includes(s.slug) || (i.album === a.slug && i.youtube));
+const photos = s.photos?.length ? s.photos : [0, 3, 6].map((k) => a.photos[(s.track + k) % a.photos.length]).filter((p, i, arr) => arr.indexOf(p) === i);
+const related = interviews.filter((i) => i.songs?.includes(s.slug) || i.album === a.slug);
 const beads = s.title.toUpperCase().replace(/[^A-Z0-9 ]/g, '').split('');
-const tvTitle = s.section === 'vault' ? `${s.title} (Taylor's Version) [From The Vault]` : `${s.title} (Taylor's Version)`;
+const searchTitle = ['vault'].includes(s.section) ? `${s.title} (Taylor's Version) (From The Vault)` : a.tv ? `${s.title} (Taylor's Version)` : s.title;
+
+type Layer = { id: string; n: string; t: L; sub: L };
+const layers: Layer[] = [];
+const add = (id: string, t: L, sub: L) => layers.push({ id, n: String(layers.length + 1).padStart(2, '0'), t, sub });
+if (s.context) add('context', { en: 'The era', zh: '時期背景' }, { en: 'Where her life was when this song arrived', zh: '這首歌誕生時，她的人生處於甚麼位置' });
+add('story', { en: 'The story', zh: '創作心路歷程' }, { en: 'How the song was written and why', zh: '這首歌如何寫成、為何而寫' });
+add('lyrics', { en: 'The lyrics, part by part', zh: '歌詞逐段解讀' }, { en: 'What each section means (no lyrics are reproduced)', zh: '每一段的含義（不轉載歌詞原文）' });
+if (s.mv) add('mv', { en: 'The music video', zh: 'MV 解析' }, { en: 'Scene by scene', zh: '逐場拆解' });
+if (s.echoes?.length) add('echoes', { en: 'Echoes across eras', zh: '前後呼應' }, { en: 'Threads that connect this song to others', zh: '與其他時期作品之間的連線' });
+add('listen', { en: 'Watch & listen', zh: '觀看與聆聽' }, { en: 'Official sources only', zh: '只連結官方來源' });
+if (s.trivia?.length) add('trivia', { en: 'Did you know?', zh: '冷知識' }, { en: 'Details worth noticing', zh: '值得留意的細節' });
+const num = (id: string) => layers.find((l) => l.id === id)!.n;
 ---
 <Base title={`${s.title} · ${a.title} · Taylor Swift`} theme={a.theme} era={a.slug} page="eras">
-  <section class="song-hero">
+  <header class="song-hero">
     <div class="wrap">
-      <p class="eyebrow"><a href={href(`/eras/${a.slug}/`)}>{a.title}</a> · Track {s.track} · <Bi l={sectionLabel[s.section]} /></p>
+      <p class="eyebrow" style="justify-content:center"><a href={href(`/eras/${a.slug}/`)}>{a.title}</a> · No. {s.track} · <Bi l={sectionLabel[s.section]} /></p>
       <div class="bracelet" aria-hidden="true">
         <i class="c"></i>{beads.map((c) => (c === ' ' ? <i class="c"></i> : <i>{c}</i>))}<i class="c"></i>
       </div>
-      <h1 class="era-title">{s.title}</h1>
-      {s.single && <p class="chip"><Bi l={s.single} /></p>}
+      <h1 class="era-title" style={`view-transition-name:s-${s.slug}`}>{s.title}</h1>
+      {s.feat && <p class="chip">feat. <Fragment set:html={personHTML(s.feat)} /></p>}
+      {s.single && <p><span class="chip"><Bi l={s.single} /></span></p>}
+      <p class="overview" data-reveal><Fragment set:html={bi(s.overview, { rich: true })} /></p>
     </div>
-  </section>
+  </header>
 
-  <section style="padding-top:20px">
-    <div class="wrap song-grid">
-      <div style="display:grid;gap:28px">
-        {s.mv && (
-          <div data-reveal>
-            <YouTube id={s.mv.id} title={`${s.title} – Official Music Video`} label={s.mv.director ? `Official Music Video · dir. ${s.mv.director}` : 'Official Music Video'} />
-            {s.mv.note && <p style="font-size:.85rem;color:var(--muted);margin:.6em 0 0"><Bi l={s.mv.note} /></p>}
-          </div>
-        )}
+  <nav class="song-nav" data-spy aria-label="Sections">
+    {layers.map((l) => <a href={`#${l.id}`}><Bi l={l.t} /></a>)}
+  </nav>
 
-        <article class="panel glass" data-reveal>
-          <h2><span class="l-zh">創作心路歷程</span><span class="l-en">The story behind the song</span></h2>
-          <div class="prose" style="margin:0"><Fragment set:html={bi(s.story, { tag: 'p', rich: true })} /></div>
-        </article>
+  <div class="wrap song-body">
+    {s.context && (
+      <section class="layer" id="context" style="padding:0">
+        <header><span class="n">{num('context')}</span><h2><span class="l-zh">時期背景</span><span class="l-en">The era</span></h2><p><Bi l={layers[0].sub} /></p></header>
+        <div class="prose read" data-reveal><Fragment set:html={bi(s.context, { tag: 'p', rich: true })} /></div>
+      </section>
+    )}
 
-        <article class="panel glass" data-reveal>
-          <h2><span class="l-zh">歌詞主題解讀</span><span class="l-en">What the lyrics are about</span></h2>
-          <div class="prose" style="margin:0"><Fragment set:html={bi(s.themes, { tag: 'p' })} /></div>
-          <p style="font-size:.85rem;color:var(--muted)"><Bi l={{ en: 'Full lyrics are available on licensed platforms:', zh: '完整歌詞請到持有授權的平台閱讀：' }} /></p>
-          <div class="listen">
-            <a class="btn ghost" href={spotifySearch(tvTitle)} target="_blank" rel="noopener">Spotify</a>
-            <a class="btn ghost" href={appleSearch(tvTitle)} target="_blank" rel="noopener">Apple Music</a>
-            <a class="btn ghost" href={geniusSearch(s.title)} target="_blank" rel="noopener">Genius</a>
-          </div>
-        </article>
+    <section class="layer" id="story" style="padding:0">
+      <header><span class="n">{num('story')}</span><h2><span class="l-zh">創作心路歷程</span><span class="l-en">The story</span></h2><p><span class="l-zh">這首歌如何寫成、為何而寫</span><span class="l-en">How it was written, and why</span></p></header>
+      <div class="prose read" data-reveal><Fragment set:html={bi(s.story, { tag: 'p', rich: true })} /></div>
+    </section>
 
-        {s.facts && (
-          <ul class="facts" data-reveal>{s.facts.map((f) => <li class="glass"><Bi l={f} /></li>)}</ul>
-        )}
-
-        <div class="gallery" data-reveal>{photos.map((p) => <Photo p={p} />)}</div>
+    <section class="layer" id="lyrics" style="padding:0">
+      <header><span class="n">{num('lyrics')}</span><h2><span class="l-zh">歌詞逐段解讀</span><span class="l-en">The lyrics, part by part</span></h2><p><span class="l-zh">只解釋含義，不轉載原文。完整歌詞見下方授權平台。</span><span class="l-en">Meaning only; full lyrics are on the licensed platforms below.</span></p></header>
+      <div class="read">
+        <div class="lyric-parts">
+          {s.lyrics.map((p, i) => (
+            <div class="lyric-part" data-reveal style={`--d:${Math.min(i, 4) * 0.06}s`}>
+              <h4><Bi l={p.part} /></h4>
+              <Fragment set:html={bi(p.meaning, { tag: 'p', rich: true })} />
+            </div>
+          ))}
+        </div>
+        <div class="watch">
+          <a class="btn ghost sm" href={appleSearch(searchTitle)} target="_blank" rel="noopener">Apple Music <span class="l-zh">歌詞</span><span class="l-en">lyrics</span> ↗</a>
+          <a class="btn ghost sm" href={spotifySearch(searchTitle)} target="_blank" rel="noopener">Spotify ↗</a>
+          <a class="btn ghost sm" href={geniusSearch(s.title)} target="_blank" rel="noopener">Genius ↗</a>
+        </div>
       </div>
+    </section>
 
-      <aside style="display:grid;gap:22px">
-        <div class="panel glass" data-reveal>
-          <h2><span class="l-zh">試聽</span><span class="l-en">Preview</span></h2>
-          {s.spotifyTrack ? <Spotify kind="track" id={s.spotifyTrack} /> : a.spotifyAlbum && <Spotify kind="album" id={a.spotifyAlbum} />}
-          {!s.spotifyTrack && <p style="font-size:.8rem;color:var(--muted);margin:.6em 0 0"><Bi l={{ en: `Find track ${s.track} in the player above.`, zh: `請在上方播放器選擇第 ${s.track} 首。` }} /></p>}
+    {s.mv && (
+      <section class="layer" id="mv" style="padding:0">
+        <header><span class="n">{num('mv')}</span><h2><span class="l-zh">MV 解析</span><span class="l-en">The music video</span></h2><p>{s.mv.director && <>dir. <Fragment set:html={personHTML(s.mv.director)} /></>}{s.mv.date && <><br /><Bi l={fmtDate(s.mv.date)} /></>}</p></header>
+        <div>
+          <div data-reveal="zoom"><YouTube id={s.mv.id} title={`${s.title} – Official Music Video`} label="Official Music Video · YouTube" /></div>
+          {s.mv.note && <p style="font-size:.86rem;color:var(--muted);margin:.7em 0 0"><Bi l={s.mv.note} /></p>}
+          {s.mv.scenes && (
+            <div class="mv-scenes">
+              {s.mv.scenes.map((sc) => (
+                <div class="mv-scene card" data-reveal>
+                  <strong><Bi l={sc.scene} /></strong>
+                  <Fragment set:html={bi(sc.meaning, { tag: 'p', rich: true })} />
+                </div>
+              ))}
+            </div>
+          )}
         </div>
-        <div class="panel glass" data-reveal>
-          <h2><span class="l-zh">作曲</span><span class="l-en">Written by</span></h2>
-          <div class="credits-list" set:html={s.writers.map(personHTML).join('')} />
+      </section>
+    )}
+
+    {s.echoes?.length ? (
+      <section class="layer" id="echoes" style="padding:0">
+        <header><span class="n">{num('echoes')}</span><h2><span class="l-zh">前後呼應</span><span class="l-en">Echoes across eras</span></h2><p><span class="l-zh">與其他作品之間的連線</span><span class="l-en">Threads to other songs</span></p></header>
+        <div class="echoes">
+          {s.echoes.map((e) => {
+            const hit = songByRef(e.ref);
+            const al = hit ? albumBySlug[hit.album] : undefined;
+            const inner = (
+              <>
+                <span class="to">{hit ? hit.song.title : e.ref}{al && <small style={`color:${al.theme.accent}`}>{al.title}</small>}</span>
+                <Fragment set:html={bi(e.note, { tag: 'p', rich: true })} />
+              </>
+            );
+            return hit ? <a class="echo card" href={href(`/eras/${hit.album}/${hit.song.slug}/`)} data-reveal>{inner}</a> : <div class="echo card" data-reveal>{inner}</div>;
+          })}
         </div>
-        {related.length > 0 && (
-          <div class="panel glass" data-reveal>
-            <h2><span class="l-zh">相關訪問</span><span class="l-en">Related interviews</span></h2>
-            {related.map((iv) => <p style="margin:.4em 0"><a href={href(`/interviews/#${iv.id}`)}>{iv.outlet}: <Bi l={iv.title} /></a></p>)}
+      </section>
+    ) : null}
+
+    <section class="layer" id="listen" style="padding:0">
+      <header><span class="n">{num('listen')}</span><h2><span class="l-zh">觀看與聆聽</span><span class="l-en">Watch & listen</span></h2><p><span class="l-zh">YouTube 連結只搜尋 Taylor Swift 官方頻道</span><span class="l-en">YouTube links search her official channel only</span></p></header>
+      <div>
+        <div class="watch" style="margin-top:0">
+          <a class="btn" href={ytChannelSearch(s.title)} target="_blank" rel="noopener">▶ YouTube <span class="l-zh">官方頻道</span><span class="l-en">official channel</span></a>
+          {s.mv && <a class="btn ghost" href={`https://www.youtube.com/watch?v=${s.mv.id}`} target="_blank" rel="noopener">Official MV ↗</a>}
+        </div>
+        <div style="margin-top:20px" data-reveal>
+          {s.spotifyTrack ? <Spotify kind="track" id={s.spotifyTrack} /> : (a.tv?.spotifyAlbum || a.spotifyAlbum) && <Spotify kind="album" id={(a.tv?.spotifyAlbum || a.spotifyAlbum)!} />}
+          {!s.spotifyTrack && (a.tv?.spotifyAlbum || a.spotifyAlbum) && <p style="font-size:.8rem;color:var(--muted);margin:.6em 0 0"><Bi l={{ en: `Choose track ${s.track} in the player.`, zh: `請在播放器中選擇第 ${s.track} 首。` }} /></p>}
+        </div>
+        <div class="side-grid" style="margin-top:22px">
+          <div class="card">
+            <h3><span class="l-zh">作曲</span><span class="l-en">Written by</span></h3>
+            <div class="credits-list" set:html={s.writers.map(personHTML).join('')} />
+            {s.producers && <><h3 style="margin-top:1.2em"><span class="l-zh">監製</span><span class="l-en">Produced by</span></h3><div class="credits-list" set:html={s.producers.map(personHTML).join('')} /></>}
           </div>
-        )}
-      </aside>
-    </div>
+          {related.length > 0 && (
+            <div class="card">
+              <h3><span class="l-zh">相關訪問</span><span class="l-en">Related interviews</span></h3>
+              {related.map((iv) => <p style="margin:.35em 0;font-size:.92em"><a href={href(`/interviews/#${iv.id}`)}>{iv.youtube ? '▶' : '↗'} {iv.outlet}: <Bi l={iv.title} /></a></p>)}
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
 
-    <nav class="wrap pager" aria-label="Songs">
-      {prev ? <a class="glass" href={href(`/eras/${a.slug}/${prev.slug}/`)}><small>← <span class="l-zh">上一首</span><span class="l-en">Previous</span></small>{prev.title}</a> : <a class="glass" href={href(`/eras/${a.slug}/`)}><small>← {a.title}</small><span class="l-zh">返回曲目</span><span class="l-en">Back to tracklist</span></a>}
-      {next ? <a class="glass next" href={href(`/eras/${a.slug}/${next.slug}/`)}><small><span class="l-zh">下一首</span><span class="l-en">Next</span> →</small>{next.title}</a> : <a class="glass next" href={href(`/eras/${a.slug}/`)}><small>{a.title} →</small><span class="l-zh">返回曲目</span><span class="l-en">Back to tracklist</span></a>}
-    </nav>
-  </section>
+    {s.trivia?.length ? (
+      <section class="layer" id="trivia" style="padding:0">
+        <header><span class="n">{num('trivia')}</span><h2><span class="l-zh">冷知識</span><span class="l-en">Did you know?</span></h2><p><span class="l-zh">值得留意的細節</span><span class="l-en">Details worth noticing</span></p></header>
+        <ul class="facts read">{s.trivia.map((f) => <li data-reveal><Fragment set:html={bi(f, { rich: true })} /></li>)}</ul>
+      </section>
+    ) : null}
+
+    <div class="gallery">{photos.map((p) => <Photo p={p} />)}</div>
+  </div>
+
+  <nav class="wrap pager" aria-label="Songs">
+    {prev ? <a class="card" href={href(`/eras/${a.slug}/${prev.slug}/`)}><small>← <span class="l-zh">上一首</span><span class="l-en">Previous</span></small>{prev.title}</a> : <a class="card" href={href(`/eras/${a.slug}/`)}><small>← {a.title}</small><span class="l-zh">返回曲目</span><span class="l-en">Tracklist</span></a>}
+    {next ? <a class="card next" href={href(`/eras/${a.slug}/${next.slug}/`)}><small><span class="l-zh">下一首</span><span class="l-en">Next</span> →</small>{next.title}</a> : <a class="card next" href={href(`/eras/${a.slug}/`)}><small>{a.title} →</small><span class="l-zh">返回曲目</span><span class="l-en">Tracklist</span></a>}
+  </nav>
 </Base>

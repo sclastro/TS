@@ -24,6 +24,17 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # 照片自存：沿用上次下載的檔案，只補缺少的
+      - uses: actions/cache@v4
+        with:
+          path: |
+            public/photos
+            src/data/photo-manifest.json
+          key: photos-v1-${{ github.run_id }}
+          restore-keys: photos-v1-
+      - name: Fetch Wikimedia Commons photos
+        run: node scripts/fetch-images.mjs
+        continue-on-error: true
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:

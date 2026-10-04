@@ -27,6 +27,9 @@ export interface Photo {
   focus?: string;    // CSS object-position
 }
 
+/** 專輯頁的章節（時期序章、聲音、視覺、巡演、影響等） */
+export interface Chapter { title: L; body: L }
+
 export interface Album {
   slug: string;
   title: string;
@@ -36,25 +39,42 @@ export interface Album {
   theme: Theme;
   tagline: L;
   summary: L;
+  chapters?: Chapter[];
   facts: L[];
   photos: Photo[];
   spotifyAlbum?: string;
   tv?: { title: string; date: string; spotifyAlbum?: string };
 }
 
-export type SongSection = 'standard' | 'deluxe' | 'vault';
+export type SongSection =
+  | 'standard' | 'deluxe' | 'bonus' | 'vault'
+  | '3am' | 'tilldawn' | 'anthology';
+
+/** 歌詞逐段解讀：只解釋含義，不引用原文 */
+export interface LyricPart { part: L; meaning: L }
+
+/** MV 逐場解析 */
+export interface MvScene { scene: L; meaning: L }
+
+/** 前後呼應：ref 為「專輯slug/歌曲slug」，或任意歌名 */
+export interface Echo { ref: string; note: L }
 
 export interface Song {
   slug: string;
   title: string;
   track: number;
   section: SongSection;
+  feat?: string;
   writers: string[];   // 英文人名（會附讀音按鈕）
+  producers?: string[];
   single?: L;          // 單曲資料
-  themes: L;           // 歌詞主題解讀（不引用原文）
+  overview: L;         // 一句至一段的概覽
+  context?: L;         // 當時的人生與時期背景
   story: L;            // 創作心路歷程，可用 [[人名]] 標記
-  facts?: L[];
-  mv?: { id: string; director?: string; note?: L };
+  lyrics: LyricPart[]; // 歌詞逐段解讀
+  mv?: { id: string; director?: string; date?: string; note?: L; scenes?: MvScene[] };
+  echoes?: Echo[];
+  trivia?: L[];
   spotifyTrack?: string;
   photos?: Photo[];
 }
