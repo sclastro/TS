@@ -413,6 +413,43 @@ export const albums: Album[] = [
       en: 'Written and recorded remotely during the pandemic, folklore was announced only hours before release. Working with Aaron Dessner and Jack Antonoff, Swift turned to indie folk and fictional characters, and the album won the Grammy for Album of the Year, her third.',
       zh: '《folklore》在疫情期間遙距創作和錄音，推出前數小時才公佈。Swift 與 Aaron Dessner、Jack Antonoff 合作，轉向獨立民謠，並以虛構角色說故事。專輯奪得格林美年度專輯，是她第三次獲得此獎。',
     },
+    chapters: [
+      {
+        title: { en: 'Written in lockdown', zh: '封城中寫成' },
+        body: {
+          en: 'When the pandemic cancelled her plans for 2020, Swift began writing with [[Aaron Dessner]] of The National, who sent her instrumental sketches from his home studio. She also continued working with [[Jack Antonoff]]. Everyone recorded remotely, and almost no one knew the album existed until she announced it on the morning of its release.',
+          zh: '疫情打亂了她 2020 年的計劃後，Swift 開始與 The National 的 [[Aaron Dessner]] 寫歌，他從家中錄音室把樂曲草稿寄給她。她亦繼續與 [[Jack Antonoff]] 合作。所有人都遙距錄音，直至她在推出當天早上宣佈之前，幾乎沒有人知道這張專輯存在。',
+        },
+      },
+      {
+        title: { en: 'Stories, not diaries', zh: '故事，而非日記' },
+        body: {
+          en: 'For the first time, Swift wrote mainly about characters rather than her own life: a scandalous heiress, a teenage love triangle, a soldier, a woman in an affair. She mixed these with personal songs, and invited listeners to guess which was which. The result felt like a book of short stories.',
+          zh: 'Swift 首次主要寫人物，而不是寫自己的生活：一位惹人非議的女繼承人、一段少年三角戀、一名士兵、一個身陷婚外情的女人。她把這些故事與私人的歌混在一起，讓聽眾猜哪些是哪些。成品就像一本短篇小說集。',
+        },
+      },
+      {
+        title: { en: 'The sound of the woods', zh: '森林的聲音' },
+        body: {
+          en: 'The music moved away from big pop production towards piano, acoustic guitar, strings and soft electronics, often described as indie folk. The photographs were black and white, taken in a forest, and the cardigan became the era’s symbol.',
+          zh: '音樂離開了大型流行樂製作，轉向鋼琴、木結他、弦樂和柔和的電子聲音，常被形容為獨立民謠。照片是在森林中拍攝的黑白相片，開襟毛衣成為這個時期的象徵。',
+        },
+      },
+      {
+        title: { en: 'The Long Pond Studio Sessions', zh: 'The Long Pond Studio Sessions' },
+        body: {
+          en: 'In November 2020 Swift released a film on Disney+ in which she, Dessner and Antonoff performed the whole album together for the first time at Long Pond Studio in upstate New York, and talked through how each song was written. It revealed that the co-writer credited as William Bowery was [[Joe Alwyn]].',
+          zh: '2020 年 11 月，Swift 在 Disney+ 推出一部影片：她與 Dessner、Antonoff 首次在紐約州北部的 Long Pond 錄音室一同演唱整張專輯，並逐首講述創作經過。影片揭示署名 William Bowery 的合寫人就是 [[Joe Alwyn]]。',
+        },
+      },
+      {
+        title: { en: 'A third Album of the Year', zh: '第三座年度專輯' },
+        body: {
+          en: 'folklore won the Grammy for Album of the Year in March 2021, making Swift the first woman to win the award three times as a lead artist. Before that ceremony she had already released its sister album, evermore.',
+          zh: '2021 年 3 月，《folklore》奪得格林美年度專輯，令 Swift 成為首位三度以主唱身份奪得此獎的女歌手。在那屆頒獎禮之前，她已推出了姊妹專輯《evermore》。',
+        },
+      },
+    ],
     facts: [
       { en: 'Surprise release, announced the same day', zh: '突襲發行，當日才宣佈' },
       { en: 'Grammy Album of the Year (2021)', zh: '格林美年度專輯（2021 年）' },
