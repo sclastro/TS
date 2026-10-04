@@ -125,6 +125,43 @@ export const albums: Album[] = [
       en: 'Swift wrote every song on Speak Now by herself, partly to answer critics who doubted her songwriting. The album is a set of confessions addressed to people she had never spoken to directly, framed in sweeping, theatrical arrangements.',
       zh: '《Speak Now》全碟歌曲都由 Swift 獨力創作，某程度上是回應質疑她創作能力的評論。整張專輯好比一封封從未當面說出口的信，配上恢宏而富戲劇感的編曲。',
     },
+    chapters: [
+      {
+        title: { en: 'An answer to the doubters', zh: '回應質疑者' },
+        body: {
+          en: 'After Fearless, some critics suggested that Swift’s co-writers deserved the credit for her success. Her response was to write every song on Speak Now entirely by herself. She co-produced it with [[Nathan Chapman]], and the album became a statement that the voice in the songs was hers alone.',
+          zh: '《Fearless》之後，有評論暗示 Swift 的成功應歸功於她的合寫人。她的回應，是獨力寫下《Speak Now》的每一首歌。她與 [[Nathan Chapman]] 共同監製，這張專輯成為一個宣言：歌中的聲音只屬於她自己。',
+        },
+      },
+      {
+        title: { en: 'Confessions she never made', zh: '從未當面說出的告白' },
+        body: {
+          en: 'Swift described the album as a collection of things she wished she had said to people in the moment: apologies, accusations, thank-yous and declarations. Each song is addressed to someone. In the booklet, the hidden capital-letter messages continued, now reading like footnotes to those confessions.',
+          zh: 'Swift 形容這張專輯收集了她希望當時能對某些人說出口的話：道歉、指控、感謝與表白。每一首歌都寫給某一個人。歌詞冊中隱藏的大楷字母訊息仍然延續，如今讀起來像這些告白的註腳。',
+        },
+      },
+      {
+        title: { en: 'The Speak Now World Tour', zh: 'Speak Now World Tour' },
+        body: {
+          en: 'The tour ran through 2011 and 2012 and was her most theatrical yet, inspired by Broadway: a moving bridge, a balcony, aerial acrobatics, a rainstorm during "Haunted", and a different cover song in each city. A live album, Speak Now World Tour Live, followed.',
+          zh: '巡演於 2011 至 2012 年舉行，是她迄今最富舞台劇色彩的演出，靈感來自百老匯：會移動的橋、露台、空中雜技、〈Haunted〉期間的人造暴雨，以及在每個城市演唱不同的翻唱歌曲。其後推出了現場專輯《Speak Now World Tour Live》。',
+        },
+      },
+      {
+        title: { en: 'Recognition and a snub', zh: '肯定與遺珠' },
+        body: {
+          en: '"Mean" won two Grammys in 2012, but the album itself was not nominated for Album of the Year, which surprised many. Swift performed "Mean" at that ceremony on a porch set with a banjo, ending with a pointed look at the audience.',
+          zh: '〈Mean〉在 2012 年奪得兩項格林美獎，但專輯本身未獲年度專輯提名，令不少人感到意外。Swift 在那屆頒獎禮上，於門廊佈景中彈着班祖琴演唱〈Mean〉，最後意味深長地望向觀眾。',
+        },
+      },
+      {
+        title: { en: 'Speak Now (Taylor’s Version)', zh: 'Speak Now (Taylor’s Version)' },
+        body: {
+          en: 'Swift announced the re-recording on stage at the Eras Tour in Nashville in May 2023, and released it on 7 July 2023. It added six vault tracks, guest vocals from [[Fall Out Boy]] and [[Hayley Williams]], and one notable change of lyric in "Better than Revenge". It debuted at number one.',
+          zh: 'Swift 於 2023 年 5 月在 Eras Tour 納什維爾站的舞台上宣佈重錄版，並於 2023 年 7 月 7 日推出。重錄版加入六首 vault 歌曲、[[Fall Out Boy]] 和 [[Hayley Williams]] 的客席演唱，以及〈Better than Revenge〉中一處引人注目的歌詞修改。專輯空降冠軍。',
+        },
+      },
+    ],
     facts: [
       { en: 'Entirely self-written', zh: '全碟歌曲由她一人包辦詞曲' },
       { en: "Re-recorded as Speak Now (Taylor's Version), 7 July 2023", zh: "重錄版 Speak Now (Taylor's Version)：2023 年 7 月 7 日" },
