@@ -39,7 +39,7 @@ export const part1: Song[] = [
     ],
     trivia: [
       { en: 'Swift performed the song at the 2007 Academy of Country Music Awards with Tim McGraw and Faith Hill in the audience; she later toured with them.', zh: 'Swift 在 2007 年 ACM 頒獎禮上演唱這首歌，Tim McGraw 與 Faith Hill 就在台下；其後她更擔任兩人巡迴演唱會的嘉賓。' },
-      { en: 'It was the opening number of the debut album and of her first chapter in the Eras Tour’s surprise-song history.', zh: '這是出道專輯的第一首歌，也是她整個創作生涯的起點。' },
+      { en: 'It is the first track on her first album: the starting point of everything that followed.', zh: '這是她第一張專輯的第一首歌，也是之後一切的起點。' },
     ],
   },
   {

@@ -15,6 +15,43 @@ export const albums: Album[] = [
       en: 'Released when Swift was sixteen, her debut introduced a teenage songwriter who wrote or co-wrote every track. Country radio embraced singles such as "Tim McGraw", "Teardrops on My Guitar" and "Our Song", the last making her the youngest person at the time to solely write and perform a number-one country hit.',
       zh: '這張出道專輯推出時，Swift 只有十六歲，每一首歌都由她親自創作或參與創作。〈Tim McGraw〉、〈Teardrops on My Guitar〉、〈Our Song〉等單曲深受鄉村電台歡迎；其中〈Our Song〉令她成為當時最年輕、獨力包辦詞曲並主唱鄉村榜冠軍歌的歌手。',
     },
+    chapters: [
+      {
+        title: { en: 'A Christmas tree farm in Pennsylvania', zh: '賓夕法尼亞州的聖誕樹農場' },
+        body: {
+          en: 'Swift grew up on a Christmas tree farm in Pennsylvania and fell in love with country music through singers like [[LeAnn Rimes]], [[Shania Twain]] and [[Faith Hill]]. She sang at local fairs and karaoke contests, and at about twelve a computer repairman who came to fix the family computer taught her three chords on the guitar. She started writing songs almost immediately, partly as a way to cope with feeling left out at school.',
+          zh: 'Swift 在賓夕法尼亞州的聖誕樹農場長大，透過 [[LeAnn Rimes]]、[[Shania Twain]] 和 [[Faith Hill]] 等歌手愛上鄉村音樂。她在地方市集和卡拉 OK 比賽中演唱；約十二歲時，一位上門修理電腦的技術員教她彈了三個結他和弦。她幾乎立即開始寫歌，部分原因是為了排解在學校被排擠的感受。',
+        },
+      },
+      {
+        title: { en: 'Nashville, after school', zh: '放學後的納什維爾' },
+        body: {
+          en: 'Her family moved to Hendersonville, Tennessee, so that she could pursue music. At fourteen she signed a songwriting deal with Sony/ATV, becoming the youngest staff writer the company had signed at the time. After school she would go to writing sessions on Music Row, most often with [[Liz Rose]], who has said that Swift arrived with the ideas and the stories, and that her own job was mostly to help shape them.',
+          zh: '她一家遷往田納西州 Hendersonville，讓她追求音樂。十四歲時，她與 Sony/ATV 簽下作曲合約，成為該公司當時簽下的最年輕駐場作曲人。放學後，她便到 Music Row 參加寫歌工作，最常合作的是 [[Liz Rose]]。Rose 說，構思和故事都是 Swift 帶來的，她的工作主要是幫忙打磨。',
+        },
+      },
+      {
+        title: { en: 'The Bluebird Café', zh: 'Bluebird Café' },
+        body: {
+          en: 'In 2005 she performed at the Bluebird Café, Nashville’s famous listening room. In the audience was [[Scott Borchetta]], who was starting a new label, Big Machine Records. He signed her, and she worked on the debut album mainly with producer [[Nathan Chapman]], who had produced her demos and believed in her sound.',
+          zh: '2005 年，她在納什維爾著名的音樂表演場地 Bluebird Café 演出。台下的 [[Scott Borchetta]] 正準備成立新唱片公司 Big Machine Records，他與她簽約。她主要與監製 [[Nathan Chapman]] 製作出道專輯；Chapman 曾為她監製試聽帶，一直相信她的聲音。',
+        },
+      },
+      {
+        title: { en: 'Radio tours and MySpace', zh: '電台巡迴與 MySpace' },
+        body: {
+          en: 'Before and after the album came out on 24 October 2006, Swift travelled to radio stations across the country, often driven by her mother, to introduce herself and her songs. At the same time she built a following on MySpace, writing to fans directly. She opened for [[Rascal Flatts]], [[George Strait]], [[Brad Paisley]], and [[Tim McGraw]] and [[Faith Hill]], learning to win over crowds who had come to see someone else.',
+          zh: '專輯於 2006 年 10 月 24 日推出，前後期間，Swift 走遍全國各地的電台介紹自己和作品，往往由母親開車接送。同時，她在 MySpace 上直接寫信給歌迷，建立追隨者。她曾為 [[Rascal Flatts]]、[[George Strait]]、[[Brad Paisley]]，以及 [[Tim McGraw]] 與 [[Faith Hill]] 擔任開場嘉賓，學會如何打動那些本來是來看別人的觀眾。',
+        },
+      },
+      {
+        title: { en: 'What the debut proved', zh: '出道專輯證明了甚麼' },
+        body: {
+          en: 'Teenagers rarely had a voice on country radio, and certainly not one writing her own material about her own life. The album stayed on the Billboard 200 for years, won her the CMA Horizon Award in 2007 and a Grammy nomination for Best New Artist. More importantly, it established the method she still uses: specific details, real names and real places, and the belief that a personal story can be universal.',
+          zh: '在鄉村電台上，少年人很少有發聲的機會，更遑論一個親自寫自己生活的少女。這張專輯在 Billboard 200 停留多年，為她贏得 2007 年 CMA Horizon Award，以及格林美最佳新人提名。更重要的是，它確立了她至今仍在使用的方法：具體的細節、真實的名字與地點，以及相信個人的故事也可以是普遍的。',
+        },
+      },
+    ],
     facts: [
       { en: 'Label: Big Machine Records', zh: '唱片公司：Big Machine Records' },
       { en: 'Lead single: "Tim McGraw" (June 2006)', zh: '首支單曲：〈Tim McGraw〉（2006 年 6 月）' },
