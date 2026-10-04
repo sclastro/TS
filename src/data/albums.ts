@@ -464,6 +464,43 @@ export const albums: Album[] = [
       en: 'Released less than five months after folklore, evermore continues its storytelling approach. Swift called it a sister record, explaining that she and her collaborators simply could not stop writing songs.',
       zh: '《evermore》在《folklore》推出後不足五個月面世，延續其說故事的創作手法。Swift 稱之為姊妹專輯，並解釋她與合作者根本停不了寫歌。',
     },
+    chapters: [
+      {
+        title: { en: 'We just kept writing', zh: '停不了的創作' },
+        body: {
+          en: 'After folklore, Swift and [[Aaron Dessner]] kept exchanging ideas. Songs continued to arrive, and the characters seemed to have more to say. She announced evermore only the day before its release, in December 2020, calling it folklore’s sister record.',
+          zh: '《folklore》之後，Swift 與 [[Aaron Dessner]] 繼續交換構思。新歌不斷出現，那些角色彷彿還有話要說。她在 2020 年 12 月推出前一天才宣佈《evermore》，稱之為《folklore》的姊妹專輯。',
+        },
+      },
+      {
+        title: { en: 'From autumn to winter', zh: '由秋入冬' },
+        body: {
+          en: 'If folklore felt like late summer and autumn in the woods, evermore moved into winter: plaid coats, snow, holiday parties and the long dark evenings of December. The colours turned to amber, rust and brown.',
+          zh: '如果說《folklore》像林間的夏末與秋天，《evermore》則走進了冬季：格子大衣、雪、節日派對，以及十二月漫長的黑夜。色調轉為琥珀、鐵鏽與啡色。',
+        },
+      },
+      {
+        title: { en: 'A town full of characters', zh: '滿是角色的小鎮' },
+        body: {
+          en: 'The storytelling went further. A woman refuses a proposal; two friends solve a crime; a star returns to her hometown while an old friend writes to her; two con artists fall in love. Some songs answer each other, building a small connected world.',
+          zh: '說故事的手法走得更遠：一位女子拒絕求婚；兩個朋友解決一宗罪案；一位明星回鄉，一位舊友寫信給她；兩個騙子墮入愛河。有些歌互相呼應，建構出一個相連的小世界。',
+        },
+      },
+      {
+        title: { en: 'Family and memory', zh: '家人與記憶' },
+        body: {
+          en: 'Among the fiction sit deeply personal songs. "marjorie" honours Swift’s grandmother, an opera singer, and includes recordings of her voice. "long story short" looks back on the hard years with a light touch.',
+          zh: '在虛構故事之間，也有非常私人的歌。〈marjorie〉紀念 Swift 身為歌劇歌手的外祖母，並收錄了她的歌聲錄音。〈long story short〉則以輕鬆的筆觸回望那段艱難歲月。',
+        },
+      },
+      {
+        title: { en: 'The two sisters on tour', zh: '兩姊妹同登舞台' },
+        body: {
+          en: 'On the Eras Tour, evermore had its own set with a mossy stage and a glowing piano, sitting beside the folklore set. Together the two albums closed one chapter of quiet, remote work before the return to pop with Midnights.',
+          zh: '在 Eras Tour 上，《evermore》擁有獨立環節：長滿青苔的舞台和發光的鋼琴，與《folklore》環節並列。兩張專輯一同為一段安靜、遙距創作的時期作結，之後她便以《Midnights》重返流行樂。',
+        },
+      },
+    ],
     facts: [{ en: 'Second surprise album of 2020', zh: '2020 年第二張突襲發行的專輯' }],
     photos: [
       eras('Taylor Swift The Eras Tour Evermore Era Set (53109927033).jpg', 'evermore set', 'evermore 環節'),
