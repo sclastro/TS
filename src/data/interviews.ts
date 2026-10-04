@@ -65,6 +65,60 @@ export const interviews: Interview[] = [
     },
     url: 'https://time.com/6342806/person-of-the-year-2023-taylor-swift/',
   },
+  {
+    id: 'rolling-stone-2019', date: '2019-09-18', outlet: 'Rolling Stone', album: 'lover',
+    title: { en: 'The Rolling Stone Interview', zh: '《Rolling Stone》封面專訪' },
+    summary: {
+      en: 'A long conversation with Brian Hiatt, begun in her mother’s kitchen in Nashville, about the hard road from reputation to Lover, the years of public hostility, and how close she came to stepping away from music.',
+      zh: '與 Brian Hiatt 的長篇對談，由她母親在納什維爾的廚房開始，談由《reputation》走到《Lover》的艱難路程、多年的公眾敵意，以及她曾經多麼接近離開樂壇。',
+    },
+    url: 'https://www.rollingstone.com/music/music-features/taylor-swift-rolling-stone-interview-880794/',
+  },
+  {
+    id: 'billboard-2019', date: '2019-12-12', outlet: 'Billboard', album: 'lover',
+    title: { en: 'Woman of the Decade speech, Women in Music', zh: 'Billboard Women in Music「十年代女性」得獎致辭' },
+    summary: {
+      en: 'Accepting the first Woman of the Decade award, Swift spoke for more than fifteen minutes about sexism in the music industry, unfair business practices, and the right of artists to own their work, including the sale of her masters.',
+      zh: 'Swift 領取首屆「十年代女性」獎時，發表超過十五分鐘的演說，談音樂業的性別歧視、不公平的商業手法，以及藝人擁有自己作品的權利，包括她的母帶被出售一事。',
+    },
+    url: 'https://www.billboard.com/music/awards/taylor-swift-woman-of-the-decade-speech-billboard-women-in-music-8546156/',
+  },
+  {
+    id: 'tribeca-2022', date: '2022-06-11', outlet: 'Tribeca Festival', album: 'red', songs: ['all-too-well-10-minute-version'],
+    title: { en: 'In conversation about All Too Well: The Short Film', zh: '談《All Too Well: The Short Film》' },
+    summary: {
+      en: 'After a screening at New York’s Beacon Theatre, Swift talked with the director Mike Mills about writing and directing the film, reclaiming her music, and her hopes to direct a feature, then performed the song live.',
+      zh: '在紐約 Beacon Theatre 放映後，Swift 與導演 Mike Mills 對談，講述編寫及執導這部短片的經過、奪回自己的音樂，以及日後執導長片的期望，最後現場演唱這首歌。',
+    },
+    url: 'https://deadline.com/2022/06/taylor-swift-reclaiming-her-music-directing-all-too-well-feature-film-tribeca-festival-1235043434/',
+  },
+  {
+    id: 'new-heights-2025', date: '2025-08-13', outlet: 'New Heights', album: 'the-life-of-a-showgirl',
+    title: { en: 'The Taylor Swift episode', zh: '《New Heights》Taylor Swift 特輯' },
+    summary: {
+      en: 'Her first long interview since 2023, with Travis and Jason Kelce. She revealed the cover, tracklist and release date of The Life of a Showgirl and talked about owning her masters. The video drew a record 13 million YouTube views in a day.',
+      zh: '她自 2023 年以來首次長篇訪問，與 Travis 及 Jason Kelce 對談。她揭曉《The Life of a Showgirl》的封面、曲目和推出日期，並談及擁有自己的母帶。影片一日內在 YouTube 錄得破紀錄的一千三百萬次觀看。',
+    },
+    url: 'https://podcasts.apple.com/us/podcast/the-taylor-swift-episode/id1643745036?i=1000721865340',
+  },
+  {
+    id: 'graham-norton-2025', date: '2025-10-03', outlet: 'BBC · The Graham Norton Show', album: 'the-life-of-a-showgirl',
+    title: { en: 'On the night of the release', zh: '專輯推出當晚的訪問' },
+    summary: {
+      en: 'Swift appeared on the sofa on the day The Life of a Showgirl came out, alongside actors including Cillian Murphy, talking about the album and life after the Eras Tour.',
+      zh: '《The Life of a Showgirl》推出當日，Swift 與 Cillian Murphy 等演員同場上節目，談新專輯及 Eras Tour 之後的生活。',
+    },
+    url: 'https://www.bbc.co.uk/programmes/m002k7rj',
+  },
+  {
+    id: 'seth-meyers-2025', date: '2025-10-08', outlet: 'Late Night with Seth Meyers', album: 'the-life-of-a-showgirl',
+    title: { en: 'The Life of a Showgirl, the engagement and more', zh: '談《The Life of a Showgirl》、訂婚及其他' },
+    summary: {
+      en: 'As the only guest of the night, Swift talked at length about the new album, its record-breaking release and her engagement to Travis Kelce.',
+      zh: 'Swift 是當晚唯一嘉賓，詳談新專輯、專輯破紀錄的發行，以及她與 Travis Kelce 訂婚。',
+    },
+    youtube: 'Wd7S1wZqkbI',
+  },
 ];
 
 export const interviewById = Object.fromEntries(interviews.map((i) => [i.id, i]));

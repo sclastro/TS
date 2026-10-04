@@ -8,7 +8,7 @@ export const part1: Song[] = [
   {
     slug: 'the-fate-of-ophelia', title: 'The Fate of Ophelia', track: 1, section: 'standard',
     writers: TMS, producers: TMS,
-    single: { en: 'Lead single, 3 October 2025', zh: '首支單曲，2025 年 10 月 3 日' },
+    single: { en: 'Lead single, 3 October 2025 · debuted at No. 1, her longest-running Hot 100 number one', zh: '首支單曲，2025 年 10 月 3 日．空降 Hot 100 冠軍，並成為她蟬聯冠軍最久的歌' },
     overview: {
       en: 'A glossy pop opener that borrows Shakespeare’s tragic Ophelia to say that love rescued the narrator from a similar fate.',
       zh: '一首光鮮亮麗的流行開場曲，借用莎士比亞筆下的悲劇人物 Ophelia，訴說愛情把敘述者從相似的命運中救出。',

@@ -9,6 +9,7 @@ const eras = (file: string, en: string, zh: string): Photo => ({
 export const albums: Album[] = [
   {
     slug: 'taylor-swift', title: 'Taylor Swift', year: 2006, date: '2006-10-24', ready: false,
+    spotifyAlbum: '7mzrIsaAjnXihW3InKjlC3',
     theme: { bg: '#eaf3ee', bg2: '#c8e2da', ink: '#183531', muted: '#4c6c65', accent: '#318b7f', accent2: '#c1a266', card: '#f8fdfb', font: 'Satisfy', particles: 'butterflies', dark: false },
     tagline: { en: 'A girl, a guitar and a notebook full of songs', zh: '一個女孩、一支結他、一本寫滿歌的筆記簿' },
     summary: {
@@ -63,6 +64,7 @@ export const albums: Album[] = [
   },
   {
     slug: 'fearless', title: 'Fearless', year: 2008, date: '2008-11-11', ready: false,
+    spotifyAlbum: '4hDok0OAJd57SGIT8xuWJH',
     theme: { bg: '#191308', bg2: '#392a11', ink: '#faf0d7', muted: '#cdb78b', accent: '#e5bf52', accent2: '#f8e9b0', card: '#261d0d', font: 'Cinzel Decorative', particles: 'glitter', dark: true },
     tagline: { en: 'Fairy tales, golden hair and the first Album of the Year', zh: '童話、金髮與第一座年度專輯大獎' },
     summary: {
@@ -119,6 +121,7 @@ export const albums: Album[] = [
   },
   {
     slug: 'speak-now', title: 'Speak Now', year: 2010, date: '2010-10-25', ready: false,
+    spotifyAlbum: '5AEDGbliTTfjOB8TSm1sxt',
     theme: { bg: '#180d24', bg2: '#3a1d52', ink: '#f4ebfb', muted: '#c4add7', accent: '#c08bed', accent2: '#f5cfee', card: '#261636', font: 'Pinyon Script', particles: 'magic', dark: true },
     tagline: { en: 'Every word written by her alone', zh: '每一個字，都由她獨力寫成' },
     summary: {
@@ -175,6 +178,7 @@ export const albums: Album[] = [
   },
   {
     slug: 'red', title: 'Red', year: 2012, date: '2012-10-22', ready: false,
+    spotifyAlbum: '6kZ42qRrzov54LcAk4onW9',
     theme: { bg: '#21090a', bg2: '#541216', ink: '#faede7', muted: '#d7b0a3', accent: '#d73f3d', accent2: '#edc39d', card: '#300f11', font: 'Abril Fatface', particles: 'leaves', dark: true },
     tagline: { en: 'Autumn leaves, a scarf and the colour of intense emotion', zh: '秋葉、圍巾，以及最濃烈的情感顏色' },
     summary: {
@@ -298,6 +302,7 @@ export const albums: Album[] = [
   },
   {
     slug: 'reputation', title: 'reputation', year: 2017, date: '2017-11-10', ready: false,
+    spotifyAlbum: '6DEjYFkNZh67HP7R9PSZvv',
     theme: { bg: '#0c0c0c', bg2: '#202020', ink: '#f0f0f0', muted: '#a2a2a2', accent: '#cbcbcb', accent2: '#4c986a', card: '#171717', font: 'UnifrakturMaguntia', particles: 'smoke', dark: true },
     tagline: { en: 'Snakes, newsprint and a reputation reclaimed', zh: '蛇、報紙鉛字，以及奪回的名聲' },
     summary: {
@@ -353,6 +358,7 @@ export const albums: Album[] = [
   },
   {
     slug: 'lover', title: 'Lover', year: 2019, date: '2019-08-23', ready: false,
+    spotifyAlbum: '1NAmidJlEaVgA3MpcPFYGq',
     theme: { bg: '#fdeaf2', bg2: '#ddeafd', ink: '#532a45', muted: '#88607a', accent: '#ee6ba5', accent2: '#7cb2f0', card: '#fff8fb', font: 'Pacifico', particles: 'hearts', dark: false },
     tagline: { en: 'Pastel skies and the first album she owns', zh: '粉彩天空，以及第一張由她擁有母帶的專輯' },
     summary: {
@@ -407,6 +413,7 @@ export const albums: Album[] = [
   },
   {
     slug: 'folklore', title: 'folklore', year: 2020, date: '2020-07-24', ready: false,
+    spotifyAlbum: '1pzvBxYgT6OVwJLtHkrdQK',
     theme: { bg: '#e5e5e1', bg2: '#b2b5b1', ink: '#262926', muted: '#595e59', accent: '#4b594b', accent2: '#d7d6d2', card: '#f3f3f0', font: 'IM Fell English', particles: 'fog', dark: false },
     tagline: { en: 'A cardigan, a misty forest and stories told in lockdown', zh: '羊毛開襟衫、迷霧森林，以及封城時寫下的故事' },
     summary: {
@@ -458,6 +465,7 @@ export const albums: Album[] = [
   },
   {
     slug: 'evermore', title: 'evermore', year: 2020, date: '2020-12-11', ready: false,
+    spotifyAlbum: '6AORtDjduMM3bupSWzbTSG',
     theme: { bg: '#22170f', bg2: '#50331c', ink: '#f5e8d7', muted: '#c9b192', accent: '#d58a4e', accent2: '#b9a88b', card: '#2f1f14', font: 'IM Fell English SC', particles: 'snow', dark: true },
     tagline: { en: 'The sister record: winter woods and a plaid coat', zh: '姊妹專輯：冬日樹林與格子大衣' },
     summary: {
@@ -509,6 +517,7 @@ export const albums: Album[] = [
   },
   {
     slug: 'midnights', title: 'Midnights', year: 2022, date: '2022-10-21', ready: false,
+    spotifyAlbum: '3lS1y25WAhcqJDATJK70Mq',
     theme: { bg: '#0b0f29', bg2: '#222553', ink: '#edefff', muted: '#b1b5e2', accent: '#b19ff7', accent2: '#ebbf7b', card: '#151a3e', font: 'Bodoni Moda', particles: 'stars', dark: true },
     tagline: { en: 'Thirteen sleepless nights across her life', zh: '一生中十三個不眠之夜' },
     summary: {
@@ -563,6 +572,7 @@ export const albums: Album[] = [
   },
   {
     slug: 'the-tortured-poets-department', title: 'The Tortured Poets Department', year: 2024, date: '2024-04-19', ready: false,
+    spotifyAlbum: '5H7ixXZfsNMGbIE5OBSpcb',
     theme: { bg: '#f2ede5', bg2: '#ddd6c9', ink: '#1b1a1a', muted: '#5e5950', accent: '#33312e', accent2: '#8a7d68', card: '#faf7f2', font: 'Special Elite', particles: 'letters', dark: false },
     tagline: { en: 'Typewriters, sepia ink and raw confession', zh: '打字機、褐色墨水與赤裸的告白' },
     summary: {
@@ -617,6 +627,7 @@ export const albums: Album[] = [
   },
   {
     slug: 'the-life-of-a-showgirl', title: 'The Life of a Showgirl', year: 2025, date: '2025-10-03', ready: false,
+    spotifyAlbum: '4a6NzYL1YHRUgx9e3YZI6I',
     theme: { bg: '#082623', bg2: '#10443d', ink: '#fdf3e5', muted: '#b5d8cc', accent: '#f7812a', accent2: '#98e1cb', card: '#0e3531', font: 'Limelight', particles: 'confetti', dark: true },
     tagline: { en: 'Orange, mint green and sequins under the spotlight', zh: '橙色、薄荷綠，以及射燈下的亮片' },
     summary: {
