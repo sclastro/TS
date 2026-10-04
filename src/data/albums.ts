@@ -304,6 +304,43 @@ export const albums: Album[] = [
       en: 'After a year away from the public eye, Swift returned with a darker, heavier electro-pop record that answered the media narratives around her. She gave almost no interviews for the album, letting the music, and a tour that became the highest-grossing in US history at the time, speak for her.',
       zh: '淡出公眾視線一年後，Swift 帶着一張更陰暗、更沉重的電子流行專輯回歸，回應媒體對她的種種描述。她為這張專輯幾乎沒有接受任何訪問，讓音樂和巡迴演唱會替她發聲；這次巡迴演唱會更成為當時美國史上票房最高的巡演。',
     },
+    chapters: [
+      {
+        title: { en: 'The disappearance', zh: '消失' },
+        body: {
+          en: 'In July 2016, a dispute over [[Kanye West]]’s song "Famous" exploded online after [[Kim Kardashian]] published an edited recording of a phone call. Swift was flooded with snake emojis and accusations of lying. She withdrew from public life for about a year, later describing it as the lowest point of her life.',
+          zh: '2016 年 7 月，[[Kim Kardashian]] 公開一段經剪輯的電話錄音，令一場關於 [[Kanye West]] 歌曲〈Famous〉的爭議在網上爆發。Swift 的帳戶被蛇的表情符號淹沒，並被指說謊。她其後淡出公眾生活約一年，後來形容那是她人生的最低谷。',
+        },
+      },
+      {
+        title: { en: 'Reclaiming the snake', zh: '把蛇據為己有' },
+        body: {
+          en: 'When she returned in August 2017, she took the insult and turned it into the era’s emblem: snake rings, snake microphones, and giant inflatable snakes on stage. The album’s artwork used black-and-white photography and newspaper-style type, as if she were writing her own headlines.',
+          zh: '2017 年 8 月回歸時，她把那個侮辱變成這個時期的標誌：蛇形戒指、蛇形咪高峰，以及舞台上的巨型充氣蛇。專輯封面採用黑白攝影和報紙式字體，彷彿她在為自己撰寫頭條。',
+        },
+      },
+      {
+        title: { en: 'No interviews', zh: '不接受訪問' },
+        body: {
+          en: 'Swift did almost no press for reputation. Instead she published a short note with the album, saying there would be no further explanation, only reputation. The deluxe editions came as magazines filled with photographs and her own poems.',
+          zh: 'Swift 幾乎沒有為《reputation》做任何宣傳訪問。她只隨專輯發表一段短文，表示不會再有更多解釋，只有《reputation》。豪華版以雜誌形式推出，載滿照片和她親筆的詩。',
+        },
+      },
+      {
+        title: { en: 'A love story underneath', zh: '底下的愛情故事' },
+        body: {
+          en: 'Behind the armour, many of the songs describe a new, private relationship that began during her year away, with the English actor [[Joe Alwyn]]. Swift later said that reputation was a love story at heart, and that the loud songs were the walls around it.',
+          zh: '在盔甲背後，不少歌曲描述她淡出期間開始的一段新的私密感情，對象是英國演員 [[Joe Alwyn]]。Swift 後來表示，《reputation》本質上是一個愛情故事，那些響亮的歌只是包圍着它的圍牆。',
+        },
+      },
+      {
+        title: { en: 'The reputation Stadium Tour', zh: 'reputation Stadium Tour' },
+        body: {
+          en: 'From May to November 2018 she played stadiums across North America, Europe, Oceania and Japan, with towering snakes, a moving catwalk and floating cages. It became the highest-grossing US tour in history at the time, and its final night in Texas was released as a concert film on Netflix.',
+          zh: '2018 年 5 月至 11 月，她在北美、歐洲、大洋洲和日本的體育場巡演，舞台上有高聳的巨蛇、移動的天橋和懸浮的籠子。它成為當時美國史上票房最高的巡迴演唱會，德州的最後一場更以演唱會電影形式在 Netflix 推出。',
+        },
+      },
+    ],
     facts: [
       { en: 'Lead single: "Look What You Made Me Do"', zh: '首支單曲：〈Look What You Made Me Do〉' },
       { en: 'Last album released under Big Machine Records', zh: '在 Big Machine Records 推出的最後一張專輯' },
