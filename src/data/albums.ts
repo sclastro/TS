@@ -336,8 +336,8 @@ export const albums: Album[] = [
       {
         title: { en: 'The reputation Stadium Tour', zh: 'reputation Stadium Tour' },
         body: {
-          en: 'From May to November 2018 she played stadiums across North America, Europe, Oceania and Japan, with towering snakes, a moving catwalk and floating cages. It became the highest-grossing US tour in history at the time, and its final night in Texas was released as a concert film on Netflix.',
-          zh: '2018 年 5 月至 11 月，她在北美、歐洲、大洋洲和日本的體育場巡演，舞台上有高聳的巨蛇、移動的天橋和懸浮的籠子。它成為當時美國史上票房最高的巡迴演唱會，德州的最後一場更以演唱會電影形式在 Netflix 推出。',
+          en: 'From May to November 2018 she played stadiums across North America, Europe, Oceania and Japan, with towering snakes, a moving catwalk and floating cages. It became the highest-grossing US tour in history at the time, and one of its nights in Arlington, Texas, was released as a concert film on Netflix.',
+          zh: '2018 年 5 月至 11 月，她在北美、歐洲、大洋洲和日本的體育場巡演，舞台上有高聳的巨蛇、移動的天橋和懸浮的籠子。它成為當時美國史上票房最高的巡迴演唱會，其中在德州阿靈頓的一場更以演唱會電影形式在 Netflix 推出。',
         },
       },
     ],
