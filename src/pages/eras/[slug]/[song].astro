@@ -134,7 +134,7 @@ const num = (id: string) => layers.find((l) => l.id === id)!.n;
         </div>
         <div style="margin-top:20px" data-reveal>
           {s.spotifyTrack ? <Spotify kind="track" id={s.spotifyTrack} /> : (a.tv?.spotifyAlbum || a.spotifyAlbum) && <Spotify kind="album" id={(a.tv?.spotifyAlbum || a.spotifyAlbum)!} />}
-          {!s.spotifyTrack && s.section !== 'tilldawn' && (a.tv?.spotifyAlbum || a.spotifyAlbum) && <p style="font-size:.8rem;color:var(--muted);margin:.6em 0 0"><Bi l={{ en: `Choose track ${s.track} in the player.`, zh: `請在播放器中選擇第 ${s.track} 首。` }} /></p>}
+          {!s.spotifyTrack && !['tilldawn', 'encore'].includes(s.section) && (a.tv?.spotifyAlbum || a.spotifyAlbum) && <p style="font-size:.8rem;color:var(--muted);margin:.6em 0 0"><Bi l={{ en: `Choose track ${s.track} in the player.`, zh: `請在播放器中選擇第 ${s.track} 首。` }} /></p>}
         </div>
         <div class="side-grid" style="margin-top:22px">
           <div class="card">

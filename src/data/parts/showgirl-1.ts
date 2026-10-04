@@ -65,6 +65,7 @@ export const part1: Song[] = [
   {
     slug: 'opalite', title: 'Opalite', track: 3, section: 'standard',
     writers: TMS, producers: TMS,
+    single: { en: 'Second single, January 2026 · her 14th Hot 100 number one', zh: '第二支單曲，2026 年 1 月．她第十四首 Hot 100 冠軍歌' },
     overview: {
       en: 'A sunny love song named after a man-made gemstone: happiness that is not found by chance but created.',
       zh: '一首陽光燦爛的情歌，以一種人造寶石命名：幸福不是偶然尋獲，而是親手創造的。',
@@ -80,6 +81,11 @@ export const part1: Song[] = [
     echoes: [
       { ref: 'lover/daylight', note: { en: 'Arriving in the light after darker years.', zh: '在黑暗歲月後走進光明。' } },
       { ref: 'midnights/bejeweled', note: { en: 'Gem imagery for self-worth and joy.', zh: '以寶石意象表達自我價值與喜悅。' } },
+    ],
+    trivia: [
+      { en: 'In February 2026 the song reached No. 1 on the Hot 100, making Swift the joint third-most successful act in the chart’s history by number ones, level with Rihanna and behind only the Beatles and Mariah Carey.', zh: '2026 年 2 月，這首歌登上 Hot 100 冠軍，令 Swift 的冠軍歌數目與 Rihanna 並列史上第三，僅次於披頭四和 Mariah Carey。' },
+      { en: 'The music video, written and directed by Swift, premiered on Apple Music and Spotify on 6 February 2026 and reached YouTube two days later. Set in the 1990s, it is a comedy about two lonely people, one devoted to a pet rock and the other to a cactus, brought together by a magical spray called Opalite.', zh: 'MV 由 Swift 編寫及執導，2026 年 2 月 6 日先在 Apple Music 和 Spotify 首播，兩日後登上 YouTube。故事設於九十年代，是一齣喜劇：一個對寵物石頭情有獨鍾、一個對仙人掌依依不捨的兩個寂寞人，被一瓶名為 Opalite 的神奇噴霧撮合。' },
+      { en: 'The idea came from her October 2025 appearance on The Graham Norton Show, where [[Domhnall Gleeson]] joked about wanting to be in one of her videos. He plays her love interest; fellow guests [[Cillian Murphy]], [[Greta Lee]], [[Jodie Turner-Smith]] and [[Lewis Capaldi]], and the host [[Graham Norton]], all appear in cameos.', zh: '構思源自她 2025 年 10 月上《The Graham Norton Show》時，[[Domhnall Gleeson]] 笑說想在她的 MV 中演出。結果他飾演男主角；同場嘉賓 [[Cillian Murphy]]、[[Greta Lee]]、[[Jodie Turner-Smith]]、[[Lewis Capaldi]] 及主持 [[Graham Norton]] 均有客串。' },
     ],
   },
   {

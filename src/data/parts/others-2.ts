@@ -98,4 +98,29 @@ export const part2: Song[] = [
       { ref: 'folklore/seven', note: { en: 'Childhood, nature and loneliness.', zh: '童年、大自然與孤獨。' } },
     ],
   },
+  {
+    slug: 'i-knew-it-i-knew-you', title: 'I Knew It, I Knew You', track: 10, section: 'other',
+    writers: ['Taylor Swift', 'Jack Antonoff'], producers: ['Taylor Swift', 'Jack Antonoff'],
+    single: { en: 'Soundtrack · Toy Story 5 (2026)', zh: '電影歌曲．《反斗奇兵 5》（2026 年）' },
+    overview: {
+      en: 'An original country-pop song for Disney and Pixar’s Toy Story 5, written for the cowgirl Jessie: a return to Swift’s country roots.',
+      zh: '一首為迪士尼及 Pixar《反斗奇兵 5》而寫的原創鄉謠流行曲，寫給牛仔女孩翠絲：Swift 重返鄉謠根源之作。',
+    },
+    context: {
+      en: 'Swift wrote and recorded the song with [[Jack Antonoff]] in February 2026, after attending an early screening of the film. She announced it by saying she had dreamed of writing for these characters since watching the first Toy Story as a five-year-old. It was released on 5 June 2026.',
+      zh: 'Swift 在 2026 年 2 月觀看電影的早期放映後，與 [[Jack Antonoff]] 寫成並錄製這首歌。她宣佈時說，自五歲看第一集《反斗奇兵》起，便夢想為這些角色寫歌。歌曲於 2026 年 6 月 5 日推出。',
+    },
+    story: {
+      en: 'Jessie’s story has a famous musical moment already: in Toy Story 2, "When She Loved Me" told of being forgotten by the child who once loved her. Swift’s song does the opposite, finding easy joy in a reunion.\n\nSwift said writing it felt like a musical departure and coming home at the same time. In its first week it was added by every country radio station reporting to Mediabase, the first song by a female artist to do so.',
+      zh: '翠絲的故事早有一段著名的音樂時刻：《反斗奇兵 2》的〈When She Loved Me〉，寫被曾經疼愛她的孩子遺忘。Swift 這首歌恰恰相反，在重聚中找到輕鬆的喜悅。\n\nSwift 說寫這首歌既像一次音樂上的出走，又像回家。推出首週，所有向 Mediabase 匯報的鄉謠電台都把它加入播放清單，是首位女歌手的歌曲做到這一點。',
+    },
+    lyrics: [
+      { part: { en: 'Verse', zh: '主歌' }, meaning: { en: 'After a long time apart, a familiar face appears again.', zh: '分別很久之後，一張熟悉的臉再次出現。' } },
+      { part: { en: 'Chorus', zh: '副歌' }, meaning: { en: 'She recognises them at once: the bond was never really broken.', zh: '她一眼便認出對方：這份羈絆從未真正斷過。' } },
+    ],
+    echoes: [
+      { ref: 'taylor-swift/tim-mcgraw', note: { en: 'Back to country, twenty years after her debut single.', zh: '出道單曲二十年後，重返鄉謠。' } },
+      { ref: 'fearless/the-best-day', note: { en: 'Childhood, memory and the people who loved us first.', zh: '童年、回憶，以及最早愛我們的人。' } },
+    ],
+  },
 ];

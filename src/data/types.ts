@@ -48,7 +48,7 @@ export interface Album {
 
 export type SongSection =
   | 'standard' | 'deluxe' | 'bonus' | 'vault'
-  | '3am' | 'tilldawn' | 'anthology' | 'other';
+  | '3am' | 'tilldawn' | 'anthology' | 'encore' | 'other';
 
 /** 歌詞逐段解讀：只解釋含義，不引用原文 */
 export interface LyricPart { part: L; meaning: L }

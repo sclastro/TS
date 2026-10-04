@@ -670,10 +670,19 @@ export const albums: Album[] = [
           zh: '專輯於 2025 年 10 月 3 日推出，同時在戲院舉行特別放映，Swift 首播〈The Fate of Ophelia〉MV 並講解各首歌曲。推出首週在美國錄得超過四百萬個單位，是現代排行榜時代任何專輯的最高單週成績。',
         },
       },
+      {
+        title: { en: 'The Encore', zh: '安哥：The Encore' },
+        body: {
+          en: 'In September 2026, almost a year after release, Swift added four new songs in The Encore: "Patient Zero", "Cleveland!", "Pink Clouding" and "Babylon". Written in Sweden after the record-breaking first week, they move from a ghostly thriller to a love song for her new husband and a closing parable about the price of fame.',
+          zh: '2026 年 9 月，專輯推出差不多一年後，Swift 以《The Encore》加入四首新歌：〈Patient Zero〉、〈Cleveland!〉、〈Pink Clouding〉和〈Babylon〉。這些歌在首週破紀錄後於瑞典寫成，由鬼魅的驚悚故事，走到獻給新婚丈夫的情歌，最後以一則關於名利代價的寓言作結。',
+        },
+      },
     ],
     facts: [
       { en: 'Lead single: "The Fate of Ophelia"', zh: '首支單曲：〈The Fate of Ophelia〉' },
       { en: 'Produced with Max Martin and Shellback', zh: '與 Max Martin、Shellback 合作監製' },
+      { en: 'The Encore (2026) adds four songs, 16 in total', zh: 'The Encore 加長版（2026 年）加入四首新歌，合共 16 首' },
+      { en: 'Two Hot 100 number ones: "The Fate of Ophelia" and "Opalite"', zh: '兩首 Hot 100 冠軍歌：〈The Fate of Ophelia〉及〈Opalite〉' },
     ],
     photos: [
       { ...eras('Taylor Swift The Eras Tour (53109376836).jpg', 'stage', '舞台'), caption: { en: 'The Eras Tour stage, 2023 (no CC-licensed photos from the Showgirl era yet)', zh: 'The Eras Tour 舞台，2023 年（Showgirl 時期暫未有 CC 授權照片）' } },
