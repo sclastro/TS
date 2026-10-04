@@ -623,6 +623,43 @@ export const albums: Album[] = [
       en: 'Swift’s twelfth album was announced in August 2025 on the New Heights podcast and reunited her with Max Martin and Shellback. Its imagery draws on showgirls and the backstage life she lived during the Eras Tour, and it set a new US record for first-week sales.',
       zh: '第十二張專輯於 2025 年 8 月在 New Heights podcast 中宣佈，她亦再次與 Max Martin、Shellback 合作。專輯的意象取材自歌舞女郎，以及她在 Eras Tour 期間的後台生活；專輯推出後，打破了美國首週銷量紀錄。',
     },
+    chapters: [
+      {
+        title: { en: 'Made between shows', zh: '在演出之間誕生' },
+        body: {
+          en: 'During the European leg of the Eras Tour in 2024, Swift flew to Sweden on her days off to write and record with [[Max Martin]] and [[Shellback]], the team behind "We Are Never Ever Getting Back Together", "Shake It Off" and "Blank Space". She described the album as a reflection of her inner life while on tour.',
+          zh: '2024 年 Eras Tour 歐洲站期間，Swift 利用休息日飛往瑞典，與 [[Max Martin]] 和 [[Shellback]] 寫歌錄音；他們正是〈We Are Never Ever Getting Back Together〉、〈Shake It Off〉和〈Blank Space〉背後的團隊。她形容這張專輯反映了她巡演期間的內心世界。',
+        },
+      },
+      {
+        title: { en: 'Owning her work', zh: '擁有自己的作品' },
+        body: {
+          en: 'In May 2025 Swift announced that she had bought back the master recordings of her first six albums, ending the long dispute that had led to the re-recordings. The Life of a Showgirl was the first album released after she owned her entire catalogue.',
+          zh: '2025 年 5 月，Swift 宣佈已購回首六張專輯的母帶，結束了促使她重錄舊作的長期爭議。《The Life of a Showgirl》是她擁有全部作品版權後推出的第一張專輯。',
+        },
+      },
+      {
+        title: { en: 'Announced on a podcast', zh: '在 podcast 中宣佈' },
+        body: {
+          en: 'In August 2025 she revealed the album on New Heights, the podcast of [[Travis Kelce]] and [[Jason Kelce]], showing the cover in a glittering case. Later that month, she and Travis Kelce announced their engagement.',
+          zh: '2025 年 8 月，她在 [[Travis Kelce]] 與 [[Jason Kelce]] 的 podcast《New Heights》中揭曉專輯，並展示放在閃亮盒子中的封面。同月稍後，她與 Travis Kelce 宣佈訂婚。',
+        },
+      },
+      {
+        title: { en: 'Orange and mint green', zh: '橙色與薄荷綠' },
+        body: {
+          en: 'The visual world is theatrical: sequins, feathers, stage lights and a palette of bright orange and mint green. The songs are shorter and brighter than on TTPD, mixing love songs with sharp comments on fame and the industry.',
+          zh: '視覺世界充滿劇場感：亮片、羽毛、舞台燈光，以及鮮橙與薄荷綠的配色。歌曲比 TTPD 更短、更明亮，在情歌之間穿插對名氣與業界的尖銳評論。',
+        },
+      },
+      {
+        title: { en: 'A record-breaking release', zh: '破紀錄的發行' },
+        body: {
+          en: 'The album was released on 3 October 2025, together with a cinema event in which Swift premiered the "Fate of Ophelia" video and talked about the songs. In its first week it sold more than four million units in the United States, the biggest week for any album in the modern chart era.',
+          zh: '專輯於 2025 年 10 月 3 日推出，同時在戲院舉行特別放映，Swift 首播〈The Fate of Ophelia〉MV 並講解各首歌曲。推出首週在美國錄得超過四百萬個單位，是現代排行榜時代任何專輯的最高單週成績。',
+        },
+      },
+    ],
     facts: [
       { en: 'Lead single: "The Fate of Ophelia"', zh: '首支單曲：〈The Fate of Ophelia〉' },
       { en: 'Produced with Max Martin and Shellback', zh: '與 Max Martin、Shellback 合作監製' },
