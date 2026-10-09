@@ -16,8 +16,13 @@ const REFRESH = process.env.YT_REFRESH === '1';
 const RETRY_DAYS = 14;
 const VERSION = 2; // 比對規則更新時遞增，未配對的歌曲會即時重試
 
-// 人手指定：'album/slug': 'videoId'（或 null 表示不要嵌入）
-const OVERRIDES = {};
+// 人手指定（已於網上核實為官方頻道上載）：'album/slug': { id, title, kind }，或 null 表示不要嵌入
+const OVERRIDES = {
+  // 標題以「ft. Maren Morris」開頭，自動比對無法辨認
+  'fearless/you-all-over-me': { id: 'XKaMUm7YwZc', title: 'Taylor Swift ft. Maren Morris - You All Over Me (From The Vault) (Official Lyric Video)', kind: 'lyric' },
+  // 頻道上的標題沒有標示「From The Vault」
+  'speak-now/when-emma-falls-in-love': { id: 'IYqgVYjN3Go', title: "Taylor Swift - When Emma Falls in Love (Taylor's Version) (Lyric Video)", kind: 'lyric' },
+};
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -123,7 +128,7 @@ console.log(`Songs: ${songs.length}; Taylor's Version albums: ${[...tvAlbums].jo
 for (const song of songs) {
   const ref = `${song.album}/${song.slug}`;
   if (ref in OVERRIDES) {
-    if (OVERRIDES[ref]) manifest[ref] = { id: OVERRIDES[ref], title: '(manual)', kind: 'video' }; else delete manifest[ref];
+    if (OVERRIDES[ref]) { manifest[ref] = OVERRIDES[ref]; delete misses[ref]; } else delete manifest[ref];
     continue;
   }
   if (song.mv) { delete manifest[ref]; continue; }                // 已有人手核實的 MV
