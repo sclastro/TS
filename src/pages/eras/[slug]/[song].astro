@@ -7,6 +7,7 @@ import Spotify from '../../../components/Spotify.astro';
 import { albums, albumBySlug, others } from '../../../data/albums';
 import { songsByAlbum, sectionLabel, songByRef } from '../../../data/songs';
 import { interviews } from '../../../data/interviews';
+import ytManifest from '../../../data/yt-manifest.json';
 import type { Album, Song, L } from '../../../data/types';
 import { href, bi, personHTML, geniusSearch, spotifySearch, appleSearch, ytChannelSearch, fmtDate } from '../../../lib/util';
 
@@ -24,6 +25,16 @@ const related = interviews.filter((i) => i.songs?.includes(s.slug) || i.album ==
 const beads = s.title.toUpperCase().replace(/[^A-Z0-9 ]/g, '').split('');
 const searchTitle = ['vault'].includes(s.section) ? `${s.title} (Taylor's Version) (From The Vault)` : a.tv ? `${s.title} (Taylor's Version)` : s.title;
 
+// 沒有 MV 的歌曲：使用建置時於官方頻道配對到的 Lyric Video／Visualizer／Official Audio
+type YtHit = { id: string; title: string; kind: 'mv' | 'lyric' | 'visualizer' | 'audio' | 'video' };
+const ytv = s.mv ? undefined : (ytManifest as unknown as Record<string, YtHit>)[`${a.slug}/${s.slug}`];
+const ytKind: Record<YtHit['kind'], L> = {
+  mv: { en: 'Official Music Video', zh: '官方 MV' },
+  lyric: { en: 'Official Lyric Video', zh: '官方歌詞影片' },
+  visualizer: { en: 'Official Visualizer', zh: '官方視覺影片' },
+  audio: { en: 'Official Audio', zh: '官方音訊' },
+  video: { en: 'Official Video', zh: '官方影片' },
+};
 type Layer = { id: string; n: string; t: L; sub: L };
 const layers: Layer[] = [];
 const add = (id: string, t: L, sub: L) => layers.push({ id, n: String(layers.length + 1).padStart(2, '0'), t, sub });
@@ -31,6 +42,7 @@ if (s.context) add('context', { en: 'The era', zh: '時期背景' }, { en: 'Wher
 add('story', { en: 'The story', zh: '創作心路歷程' }, { en: 'How the song was written and why', zh: '這首歌如何寫成、為何而寫' });
 add('lyrics', { en: 'The lyrics, part by part', zh: '歌詞逐段解讀' }, { en: 'What each section means (no lyrics are reproduced)', zh: '每一段的含義（不轉載歌詞原文）' });
 if (s.mv) add('mv', { en: 'The music video', zh: 'MV 解析' }, { en: 'Scene by scene', zh: '逐場拆解' });
+if (ytv) add('video', { en: 'Official video', zh: '官方影片' }, ytKind[ytv.kind]);
 if (s.echoes?.length) add('echoes', { en: 'Echoes across eras', zh: '前後呼應' }, { en: 'Threads that connect this song to others', zh: '與其他時期作品之間的連線' });
 add('listen', { en: 'Watch & listen', zh: '觀看與聆聽' }, { en: 'Official sources only', zh: '只連結官方來源' });
 if (s.trivia?.length) add('trivia', { en: 'Did you know?', zh: '冷知識' }, { en: 'Details worth noticing', zh: '值得留意的細節' });
@@ -106,6 +118,13 @@ const num = (id: string) => layers.find((l) => l.id === id)!.n;
       </section>
     )}
 
+    {ytv && (
+      <section class="layer" id="video" style="padding:0">
+        <header><span class="n">{num('video')}</span><h2><span class="l-zh">官方影片</span><span class="l-en">Official video</span></h2><p><Bi l={ytKind[ytv.kind]} /><br /><span class="l-zh">來自 Taylor Swift 官方 YouTube 頻道</span><span class="l-en">From Taylor Swift’s official YouTube channel</span></p></header>
+        <div data-reveal="zoom"><YouTube id={ytv.id} title={ytv.title} label={`${ytKind[ytv.kind].en} · YouTube`} /></div>
+      </section>
+    )}
+
     {s.echoes?.length ? (
       <section class="layer" id="echoes" style="padding:0">
         <header><span class="n">{num('echoes')}</span><h2><span class="l-zh">前後呼應</span><span class="l-en">Echoes across eras</span></h2><p><span class="l-zh">與其他作品之間的連線</span><span class="l-en">Threads to other songs</span></p></header>
@@ -131,6 +150,7 @@ const num = (id: string) => layers.find((l) => l.id === id)!.n;
         <div class="watch" style="margin-top:0">
           <a class="btn" href={ytChannelSearch(s.title)} target="_blank" rel="noopener">▶ YouTube <span class="l-zh">官方頻道</span><span class="l-en">official channel</span></a>
           {s.mv && <a class="btn ghost" href={`https://www.youtube.com/watch?v=${s.mv.id}`} target="_blank" rel="noopener">Official MV ↗</a>}
+          {ytv && <a class="btn ghost" href={`https://www.youtube.com/watch?v=${ytv.id}`} target="_blank" rel="noopener">{ytKind[ytv.kind].en} ↗</a>}
         </div>
         <div style="margin-top:20px" data-reveal>
           {s.spotifyTrack ? <Spotify kind="track" id={s.spotifyTrack} /> : (a.tv?.spotifyAlbum || a.spotifyAlbum) && <Spotify kind="album" id={(a.tv?.spotifyAlbum || a.spotifyAlbum)!} />}

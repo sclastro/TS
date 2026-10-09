@@ -4,6 +4,11 @@ on:
   push:
     branches: [main, claude/sweet-babbage-17lcda]
   workflow_dispatch:
+    inputs:
+      yt_refresh:
+        description: 'Re-search every song on YouTube (ignore cache)'
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -35,6 +40,18 @@ jobs:
       - name: Fetch Wikimedia Commons photos
         run: node scripts/fetch-images.mjs
         continue-on-error: true
+      # 官方 YouTube 影片配對：沿用上次結果，只搜尋未配對的歌曲
+      - uses: actions/cache@v4
+        with:
+          path: src/data/yt-manifest.json
+          key: yt-v1-${{ github.run_id }}
+          restore-keys: yt-v1-
+      - name: Match official YouTube videos
+        run: node scripts/fetch-youtube.mjs
+        env:
+          YT_REFRESH: ${{ inputs.yt_refresh && '1' || '0' }}
+        continue-on-error: true
+        timeout-minutes: 25
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
