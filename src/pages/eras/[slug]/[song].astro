@@ -27,7 +27,9 @@ const searchTitle = ['vault'].includes(s.section) ? `${s.title} (Taylor's Versio
 
 // 沒有 MV 的歌曲：使用建置時於官方頻道配對到的 Lyric Video／Visualizer／Official Audio
 type YtHit = { id: string; title: string; kind: 'mv' | 'lyric' | 'visualizer' | 'audio' | 'video' };
-const ytv = s.mv ? undefined : (ytManifest as unknown as Record<string, YtHit>)[`${a.slug}/${s.slug}`];
+const ytRaw = s.mv ? undefined : (ytManifest as unknown as Record<string, YtHit>)[`${a.slug}/${s.slug}`];
+// 標題沒有標示類型的上載屬官方音訊
+const ytv = ytRaw && { ...ytRaw, kind: ytRaw.kind === 'video' && !/video/i.test(ytRaw.title) ? 'audio' as const : ytRaw.kind };
 const ytKind: Record<YtHit['kind'], L> = {
   mv: { en: 'Official Music Video', zh: '官方 MV' },
   lyric: { en: 'Official Lyric Video', zh: '官方歌詞影片' },

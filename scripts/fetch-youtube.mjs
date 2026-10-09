@@ -14,6 +14,7 @@ const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 const DRY = process.argv.includes('--dry');
 const REFRESH = process.env.YT_REFRESH === '1';
 const RETRY_DAYS = 14;
+const VERSION = 2; // 比對規則更新時遞增，未配對的歌曲會即時重試
 
 // 人手指定：'album/slug': 'videoId'（或 null 表示不要嵌入）
 const OVERRIDES = {};
@@ -52,7 +53,7 @@ function kindOf(n) {
   if (/lyric/.test(n)) return ['lyric', 4];
   if (/visuali[sz]er/.test(n)) return ['visualizer', 3];
   if (/audio/.test(n)) return ['audio', 2];
-  return ['video', 1];
+  return ['audio', 1]; // 沒有標示類型的上載，一般是官方音訊
 }
 
 function score(song, title) {
@@ -63,7 +64,7 @@ function score(song, title) {
   for (const p of parens(song.title)) if (/version|edit|remix/.test(p) && !n.includes(p)) return null;
   if (/\b10 minute\b/.test(n) && !/\b10 minute\b/.test(songN)) return null;
   const vault = /from the vault/.test(n);
-  if ((song.section === 'vault') !== vault) return null;
+  if ((song.section === 'vault' || /from the vault/i.test(song.title)) !== vault) return null;
   const tv = /taylors version/.test(n);
   const needTV = tvAlbums.has(song.album) && song.section !== 'other';
   const [kind, base] = kindOf(n);
@@ -114,7 +115,7 @@ function best(song, list) {
 
 // ---------- 主流程 ----------
 const manifest = existsSync(MANIFEST) ? JSON.parse(readFileSync(MANIFEST, 'utf8')) : {};
-const misses = manifest._misses ?? {};
+const misses = manifest._v === VERSION ? manifest._misses ?? {} : {};
 const now = Date.now();
 let found = 0, missed = 0, kept = 0;
 console.log(`Songs: ${songs.length}; Taylor's Version albums: ${[...tvAlbums].join(', ')}`);
@@ -135,6 +136,10 @@ for (const song of songs) {
 
   let hit = best(song, videos(await page(`https://www.youtube.com/@TaylorSwift/search?query=${encodeURIComponent(q)}&hl=en&gl=US`), [], true));
   await sleep(1200);
+  if (!hit && q !== song.title) {
+    hit = best(song, videos(await page(`https://www.youtube.com/@TaylorSwift/search?query=${encodeURIComponent(song.title)}&hl=en&gl=US`), [], true));
+    await sleep(1200);
+  }
   if (!hit) {
     hit = best(song, videos(await page(`https://www.youtube.com/results?search_query=${encodeURIComponent(`Taylor Swift ${q}`)}&hl=en&gl=US`)));
     await sleep(1200);
@@ -152,5 +157,6 @@ for (const song of songs) {
 }
 
 manifest._misses = misses;
+manifest._v = VERSION;
 if (!DRY) writeFileSync(MANIFEST, JSON.stringify(manifest, null, 1));
 console.log(`Done: ${found} new, ${kept} cached, ${missed} not found.`);
