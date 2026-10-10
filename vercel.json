@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "astro",
+  "buildCommand": "node scripts/fetch-images.mjs || true; astro build",
+  "outputDirectory": "dist",
+  "trailingSlash": true
+}

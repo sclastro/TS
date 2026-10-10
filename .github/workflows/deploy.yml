@@ -40,12 +40,7 @@ jobs:
       - name: Fetch Wikimedia Commons photos
         run: node scripts/fetch-images.mjs
         continue-on-error: true
-      # 官方 YouTube 影片配對：沿用上次結果，只搜尋未配對的歌曲
-      - uses: actions/cache@v4
-        with:
-          path: src/data/yt-manifest.json
-          key: yt-v1-${{ github.run_id }}
-          restore-keys: yt-v1-
+      # 官方 YouTube 影片配對：src/data/yt-manifest.json 已存入 repo（已覆核），只搜尋新加入或未配對的歌曲
       - name: Match official YouTube videos
         run: node scripts/fetch-youtube.mjs
         env:
