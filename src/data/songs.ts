@@ -1,10 +1,29 @@
-import type { Song, L, SongSection } from './types';
+import type { Song, L, SongSection, LyricPart, MvScene } from './types';
 
 // 每張專輯一個檔案：src/data/songs/<專輯 slug>.ts，匯出 default Song[]
 const mods = import.meta.glob<{ default: Song[] }>('./songs/*.ts', { eager: true });
 
+// 深度解讀：src/data/deep/<專輯 slug>.ts，按歌曲 slug 覆蓋歌詞逐段解讀及 MV 逐場解析
+type Deep = Record<string, { lyrics?: LyricPart[]; scenes?: MvScene[] }>;
+const deepMods = import.meta.glob<{ default: Deep }>('./deep/*.ts', { eager: true });
+const deep: Record<string, Deep> = Object.fromEntries(
+  Object.entries(deepMods).map(([path, m]) => [path.replace(/^\.\/deep\/|\.ts$/g, ''), m.default]),
+);
+const withDeep = (album: string, s: Song): Song => {
+  const d = deep[album]?.[s.slug];
+  if (!d) return s;
+  return {
+    ...s,
+    lyrics: d.lyrics ?? s.lyrics,
+    mv: s.mv && d.scenes ? { ...s.mv, scenes: d.scenes } : s.mv,
+  };
+};
+
 export const songsByAlbum: Record<string, Song[]> = Object.fromEntries(
-  Object.entries(mods).map(([path, m]) => [path.replace(/^\.\/songs\/|\.ts$/g, ''), m.default]),
+  Object.entries(mods).map(([path, m]) => {
+    const album = path.replace(/^\.\/songs\/|\.ts$/g, '');
+    return [album, m.default.map((s) => withDeep(album, s))];
+  }),
 );
 
 /** 以「專輯slug/歌曲slug」找出歌曲，供「前後呼應」連結使用 */

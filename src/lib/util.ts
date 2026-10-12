@@ -22,7 +22,10 @@ export const rich = (text: string) =>
 export const bi = (l: L, opts: { rich?: boolean; tag?: string } = {}) => {
   const f = opts.rich ? rich : esc;
   const tag = opts.tag ?? 'span';
-  return `<${tag} class="l-en" lang="en">${f(l.en)}</${tag}><${tag} class="l-zh" lang="zh-Hant">${f(l.zh)}</${tag}>`;
+  // 段落標籤：以空行分段，每段輸出一個元素
+  const wrap = (cls: string, lang: string, t: string) =>
+    (tag === 'p' ? t.split(/\n{2,}/) : [t]).map((x) => `<${tag} class="${cls}" lang="${lang}">${f(x.trim())}</${tag}>`).join('');
+  return wrap('l-en', 'en', l.en) + wrap('l-zh', 'zh-Hant', l.zh);
 };
 
 // Commons 只接受標準縮圖寬度，其他寬度會回 400 或被限流
