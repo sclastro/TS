@@ -81,8 +81,8 @@ export const a: DeepMap = {
         'Written with [[Max Martin]] and [[Shellback]], the song has Swift playing the villain the public had cast her as. The verse describes manipulating men who deserved it.\n\nThe snarling delivery and heavy drops make it one of the most aggressive songs in her catalogue.',
         '這首與 [[Max Martin]] 及 [[Shellback]] 合寫的歌，由 Swift 扮演公眾為她安排的反派角色。主歌描述玩弄那些罪有應得的男人。\n\n咆哮般的唱法和沉重的轉調，令它成為她作品中最具攻擊性的歌之一。'),
       p('Chorus',
-        'The chorus admits to doing something bad, then asks why it feels so good. The confession is gleeful.\n\nBy embracing the villain role, Swift takes control of the narrative.',
-        '副歌承認做了壞事，然後問為何感覺這麼好。這個告白帶着幸災樂禍的快意。\n\n透過擁抱反派角色，Swift 掌控了敘事。'),
+        'The chorus relishes the villain role, admitting that being cast as the bad one feels surprisingly satisfying. The confession is gleeful.\n\nBy embracing the villain role, Swift takes control of the narrative.',
+        '副歌樂於擔當反派，承認被視為壞人竟然出奇地痛快。這個告白帶着幸災樂禍的快意。\n\n透過擁抱反派角色，Swift 掌控了敘事。'),
       p('Verse 2',
         'The second verse continues the theme of turning the tables on those who lied. The narrator is unapologetic.\n\nThe defiance reflects her response to the public backlash of 2016.',
         '第二段主歌延續「反過來對付說謊者」的主題。敘述者毫無歉意。\n\n這份反抗反映她對 2016 年公眾反彈的回應。'),
@@ -112,8 +112,8 @@ export const a: DeepMap = {
   'delicate': {
     lyrics: [
       p('Verse 1',
-        'Written with [[Max Martin]] and [[Shellback]], "Delicate" opens with a vocoder-processed voice and a quiet, fragile mood. The verse admits that her reputation has never been worse, and wonders whether a new love can survive it.\n\nThe soft production is a striking contrast to the album’s louder songs.',
-        '這首與 [[Max Martin]] 及 [[Shellback]] 合寫的〈Delicate〉，以聲碼器處理的人聲和安靜、脆弱的氣氛開始。主歌承認她的名聲從未如此差，並懷疑一段新戀情能否經得起。\n\n柔和的製作與專輯中較響亮的歌形成鮮明對比。'),
+        'Written with [[Max Martin]] and [[Shellback]], "Delicate" opens with a vocoder-processed voice and a quiet, fragile mood. The verse admits that her public image is at its lowest point, and wonders whether a new love can survive it.\n\nThe soft production is a striking contrast to the album’s louder songs.',
+        '這首與 [[Max Martin]] 及 [[Shellback]] 合寫的〈Delicate〉，以聲碼器處理的人聲和安靜、脆弱的氣氛開始。主歌承認她的公眾形象正處於最低點，並懷疑一段新戀情能否經得起。\n\n柔和的製作與專輯中較響亮的歌形成鮮明對比。'),
       p('Pre-chorus',
         'The pre-chorus describes the early stage of a relationship, when everything feels uncertain and new. She hopes he likes her for who she really is.\n\nThe vulnerability is unusual for reputation.',
         '前副歌描述一段關係的初期，一切都不確定而新鮮。她希望他喜歡的是真實的她。\n\n這份脆弱在《reputation》中並不常見。'),
@@ -158,8 +158,8 @@ export const a: DeepMap = {
         'The chorus blames her enemies for the person she has become. The repetition is cold and chant-like.\n\nThe phrase became a cultural catchphrase.',
         '副歌把她變成今天這個樣子歸咎於她的敵人。重複冷漠而像吟唱。\n\n這句話成為一句流行文化口頭禪。'),
       p('Bridge',
-        'The bridge contains the most famous moment: a spoken line declaring that the old Taylor cannot come to the phone, because she is dead. The line was a viral sensation.\n\nIt symbolically killed her old public image to make way for a new one.',
-        '橋段包含最著名的時刻：一句口白宣告舊的 Taylor 無法接聽電話，因為她已經死了。這句話在網上瘋傳。\n\n它象徵性地「殺死」她舊的公眾形象，為新形象讓路。'),
+        'The bridge contains the most famous moment: a spoken phone-call gag announcing that her former self is gone for good. It became a viral sensation.\n\nIt symbolically killed her old public image to make way for a new one.',
+        '橋段包含最著名的時刻：一段模仿接聽電話的口白，宣告從前的她已一去不返。這一刻在網上瘋傳。\n\n它象徵性地「殺死」她舊的公眾形象，為新形象讓路。'),
     ],
     scenes: [
       sc('The grave', '墳墓',
