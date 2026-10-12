@@ -101,7 +101,7 @@ export const b: DeepMap = {
         '橋段懊悔那些從未問出口的問題，以及沒有好好共度的時光；任何失去祖父母的人都會有這份懊悔。情緒逐漸高漲。\n\n這份懊悔化為一個承諾：把她的教誨傳承下去。'),
       p('Outro',
         'The outro lets Marjorie’s recorded voice rise a little more clearly, as if she is answering. The song ends with love and loss.\n\nIt is track thirteen, Swift’s lucky number, mirroring "epiphany", track thirteen on folklore, which honoured her grandfather.',
-        '尾聲讓 Marjorie 的錄音稍為清晰地浮現，彷彿她正在回應。歌曲以愛與失去作結。\n\n它是第十三首，即 Swift 的幸運數字，與《folklore》第十三首、紀念她外祖父的〈epiphany〉互相呼應。'),
+        '尾聲讓 Marjorie 的錄音稍為清晰地浮現，彷彿她正在回應。歌曲以愛與失去作結。\n\n它是第十三首，即 Swift 的幸運數字，與《folklore》第十三首、紀念她祖父的〈epiphany〉互相呼應。'),
     ],
   },
 

@@ -217,7 +217,7 @@ export const part2: Song[] = [
     ],
     echoes: [
       { ref: 'lover/soon-youll-get-better', note: { en: 'Another song that sits beside illness and the fear of losing someone.', zh: '另一首陪伴在疾病旁、面對失去恐懼的歌。' } },
-      { ref: 'evermore/marjorie', note: { en: 'Grief for a loved one, years later, written about her own grandmother.', zh: '多年後，她為自己的祖母寫下對至親的哀思。' } },
+      { ref: 'evermore/marjorie', note: { en: 'Grief for a loved one, years later, written about her own grandmother.', zh: '多年後，她為自己的外祖母寫下對至親的哀思。' } },
     ],
   },
 ];

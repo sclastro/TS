@@ -85,7 +85,7 @@ export const part2: Song[] = [
       { part: { en: 'Verse 2', zh: '第二段主歌' }, meaning: { en: 'A health worker in 2020 stays with a patient in their final moments, the same kind of courage in a different war.', zh: '2020 年的一位醫護人員，陪伴病人走到最後一刻：在另一場戰爭中，同一種勇氣。' } },
     ],
     echoes: [
-      { ref: 'evermore/marjorie', note: { en: 'On evermore she writes about her grandmother, Marjorie.', zh: '在《evermore》中，她為祖母 Marjorie 寫了一首歌。' } },
+      { ref: 'evermore/marjorie', note: { en: 'On evermore she writes about her grandmother, Marjorie.', zh: '在《evermore》中，她為外祖母 Marjorie 寫了一首歌。' } },
     ],
   },
   {

@@ -77,7 +77,7 @@ export const part2: Song[] = [
     },
     context: {
       en: 'Like "epiphany" on folklore, which honoured her grandfather, "marjorie" sits at track thirteen, Swift’s lucky number, and turns the family story into music.',
-      zh: '一如《folklore》中紀念外祖父的〈epiphany〉，〈marjorie〉同樣放在第十三首（Swift 的幸運數字），把家族故事化成音樂。',
+      zh: '一如《folklore》中紀念祖父的〈epiphany〉，〈marjorie〉同樣放在第十三首（Swift 的幸運數字），把家族故事化成音樂。',
     },
     story: {
       en: 'Marjorie Finlay was a professional opera singer who died when Swift was a teenager. Swift has said she regretted not asking her more questions while she was alive. Recordings of Marjorie singing, found by Swift’s family, were woven into the background of the track.\n\nWritten with [[Aaron Dessner]], the song moves from advice remembered to grief, and finally to the feeling that she is still present.',
@@ -89,7 +89,7 @@ export const part2: Song[] = [
       { part: { en: 'Bridge', zh: '橋段' }, meaning: { en: 'She regrets the questions she never asked and the things she was too young to understand.', zh: '她懊悔那些從未問出口的問題，以及當年太年輕而未能明白的事。' } },
     ],
     echoes: [
-      { ref: 'folklore/epiphany', note: { en: 'Track thirteen of folklore honoured her grandfather; this one honours her grandmother.', zh: '《folklore》第十三首紀念外祖父；這一首紀念外祖母。' } },
+      { ref: 'folklore/epiphany', note: { en: 'Track thirteen of folklore honoured her grandfather; this one honours her grandmother.', zh: '《folklore》第十三首紀念祖父；這一首紀念外祖母。' } },
       { ref: 'fearless/the-best-day', note: { en: 'An earlier song of gratitude to family.', zh: '更早一首向家人致謝的歌。' } },
     ],
   },
