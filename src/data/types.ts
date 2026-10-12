@@ -73,6 +73,8 @@ export interface Song {
   story: L;            // 創作心路歷程，可用 [[人名]] 標記
   lyrics: LyricPart[]; // 歌詞逐段解讀
   mv?: { id: string; director?: string; date?: string; note?: L; scenes?: MvScene[] };
+  /** 官方頻道配對影片（無 mv 時使用）的說明及逐場解析 */
+  video?: { note?: L; scenes?: MvScene[] };
   echoes?: Echo[];
   trivia?: L[];
   spotifyTrack?: string;

@@ -1,7 +1,7 @@
-import type { LyricPart, MvScene } from './types';
+import type { L, LyricPart, MvScene } from './types';
 
 // 深度解讀的資料格式及簡寫函數
-export type DeepEntry = { lyrics?: LyricPart[]; scenes?: MvScene[] };
+export type DeepEntry = { lyrics?: LyricPart[]; scenes?: MvScene[]; video?: { note?: L; scenes?: MvScene[] } };
 export type DeepMap = Record<string, DeepEntry>;
 
 const LABEL: Record<string, string> = {

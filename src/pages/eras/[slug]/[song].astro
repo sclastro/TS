@@ -44,7 +44,7 @@ if (s.context) add('context', { en: 'The era', zh: '時期背景' }, { en: 'Wher
 add('story', { en: 'The story', zh: '創作心路歷程' }, { en: 'How the song was written and why', zh: '這首歌如何寫成、為何而寫' });
 add('lyrics', { en: 'The lyrics, part by part', zh: '歌詞逐段解讀' }, { en: 'What each section means (no lyrics are reproduced)', zh: '每一段的含義（不轉載歌詞原文）' });
 if (s.mv) add('mv', { en: 'The music video', zh: 'MV 解析' }, { en: 'Scene by scene', zh: '逐場拆解' });
-if (ytv) add('video', { en: 'Official video', zh: '官方影片' }, ytKind[ytv.kind]);
+if (ytv) add('video', s.video?.scenes ? { en: 'The music video', zh: 'MV 解析' } : { en: 'Official video', zh: '官方影片' }, ytKind[ytv.kind]);
 if (s.echoes?.length) add('echoes', { en: 'Echoes across eras', zh: '前後呼應' }, { en: 'Threads that connect this song to others', zh: '與其他時期作品之間的連線' });
 add('listen', { en: 'Watch & listen', zh: '觀看與聆聽' }, { en: 'Official sources only', zh: '只連結官方來源' });
 if (s.trivia?.length) add('trivia', { en: 'Did you know?', zh: '冷知識' }, { en: 'Details worth noticing', zh: '值得留意的細節' });
@@ -122,8 +122,21 @@ const num = (id: string) => layers.find((l) => l.id === id)!.n;
 
     {ytv && (
       <section class="layer" id="video" style="padding:0">
-        <header><span class="n">{num('video')}</span><h2><span class="l-zh">官方影片</span><span class="l-en">Official video</span></h2><p><Bi l={ytKind[ytv.kind]} /><br /><span class="l-zh">來自 Taylor Swift 官方 YouTube 頻道</span><span class="l-en">From Taylor Swift’s official YouTube channel</span></p></header>
-        <div data-reveal="zoom"><YouTube id={ytv.id} title={ytv.title} label={`${ytKind[ytv.kind].en} · YouTube`} /></div>
+        <header><span class="n">{num('video')}</span><h2>{s.video?.scenes ? <><span class="l-zh">MV 解析</span><span class="l-en">The music video</span></> : <><span class="l-zh">官方影片</span><span class="l-en">Official video</span></>}</h2><p><Bi l={ytKind[ytv.kind]} /><br /><span class="l-zh">來自 Taylor Swift 官方 YouTube 頻道</span><span class="l-en">From Taylor Swift’s official YouTube channel</span></p></header>
+        <div>
+          <div data-reveal="zoom"><YouTube id={ytv.id} title={ytv.title} label={`${ytKind[ytv.kind].en} · YouTube`} /></div>
+          {s.video?.note && <p style="font-size:.86rem;color:var(--muted);margin:.7em 0 0"><Fragment set:html={bi(s.video.note, { rich: true })} /></p>}
+          {s.video?.scenes && (
+            <div class="mv-scenes">
+              {s.video.scenes.map((sc) => (
+                <div class="mv-scene card" data-reveal>
+                  <strong><Bi l={sc.scene} /></strong>
+                  <Fragment set:html={bi(sc.meaning, { tag: 'p', rich: true })} />
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </section>
     )}
 

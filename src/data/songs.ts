@@ -4,7 +4,7 @@ import type { Song, L, SongSection, LyricPart, MvScene } from './types';
 const mods = import.meta.glob<{ default: Song[] }>('./songs/*.ts', { eager: true });
 
 // 深度解讀：src/data/deep/<專輯 slug>.ts，按歌曲 slug 覆蓋歌詞逐段解讀及 MV 逐場解析
-type Deep = Record<string, { lyrics?: LyricPart[]; scenes?: MvScene[] }>;
+type Deep = Record<string, { lyrics?: LyricPart[]; scenes?: MvScene[]; video?: Song['video'] }>;
 const deepMods = import.meta.glob<{ default: Deep }>('./deep/*.ts', { eager: true });
 const deep: Record<string, Deep> = Object.fromEntries(
   Object.entries(deepMods).map(([path, m]) => [path.replace(/^\.\/deep\/|\.ts$/g, ''), m.default]),
@@ -16,6 +16,7 @@ const withDeep = (album: string, s: Song): Song => {
     ...s,
     lyrics: d.lyrics ?? s.lyrics,
     mv: s.mv && d.scenes ? { ...s.mv, scenes: d.scenes } : s.mv,
+    video: d.video ?? s.video,
   };
 };
 
